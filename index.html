@@ -85,18 +85,13 @@
       align-items: start;
     }
 
-    .photo-box {
-      background: var(--soft);
-      border: 1px solid var(--line);
+    .profile-photo {
+      width: 180px;
       height: 220px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 14px;
-      text-align: center;
-      padding: 10px;
+      object-fit: cover;
+      object-position: center;
+      border: 1px solid var(--line);
+      display: block;
     }
 
     ul {
@@ -165,9 +160,7 @@
             This website collects selected projects, essays, mathematical notes, and academic materials.
           </p>
         </div>
-        <div class="photo-box">
-          Photo placeholder<br />Replace with your image later
-        </div>
+        <img src="profile.jpg" alt="Siyuan Feng" class="profile-photo" />
       </section>
 
       <section id="interests">
