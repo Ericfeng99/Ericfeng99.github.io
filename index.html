@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siyuan Feng | Mathematics Undergraduate</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #222222;
+      --muted: #666666;
+      --line: #dddddd;
+      --link: #0645ad;
+      --soft: #f7f7f7;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 32px 24px 60px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 18px;
+      margin-bottom: 28px;
+    }
+
+    .name {
+      font-size: 34px;
+      margin: 0 0 6px;
+      font-weight: 600;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    nav {
+      margin-top: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+    }
+
+    nav a {
+      color: var(--link);
+      text-decoration: none;
+      margin-right: 18px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    h2 {
+      font-size: 23px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 4px;
+      margin-top: 34px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    a {
+      color: var(--link);
+    }
+
+    .profile {
+      display: grid;
+      grid-template-columns: 1fr 180px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .photo-box {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      text-align: center;
+      padding: 10px;
+    }
+
+    ul {
+      padding-left: 24px;
+    }
+
+    li {
+      margin-bottom: 7px;
+    }
+
+    .item {
+      margin-bottom: 18px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 15px;
+      margin-top: 0;
+    }
+
+    footer {
+      margin-top: 46px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    @media (max-width: 720px) {
+      .profile {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-box {
+        width: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="name">Siyuan Feng</h1>
+      <p class="subtitle">Undergraduate Student in Mathematics, University of Warwick</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#interests">Research Interests</a>
+        <a href="#projects">Projects</a>
+        <a href="#notes">Notes</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="about" class="profile">
+        <div>
+          <h2>About</h2>
+          <p>
+            I am an undergraduate student in Mathematics at the University of Warwick.
+            My current academic interests lie in algebra, topology, combinatorial optimisation,
+            manifolds, and the mathematical foundations of machine learning.
+          </p>
+          <p>
+            This website collects selected projects, essays, mathematical notes, and academic materials.
+          </p>
+        </div>
+        <div class="photo-box">
+          Photo placeholder<br />Replace with your image later
+        </div>
+      </section>
+
+      <section id="interests">
+        <h2>Research Interests</h2>
+        <ul>
+          <li>Mathematical foundations of machine learning</li>
+          <li>Low-rank adaptation and efficient fine-tuning</li>
+          <li>Graph theory and combinatorial optimisation</li>
+          <li>Linear algebra, multilinear algebra, and manifolds</li>
+          <li>Topology and geometry</li>
+        </ul>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="item">
+          <h3>LoRA-One and One-Step Gradient Alignment</h3>
+          <p class="meta">Scientific communication essay / machine learning theory</p>
+          <p>
+            A mathematical exposition on low-rank adaptation, one-step gradient alignment,
+            and related linear algebraic structures.
+          </p>
+        </div>
+
+        <div class="item">
+          <h3>URSS Research Project</h3>
+          <p class="meta">University of Warwick, summer research project</p>
+          <p>
+            A research project on mathematical aspects of machine learning theory.
+            Details will be updated as the project develops.
+          </p>
+        </div>
+
+        <div class="item">
+          <h3>Selected Coursework Projects</h3>
+          <p class="meta">Mathematics, numerical methods, quantum computing, and programming</p>
+          <p>
+            Selected academic and programming projects from undergraduate mathematics modules.
+          </p>
+        </div>
+      </section>
+
+      <section id="notes">
+        <h2>Notes</h2>
+        <ul>
+          <li>Manifolds, inverse function theorem, and implicit function theorem</li>
+          <li>Multilinear algebra and tensor products</li>
+          <li>Jordan canonical form and linear algebra</li>
+          <li>Topology: compactness, connectedness, and metric spaces</li>
+          <li>Combinatorial optimisation</li>
+        </ul>
+      </section>
+
+      <section id="cv">
+        <h2>CV</h2>
+        <p>
+          A PDF version of my CV will be available here.
+        </p>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          Email: <a href="mailto:your-email@example.com">your-email@example.com</a><br />
+          GitHub: <a href="https://github.com/your-github-username">your-github-username</a><br />
+          LinkedIn: <a href="#">LinkedIn profile</a>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      Last updated: May 2026. Built with HTML and CSS.
+    </footer>
+  </div>
+</body>
+</html>
