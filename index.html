@@ -31,9 +31,20 @@
     }
 
     header {
+      position: relative;
       border-bottom: 1px solid var(--line);
       padding-bottom: 18px;
       margin-bottom: 28px;
+      padding-right: 95px;
+    }
+    
+    .header-logo {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 76px;
+      height: 76px;
+      object-fit: contain;
     }
 
     .name {
@@ -147,6 +158,8 @@
         <a href="#cv">CV</a>
         <a href="#contact">Contact</a>
       </nav>
+    
+      <img src="favicon.png" alt="Siyuan Feng logo" class="header-logo" />
     </header>
 
     <main>
