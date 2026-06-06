@@ -3,39 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>冯思远 | 数学本科生</title>
+
+  <title>冯思远 | 数学系本科生</title>
+
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
+
   <style>
     :root {
-      --bg: #ffffff;
-      --text: #222222;
-      --muted: #666666;
-      --line: #dddddd;
-      --link: #0645ad;
-      --soft: #f7f7f7;
+      --bg: #f7f8fb;
+      --paper: #ffffff;
+      --text: #1f2933;
+      --muted: #5f6b7a;
+      --line: #d8dee8;
+      --link: #0b3d91;
+      --link-dark: #082b66;
+      --accent: #b48a2c;
+      --accent-soft: #f4ecd7;
+      --soft: #f8f9fb;
+      --shadow: 0 12px 32px rgba(15, 35, 70, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
-      background: var(--bg);
+      background:
+        linear-gradient(180deg, rgba(11, 61, 145, 0.08), rgba(255, 255, 255, 0) 260px),
+        var(--bg);
       color: var(--text);
       font-family: Georgia, "Times New Roman", "Noto Serif SC", "Songti SC", "SimSun", serif;
-      line-height: 1.6;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    a:hover {
+      color: var(--link-dark);
+    }
+
+    .top-bar {
+      height: 6px;
+      background: linear-gradient(90deg, var(--link-dark), var(--link), var(--accent));
     }
 
     .container {
-      max-width: 920px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 32px 24px 60px;
+      padding: 30px 24px 60px;
+    }
+
+    .page-card {
+      background: var(--paper);
+      border: 1px solid rgba(216, 222, 232, 0.9);
+      box-shadow: var(--shadow);
+      padding: 30px 34px 38px;
     }
 
     header {
       position: relative;
       border-bottom: 1px solid var(--line);
-      padding-bottom: 18px;
+      padding-bottom: 20px;
       margin-bottom: 28px;
-      padding-right: 95px;
+      padding-right: 100px;
     }
 
     .header-logo {
@@ -45,14 +85,19 @@
       width: 76px;
       height: 76px;
       object-fit: contain;
-      border: none;
-      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 6px;
     }
 
     .name {
-      font-size: 34px;
-      margin: 0 0 6px;
+      font-size: 36px;
+      line-height: 1.15;
+      margin: 0 0 8px;
       font-weight: 600;
+      letter-spacing: 0.01em;
+      color: #172033;
     }
 
     .subtitle {
@@ -62,11 +107,12 @@
     }
 
     .lang-link {
-      font-size: 0.65em;
+      font-size: 0.58em;
       margin-left: 10px;
       color: var(--link);
       text-decoration: none;
       font-weight: 400;
+      white-space: nowrap;
     }
 
     .lang-link:hover {
@@ -74,41 +120,108 @@
     }
 
     nav {
-      margin-top: 18px;
+      margin-top: 20px;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
     }
 
     nav a {
       color: var(--link);
       text-decoration: none;
-      margin-right: 18px;
+      white-space: nowrap;
     }
 
     nav a:hover {
       text-decoration: underline;
     }
 
+    .hero {
+      margin: 26px 0 8px;
+      padding: 22px 24px;
+      background: linear-gradient(135deg, rgba(11, 61, 145, 0.08), rgba(180, 138, 44, 0.08));
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+    }
+
+    .hero p {
+      margin: 0 0 14px;
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-top: 12px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--link);
+      background: var(--link);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    .button:hover {
+      background: var(--link-dark);
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .button.secondary {
+      background: #ffffff;
+      color: var(--link);
+      border-color: var(--line);
+    }
+
+    .button.secondary:hover {
+      border-color: var(--link);
+      color: var(--link-dark);
+      background: #f7f9fd;
+    }
+
     h2 {
       font-size: 23px;
+      color: #172033;
       border-bottom: 1px solid var(--line);
-      padding-bottom: 4px;
-      margin-top: 34px;
+      padding-bottom: 6px;
+      margin-top: 36px;
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 52px;
+      height: 2px;
+      background: var(--accent);
+      margin-top: 6px;
     }
 
     h3 {
       font-size: 18px;
-      margin-bottom: 4px;
+      margin: 0 0 5px;
+      color: #1f2933;
     }
 
-    a {
-      color: var(--link);
+    p {
+      margin-top: 0;
     }
 
     .profile {
       display: grid;
       grid-template-columns: 1fr 180px;
-      gap: 28px;
+      gap: 30px;
       align-items: start;
     }
 
@@ -119,6 +232,8 @@
       object-position: center;
       border: 1px solid var(--line);
       display: block;
+      background: #ffffff;
+      padding: 4px;
     }
 
     ul {
@@ -130,13 +245,49 @@
     }
 
     .item {
-      margin-bottom: 18px;
+      margin-bottom: 16px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      border-left: 3px solid var(--link);
+    }
+
+    .item p:last-child {
+      margin-bottom: 0;
     }
 
     .meta {
       color: var(--muted);
       font-size: 15px;
       margin-top: 0;
+      margin-bottom: 8px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .interest-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 20px;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .interest-list li {
+      border-left: 3px solid var(--accent);
+      background: var(--soft);
+      padding: 8px 12px;
+      margin-bottom: 0;
+    }
+
+    .personal-box {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, #ffffff, var(--accent-soft));
+      border-left: 3px solid var(--accent);
+    }
+
+    .contact-lines {
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     footer {
@@ -149,129 +300,301 @@
     }
 
     @media (max-width: 720px) {
+      .container {
+        padding: 18px 14px 42px;
+      }
+
+      .page-card {
+        padding: 24px 18px 32px;
+      }
+
+      header {
+        padding-right: 72px;
+        padding-bottom: 18px;
+        margin-bottom: 24px;
+      }
+
+      .header-logo {
+        width: 56px;
+        height: 56px;
+        border-radius: 10px;
+        padding: 4px;
+      }
+
+      .name {
+        font-size: 30px;
+        line-height: 1.2;
+        margin-bottom: 8px;
+      }
+
+      .lang-link {
+        font-size: 0.52em;
+        margin-left: 8px;
+        display: inline-block;
+        vertical-align: baseline;
+      }
+
+      .subtitle {
+        font-size: 15px;
+        line-height: 1.45;
+      }
+
+      nav {
+        gap: 8px 14px;
+        margin-top: 16px;
+        line-height: 1.4;
+        font-size: 14.5px;
+      }
+
+      .hero {
+        padding: 18px 16px;
+      }
+
+      .hero p {
+        font-size: 15.5px;
+      }
+
+      .hero-actions {
+        gap: 8px;
+      }
+
+      .button {
+        padding: 8px 12px;
+        font-size: 13.5px;
+      }
+
+      h2 {
+        font-size: 22px;
+        margin-top: 30px;
+      }
+
+      h3 {
+        font-size: 17px;
+      }
+
       .profile {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .profile-photo {
+        width: 160px;
+        height: 200px;
+        margin-top: 4px;
+      }
+
+      .interest-list {
         grid-template-columns: 1fr;
       }
 
-      .photo-box {
-        width: 180px;
+      ul {
+        padding-left: 22px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .container {
+        padding: 14px 10px 38px;
+      }
+
+      .page-card {
+        padding: 22px 14px 30px;
+      }
+
+      header {
+        padding-right: 60px;
+      }
+
+      .header-logo {
+        width: 50px;
+        height: 50px;
+      }
+
+      .name {
+        font-size: 28px;
+      }
+
+      .lang-link {
+        font-size: 0.5em;
+        margin-left: 6px;
+      }
+
+      .subtitle {
+        font-size: 14.5px;
+      }
+
+      nav {
+        gap: 7px 12px;
+        font-size: 14px;
+      }
+
+      .profile-photo {
+        width: 150px;
+        height: 190px;
+      }
+
+      .item,
+      .personal-box {
+        padding: 14px 14px;
       }
     }
   </style>
 </head>
+
 <body>
+  <div class="top-bar"></div>
+
   <div class="container">
-    <header>
-      <h1 class="name">冯思远 <a href="index-en.html" class="lang-link">[English version]</a></h1>
-      <p class="subtitle">英国华威大学数学本科生</p>
-      <nav>
-        <a href="#about">关于</a>
-        <a href="#interests">研究兴趣</a>
-        <a href="#projects">项目</a>
-        <a href="#notes">论文与笔记</a>
-        <a href="#cv">简历</a>
-        <a href="#contact">联系方式</a>
-      </nav>
+    <div class="page-card">
+      <header>
+        <h1 class="name">
+          冯思远
+          <a href="index-en.html" class="lang-link">[English version]</a>
+        </h1>
 
-      <img src="favicon.png" alt="冯思远 logo" class="header-logo" />
-    </header>
+        <p class="subtitle">英国华威大学数学系本科生</p>
 
-    <main>
-      <section id="about" class="profile">
-      <div>
-        <h2>关于</h2>
-        <p>
-          我是英国华威大学数学专业本科生，学术兴趣主要包括量子计算、
-          机器学习的数学基础，以及组合优化。
-        </p>
-        <p>
-          我目前关注如何使用线性代数与结构性方法研究量子信息和机器学习中的问题，
-          包括 stabilizer formalism、辛线性代数以及图论优化方法。
-        </p>
-        <p>
-          本网站收录我部分论文、项目、笔记及其他学术材料。
-        </p>
-      </div>
+        <nav>
+          <a href="#about">关于</a>
+          <a href="#interests">研究</a>
+          <a href="#personal">个人</a>
+          <a href="#projects">项目</a>
+          <a href="#notes">笔记</a>
+          <a href="#cv">简历</a>
+          <a href="#contact">联系</a>
+        </nav>
 
-      <img src="profile.jpg" alt="冯思远" class="profile-photo" />
-    </section>
+        <img src="favicon.png" alt="冯思远 logo" class="header-logo" />
+      </header>
 
-      <section id="interests">
-      <h2>研究兴趣</h2>
-      <ul>
-        <li>量子计算与 stabilizer formalism</li>
-        <li>辛线性代数与量子信息</li>
-        <li>机器学习的数学基础</li>
-        <li>组合优化与图论方法</li>
-      </ul>
-    </section>
-
-      <section id="projects">
-        <h2>项目</h2>
-
-        <div class="item">
-          <h3>LoRA-One and One-Step Gradient Alignment</h3>
-          <p class="meta">科学传播论文 / 机器学习理论</p>
+      <main>
+        <section class="hero">
           <p>
-            一篇关于低秩适配、一步梯度对齐及相关线性代数结构的数学说明性论文。
+            我是英国华威大学数学专业本科生，兴趣方向包括量子计算、机器学习数学基础、
+            辛线性代数、组合优化与图论方法。
           </p>
-        </div>
 
-        <div class="item">
-          <h3>URSS Research Project</h3>
-          <p class="meta">英国华威大学暑期研究项目</p>
+          <div class="hero-actions">
+            <a class="button" href="cv-zh.pdf">查看中文简历</a>
+            <a class="button secondary" href="#projects">查看项目</a>
+            <a class="button secondary" href="#contact">联系方式</a>
+          </div>
+        </section>
+
+        <section id="about" class="profile">
+          <div>
+            <h2>关于</h2>
+
+            <p>
+              我是英国华威大学数学专业本科生，学术兴趣主要包括量子计算、
+              机器学习数学基础、随机矩阵、组合优化。
+            </p>
+
+            <p>
+              我目前关注如何使用线性代数与结构性方法研究量子信息和机器学习中的问题，
+              包括 stabilizer formalism、辛线性代数以及图论优化方法。
+            </p>
+
+            <p>
+              本网站收录我部分论文、项目、笔记及其他学术材料。
+            </p>
+          </div>
+
+          <img src="profile.jpg" alt="冯思远" class="profile-photo" />
+        </section>
+
+        <section id="interests">
+          <h2>研究兴趣</h2>
+
+          <ul class="interest-list">
+            <li>量子计算与量子优化</li>
+            <li>辛线性代数与量子信息</li>
+            <li>机器学习数学基础</li>
+            <li>组合优化与图论方法</li>
+          </ul>
+        </section>
+
+        <section id="personal">
+          <h2>个人兴趣</h2>
+
+          <div class="personal-box">
+            <p>
+              我是一名四阶魔方速拧选手，参加过 WCA 官方比赛。
+              我的 WCA 官方成绩包括四阶单次 34.22 秒、平均 41.46 秒。
+              魔方主页见
+              <a href="https://cubing.com/results/person/2021FENG07" target="_blank">这里</a>。
+            </p>
+          </div>
+        </section>
+
+        <section id="projects">
+          <h2>项目</h2>
+
+          <div class="item">
+            <h3>LoRA-One and One-Step Gradient Alignment</h3>
+            <p class="meta">科学传播论文 / 机器学习理论</p>
+            <p>
+              一篇关于低秩适配、一步梯度对齐及相关线性代数结构的数学说明性论文。
+            </p>
+          </div>
+
+          <div class="item">
+            <h3>URSS Research Project</h3>
+            <p class="meta">英国华威大学暑期研究项目</p>
+            <p>
+              一个关于机器学习理论中数学问题的研究项目。项目进展将后续更新。
+            </p>
+          </div>
+
+          <div class="item">
+            <h3>Selected Coursework Projects</h3>
+            <p class="meta">数学、数值方法、量子计算与编程</p>
+            <p>
+              本科数学课程中部分学术项目与编程项目。
+            </p>
+          </div>
+        </section>
+
+        <section id="notes">
+          <h2>论文与笔记</h2>
+
+          <div class="item">
+            <h3>A Symplectic-Linear Proof of the Gottesman–Knill Theorem</h3>
+            <p class="meta">论文，存档于 Zenodo。DOI: 10.5281/zenodo.19615972</p>
+            <p>
+              一篇关于 Gottesman–Knill 定理的说明性论文，重点使用辛线性代数框架描述
+              Pauli operators、Clifford updates 与 tableau simulation。
+            </p>
+            <p>
+              <a href="https://doi.org/10.5281/zenodo.19615972" target="_blank">在 Zenodo 上查看</a>
+            </p>
+          </div>
+        </section>
+
+        <section id="cv">
+          <h2>简历</h2>
+
           <p>
-            一个关于机器学习理论中数学问题的研究项目。
-            项目进展将后续更新。
+            我的简历目前提供中文版：
+            <a href="cv-zh.pdf">中文简历</a>。
+            英文版将后续添加。
           </p>
-        </div>
+        </section>
 
-        <div class="item">
-          <h3>Selected Coursework Projects</h3>
-          <p class="meta">数学、数值方法、量子计算与编程</p>
-          <p>
-            本科数学课程中部分学术项目与编程项目。
+        <section id="contact">
+          <h2>联系方式</h2>
+
+          <p class="contact-lines">
+            邮箱：<a href="mailto:eric_feng2006@outlook.com">eric_feng2006@outlook.com</a><br />
+            GitHub：<a href="https://github.com/Ericfeng99" target="_blank">Ericfeng99</a>
           </p>
-        </div>
-      </section>
+        </section>
+      </main>
 
-      <section id="notes">
-      <h2>论文与笔记</h2>
-
-      <div class="item">
-        <h3>A Symplectic-Linear Proof of the Gottesman–Knill Theorem</h3>
-        <p class="meta">论文，存档于 Zenodo。DOI: 10.5281/zenodo.19615972</p>
-        <p>
-          一篇关于 Gottesman–Knill 定理的说明性论文，重点使用辛线性代数框架描述
-          Pauli operators、Clifford updates 与 tableau simulation。
-        </p>
-        <p>
-          <a href="https://doi.org/10.5281/zenodo.19615972">在 Zenodo 上查看</a>
-        </p>
-      </div>
-    </section>
-
-      <section id="cv">
-      <h2>简历</h2>
-      <p>
-        我的简历目前提供中文版：
-        <a href="cv-zh.pdf">中文简历</a>。
-        英文版将后续添加。
-      </p>
-    </section>
-
-      <section id="contact">
-        <h2>联系方式</h2>
-        <p>
-          邮箱：<a href="mailto:eric_feng2006@outlook.com">eric_feng2006@outlook.com</a><br />
-          GitHub：<a href="https://github.com/Ericfeng99">Ericfeng99</a><br />
-        </p>
-      </section>
-    </main>
-
-    <footer>
-      最后更新：2026年5月。使用 HTML 与 CSS 搭建。
-    </footer>
+      <footer>
+        最后更新：2026年6月 · 
+      </footer>
+    </div>
   </div>
 </body>
 </html>
