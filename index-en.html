@@ -3,41 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Siyuan Feng | Mathematics Undergraduate</title>
+
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
+
   <style>
     :root {
-      --bg: #ffffff;
-      --text: #222222;
-      --muted: #666666;
-      --line: #dddddd;
-      --link: #0645ad;
-      --soft: #f7f7f7;
+      --bg: #f7f8fb;
+      --paper: #ffffff;
+      --text: #1f2933;
+      --muted: #5f6b7a;
+      --line: #d8dee8;
+      --link: #0b3d91;
+      --link-dark: #082b66;
+      --accent: #b48a2c;
+      --accent-soft: #f4ecd7;
+      --soft: #f8f9fb;
+      --shadow: 0 12px 32px rgba(15, 35, 70, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
-      background: var(--bg);
+      background:
+        linear-gradient(180deg, rgba(11, 61, 145, 0.08), rgba(255, 255, 255, 0) 260px),
+        var(--bg);
       color: var(--text);
       font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.6;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    a:hover {
+      color: var(--link-dark);
+    }
+
+    .top-bar {
+      height: 6px;
+      background: linear-gradient(90deg, var(--link-dark), var(--link), var(--accent));
     }
 
     .container {
-      max-width: 920px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 32px 24px 60px;
+      padding: 30px 24px 60px;
+    }
+
+    .page-card {
+      background: var(--paper);
+      border: 1px solid rgba(216, 222, 232, 0.9);
+      box-shadow: var(--shadow);
+      padding: 30px 34px 38px;
     }
 
     header {
       position: relative;
       border-bottom: 1px solid var(--line);
-      padding-bottom: 18px;
+      padding-bottom: 20px;
       margin-bottom: 28px;
-      padding-right: 95px;
+      padding-right: 100px;
     }
-    
+
     .header-logo {
       position: absolute;
       top: 0;
@@ -45,14 +85,19 @@
       width: 76px;
       height: 76px;
       object-fit: contain;
-      border: none;
-      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 6px;
     }
 
     .name {
-      font-size: 34px;
-      margin: 0 0 6px;
+      font-size: 36px;
+      line-height: 1.15;
+      margin: 0 0 8px;
       font-weight: 600;
+      letter-spacing: 0.01em;
+      color: #172033;
     }
 
     .subtitle {
@@ -62,11 +107,12 @@
     }
 
     .lang-link {
-      font-size: 0.65em;
+      font-size: 0.58em;
       margin-left: 10px;
       color: var(--link);
       text-decoration: none;
       font-weight: 400;
+      white-space: nowrap;
     }
 
     .lang-link:hover {
@@ -74,41 +120,108 @@
     }
 
     nav {
-      margin-top: 18px;
+      margin-top: 20px;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
     }
 
     nav a {
       color: var(--link);
       text-decoration: none;
-      margin-right: 18px;
+      white-space: nowrap;
     }
 
     nav a:hover {
       text-decoration: underline;
     }
 
+    .hero {
+      margin: 26px 0 8px;
+      padding: 22px 24px;
+      background: linear-gradient(135deg, rgba(11, 61, 145, 0.08), rgba(180, 138, 44, 0.08));
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+    }
+
+    .hero p {
+      margin: 0 0 14px;
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-top: 12px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--link);
+      background: var(--link);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    .button:hover {
+      background: var(--link-dark);
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .button.secondary {
+      background: #ffffff;
+      color: var(--link);
+      border-color: var(--line);
+    }
+
+    .button.secondary:hover {
+      border-color: var(--link);
+      color: var(--link-dark);
+      background: #f7f9fd;
+    }
+
     h2 {
       font-size: 23px;
+      color: #172033;
       border-bottom: 1px solid var(--line);
-      padding-bottom: 4px;
-      margin-top: 34px;
+      padding-bottom: 6px;
+      margin-top: 36px;
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 52px;
+      height: 2px;
+      background: var(--accent);
+      margin-top: 6px;
     }
 
     h3 {
       font-size: 18px;
-      margin-bottom: 4px;
+      margin: 0 0 5px;
+      color: #1f2933;
     }
 
-    a {
-      color: var(--link);
+    p {
+      margin-top: 0;
     }
 
     .profile {
       display: grid;
       grid-template-columns: 1fr 180px;
-      gap: 28px;
+      gap: 30px;
       align-items: start;
     }
 
@@ -119,6 +232,8 @@
       object-position: center;
       border: 1px solid var(--line);
       display: block;
+      background: #ffffff;
+      padding: 4px;
     }
 
     ul {
@@ -130,13 +245,49 @@
     }
 
     .item {
-      margin-bottom: 18px;
+      margin-bottom: 16px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      border-left: 3px solid var(--link);
+    }
+
+    .item p:last-child {
+      margin-bottom: 0;
     }
 
     .meta {
       color: var(--muted);
       font-size: 15px;
       margin-top: 0;
+      margin-bottom: 8px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .interest-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 20px;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .interest-list li {
+      border-left: 3px solid var(--accent);
+      background: var(--soft);
+      padding: 8px 12px;
+      margin-bottom: 0;
+    }
+
+    .personal-box {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, #ffffff, var(--accent-soft));
+      border-left: 3px solid var(--accent);
+    }
+
+    .contact-lines {
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     footer {
@@ -149,134 +300,308 @@
     }
 
     @media (max-width: 720px) {
+      .container {
+        padding: 18px 14px 42px;
+      }
+
+      .page-card {
+        padding: 24px 18px 32px;
+      }
+
+      header {
+        padding-right: 72px;
+        padding-bottom: 18px;
+        margin-bottom: 24px;
+      }
+
+      .header-logo {
+        width: 56px;
+        height: 56px;
+        border-radius: 10px;
+        padding: 4px;
+      }
+
+      .name {
+        font-size: 30px;
+        line-height: 1.2;
+        margin-bottom: 8px;
+      }
+
+      .lang-link {
+        font-size: 0.52em;
+        margin-left: 8px;
+        display: inline-block;
+        vertical-align: baseline;
+      }
+
+      .subtitle {
+        font-size: 15px;
+        line-height: 1.45;
+      }
+
+      nav {
+        gap: 8px 14px;
+        margin-top: 16px;
+        line-height: 1.4;
+        font-size: 14.5px;
+      }
+
+      .hero {
+        padding: 18px 16px;
+      }
+
+      .hero p {
+        font-size: 15.5px;
+      }
+
+      .hero-actions {
+        gap: 8px;
+      }
+
+      .button {
+        padding: 8px 12px;
+        font-size: 13.5px;
+      }
+
+      h2 {
+        font-size: 22px;
+        margin-top: 30px;
+      }
+
+      h3 {
+        font-size: 17px;
+      }
+
       .profile {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .profile-photo {
+        width: 160px;
+        height: 200px;
+        margin-top: 4px;
+      }
+
+      .interest-list {
         grid-template-columns: 1fr;
       }
 
-      .photo-box {
-        width: 180px;
+      ul {
+        padding-left: 22px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .container {
+        padding: 14px 10px 38px;
+      }
+
+      .page-card {
+        padding: 22px 14px 30px;
+      }
+
+      header {
+        padding-right: 60px;
+      }
+
+      .header-logo {
+        width: 50px;
+        height: 50px;
+      }
+
+      .name {
+        font-size: 28px;
+      }
+
+      .lang-link {
+        font-size: 0.5em;
+        margin-left: 6px;
+      }
+
+      .subtitle {
+        font-size: 14.5px;
+      }
+
+      nav {
+        gap: 7px 12px;
+        font-size: 14px;
+      }
+
+      .profile-photo {
+        width: 150px;
+        height: 190px;
+      }
+
+      .item,
+      .personal-box {
+        padding: 14px 14px;
       }
     }
   </style>
 </head>
+
 <body>
+  <div class="top-bar"></div>
+
   <div class="container">
-    <header>
-      <h1 class="name">Siyuan Feng <a href="index.html" class="lang-link">[中文版本]</a></h1>
-      <p class="subtitle">Undergraduate Student in Mathematics, University of Warwick</p>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#interests">Research Interests</a>
-        <a href="#projects">Projects</a>
-        <a href="#notes">Notes</a>
-        <a href="#cv">CV</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    
-      <img src="favicon.png" alt="Siyuan Feng logo" class="header-logo" />
-    </header>
+    <div class="page-card">
+      <header>
+        <h1 class="name">
+          Siyuan Feng
+          <a href="index.html" class="lang-link">[中文版本]</a>
+        </h1>
 
-    <main>
-      <section id="about" class="profile">
-      <div>
-        <h2>About</h2>
-        <p>
-          I am an undergraduate student in Mathematics at the University of Warwick,
-          with academic interests in quantum computing, mathematical foundations of
-          machine learning, and combinatorial optimisation.
-        </p>
-        <p>
-          My current work focuses on using linear algebraic and structural methods
-          to study problems in quantum information and machine learning, including
-          stabilizer formalism, symplectic linear algebra and
-          graph-theoretic optimisation.
-        </p>
-        <p>
-          This website collects selected essays, projects, notes, and academic materials.
-        </p>
-      </div>
-    
-      <img src="profile.jpg" alt="Siyuan Feng" class="profile-photo" />
-    </section>
+        <p class="subtitle">Undergraduate Student in Mathematics, University of Warwick</p>
 
-      <section id="interests">
-      <h2>Research Interests</h2>
-      <ul>
-        <li>Quantum computing and stabilizer formalism</li>
-        <li>Symplectic linear algebra and quantum information</li>
-        <li>Mathematical foundations of machine learning</li>
-        <li>Combinatorial optimisation and graph-theoretic methods</li>
-      </ul>
-    </section>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#interests">Research</a>
+          <a href="#personal">Personal</a>
+          <a href="#projects">Projects</a>
+          <a href="#notes">Notes</a>
+          <a href="#cv">CV</a>
+          <a href="#contact">Contact</a>
+        </nav>
 
-      <section id="projects">
-        <h2>Projects</h2>
+        <img src="favicon.png" alt="Siyuan Feng logo" class="header-logo" />
+      </header>
 
-        <div class="item">
-          <h3>LoRA-One and One-Step Gradient Alignment</h3>
-          <p class="meta">Scientific communication essay / machine learning theory</p>
+      <main>
+        <section class="hero">
           <p>
-            A mathematical exposition on low-rank adaptation, one-step gradient alignment,
-            and related linear algebraic structures.
+            I am an undergraduate student in Mathematics at the University of Warwick,
+            with interests in quantum computing, mathematical foundations of machine learning,
+            symplectic linear algebra, combinatorial optimisation, and graph-theoretic methods.
           </p>
-        </div>
 
-        <div class="item">
-          <h3>URSS Research Project</h3>
-          <p class="meta">University of Warwick, summer research project</p>
+          <div class="hero-actions">
+            <a class="button" href="cv-zh.pdf">View CV</a>
+            <a class="button secondary" href="#projects">View Projects</a>
+            <a class="button secondary" href="#contact">Contact</a>
+          </div>
+        </section>
+
+        <section id="about" class="profile">
+          <div>
+            <h2>About</h2>
+
+            <p>
+              I am an undergraduate student in Mathematics at the University of Warwick,
+              with academic interests in quantum computing, mathematical foundations of
+              machine learning, and combinatorial optimisation.
+            </p>
+
+            <p>
+              My current work focuses on using linear algebraic and structural methods
+              to study problems in quantum information and machine learning, including
+              stabilizer formalism, symplectic linear algebra and
+              graph-theoretic optimisation.
+            </p>
+
+            <p>
+              This website collects selected essays, projects, notes, and academic materials.
+            </p>
+          </div>
+
+          <img src="profile.jpg" alt="Siyuan Feng" class="profile-photo" />
+        </section>
+
+        <section id="interests">
+          <h2>Research Interests</h2>
+
+          <ul class="interest-list">
+            <li>Quantum computing and stabilizer formalism</li>
+            <li>Symplectic linear algebra and quantum information</li>
+            <li>Mathematical foundations of machine learning</li>
+            <li>Combinatorial optimisation and graph-theoretic methods</li>
+          </ul>
+        </section>
+
+        <section id="personal">
+          <h2>Personal Interests</h2>
+
+          <div class="personal-box">
+            <p>
+              I am a 4×4×4 speedcuber and have competed in official WCA competitions.
+              My official WCA results include a 34.22 single and a 41.46 average in 4×4×4.
+              My cubing profile is available
+              <a href="https://cubing.com/results/person/2021FENG07" target="_blank">here</a>.
+            </p>
+          </div>
+        </section>
+
+        <section id="projects">
+          <h2>Projects</h2>
+
+          <div class="item">
+            <h3>LoRA-One and One-Step Gradient Alignment</h3>
+            <p class="meta">Scientific communication essay / machine learning theory</p>
+            <p>
+              A mathematical exposition on low-rank adaptation, one-step gradient alignment,
+              and related linear algebraic structures.
+            </p>
+          </div>
+
+          <div class="item">
+            <h3>URSS Research Project</h3>
+            <p class="meta">University of Warwick, summer research project</p>
+            <p>
+              A research project on mathematical aspects of machine learning theory.
+              Details will be updated as the project develops.
+            </p>
+          </div>
+
+          <div class="item">
+            <h3>Selected Coursework Projects</h3>
+            <p class="meta">Mathematics, numerical methods, quantum computing, and programming</p>
+            <p>
+              Selected academic and programming projects from undergraduate mathematics modules.
+            </p>
+          </div>
+        </section>
+
+        <section id="notes">
+          <h2>Essays & Notes</h2>
+
+          <div class="item">
+            <h3>A Symplectic-Linear Proof of the Gottesman–Knill Theorem</h3>
+            <p class="meta">Essay, archived on Zenodo. DOI: 10.5281/zenodo.19615972</p>
+            <p>
+              An expository essay on the Gottesman–Knill theorem, focusing on a
+              symplectic-linear framework for Pauli operators, Clifford updates,
+              and tableau simulation.
+            </p>
+            <p>
+              <a href="https://doi.org/10.5281/zenodo.19615972" target="_blank">View on Zenodo</a>
+            </p>
+          </div>
+        </section>
+
+        <section id="cv">
+          <h2>CV</h2>
+
           <p>
-            A research project on mathematical aspects of machine learning theory.
-            Details will be updated as the project develops.
+            My CV is currently available in Chinese:
+            <a href="cv-zh.pdf">CV (Chinese)</a>.
+            An English version will be added later.
           </p>
-        </div>
+        </section>
 
-        <div class="item">
-          <h3>Selected Coursework Projects</h3>
-          <p class="meta">Mathematics, numerical methods, quantum computing, and programming</p>
-          <p>
-            Selected academic and programming projects from undergraduate mathematics modules.
+        <section id="contact">
+          <h2>Contact</h2>
+
+          <p class="contact-lines">
+            Email: <a href="mailto:eric_feng2006@outlook.com">eric_feng2006@outlook.com</a><br />
+            GitHub: <a href="https://github.com/Ericfeng99" target="_blank">Ericfeng99</a>
           </p>
-        </div>
-      </section>
+        </section>
+      </main>
 
-      <section id="notes">
-      <h2>Essays & Notes</h2>
-    
-      <div class="item">
-        <h3>A Symplectic-Linear Proof of the Gottesman–Knill Theorem</h3>
-        <p class="meta">Essay, archived on Zenodo. DOI: 10.5281/zenodo.19615972</p>
-        <p>
-          An expository essay on the Gottesman–Knill theorem, focusing on a
-          symplectic-linear framework for Pauli operators, Clifford updates,
-          and tableau simulation.
-        </p>
-        <p>
-          <a href="https://doi.org/10.5281/zenodo.19615972">View on Zenodo</a>
-        </p>
-      </div>
-    </section>
-
-      <section id="cv">
-      <h2>CV</h2>
-      <p>
-        My CV is currently available in Chinese:
-        <a href="cv-zh.pdf">CV (Chinese)</a>.
-        An English version will be added later.
-      </p>
-    </section>
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>
-          Email: <a href="mailto:eric_feng2006@outlook.com">eric_feng2006@outlook.com</a><br />
-          GitHub: <a href="https://github.com/Ericfeng99">Ericfeng99</a><br />
-        </p>
-      </section>
-    </main>
-
-    <footer>
-      Last updated: May 2026. Built with HTML and CSS.
-    </footer>
+      <footer>
+        Last updated: June 2026 · 
+      </footer>
+    </div>
   </div>
 </body>
 </html>
