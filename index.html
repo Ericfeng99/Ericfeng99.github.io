@@ -286,6 +286,99 @@
       border-left: 3px solid var(--accent);
     }
 
+    .fold-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, #ffffff, var(--accent-soft));
+      border-left: 3px solid var(--accent);
+      margin-bottom: 16px;
+    }
+    
+    .fold-card summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 16px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .fold-card summary::-webkit-details-marker {
+      display: none;
+    }
+    
+    .fold-card summary::after {
+      content: "+";
+      color: var(--link);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 22px;
+      line-height: 1;
+    }
+    
+    .fold-card[open] summary::after {
+      content: "−";
+    }
+    
+    .fold-title {
+      font-weight: 600;
+      color: #172033;
+    }
+    
+    .fold-subtitle {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 400;
+    }
+    
+    .fold-content {
+      padding: 0 18px 18px;
+    }
+    
+    .achievement-box {
+      margin-top: 14px;
+      padding: 13px 15px;
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(216, 222, 232, 0.9);
+    }
+    
+    .achievement-box p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    
+    .image-grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      padding: 4px;
+    }
+    
+    @media (max-width: 720px) {
+      .fold-card summary {
+        padding: 15px 16px;
+        align-items: flex-start;
+      }
+    
+      .fold-content {
+        padding: 0 16px 16px;
+      }
+    
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
     .contact-lines {
       font-family: Arial, Helvetica, sans-serif;
     }
@@ -518,15 +611,36 @@
 
         <section id="personal">
           <h2>个人兴趣</h2>
-
-          <div class="personal-box">
-            <p>
-              我是一名四阶魔方速拧选手，参加过 WCA 官方比赛。
-              我的 WCA 官方成绩包括四阶单次 34.22 秒、平均 41.46 秒。
-              魔方主页见
-              <a href="https://cubing.com/results/person/2021FENG07" target="_blank">这里</a>。
-            </p>
-          </div>
+        
+          <details class="fold-card">
+            <summary>
+              <span>
+                <span class="fold-title">四阶魔方速拧</span>
+                <span class="fold-subtitle">WCA 官方成绩与 Warwick Winter 2025 校内冠军</span>
+              </span>
+            </summary>
+        
+            <div class="fold-content">
+              <p>
+                我是一名四阶魔方速拧选手，参加过 WCA 官方比赛。
+                我的 WCA 官方成绩包括四阶单次 34.22 秒、平均 41.46 秒。
+                魔方主页见
+                <a href="https://cubing.com/results/person/2021FENG07" target="_blank">这里</a>。
+              </p>
+        
+              <div class="achievement-box">
+                <p>
+                  在 Warwick Winter 2025 校内魔方比赛中，我以四阶魔方平均 36.95 秒获得冠军，
+                  在该项目中取得全校第一名。
+                </p>
+              </div>
+        
+              <div class="image-grid">
+                <img src="warwick-winter-2025-podium.jpg" alt="Warwick Winter 2025 四阶魔方前三名合影">
+                <img src="warwick-winter-2025-certificate.jpg" alt="Warwick Winter 2025 四阶魔方冠军证书">
+              </div>
+            </div>
+          </details>
         </section>
 
         <section id="projects">
