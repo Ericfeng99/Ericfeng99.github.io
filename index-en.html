@@ -286,6 +286,99 @@
       border-left: 3px solid var(--accent);
     }
 
+    .fold-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, #ffffff, var(--accent-soft));
+      border-left: 3px solid var(--accent);
+      margin-bottom: 16px;
+    }
+    
+    .fold-card summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 16px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .fold-card summary::-webkit-details-marker {
+      display: none;
+    }
+    
+    .fold-card summary::after {
+      content: "+";
+      color: var(--link);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 22px;
+      line-height: 1;
+    }
+    
+    .fold-card[open] summary::after {
+      content: "−";
+    }
+    
+    .fold-title {
+      font-weight: 600;
+      color: #172033;
+    }
+    
+    .fold-subtitle {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 400;
+    }
+    
+    .fold-content {
+      padding: 0 18px 18px;
+    }
+    
+    .achievement-box {
+      margin-top: 14px;
+      padding: 13px 15px;
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(216, 222, 232, 0.9);
+    }
+    
+    .achievement-box p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    
+    .image-grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      padding: 4px;
+    }
+    
+    @media (max-width: 720px) {
+      .fold-card summary {
+        padding: 15px 16px;
+        align-items: flex-start;
+      }
+    
+      .fold-content {
+        padding: 0 16px 16px;
+      }
+    
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
     .contact-lines {
       font-family: Arial, Helvetica, sans-serif;
     }
@@ -524,15 +617,36 @@
 
         <section id="personal">
           <h2>Personal Interests</h2>
-
-          <div class="personal-box">
-            <p>
-              I am a 4×4×4 speedcuber and have competed in official WCA competitions.
-              My official WCA results include a 34.22 single and a 41.46 average in 4×4×4.
-              My cubing profile is available
-              <a href="https://cubing.com/results/person/2021FENG07" target="_blank">here</a>.
-            </p>
-          </div>
+        
+          <details class="fold-card">
+            <summary>
+              <span>
+                <span class="fold-title">4×4×4 Speedcubing</span>
+                <span class="fold-subtitle">Official WCA results and Warwick Winter 2025 champion</span>
+              </span>
+            </summary>
+        
+            <div class="fold-content">
+              <p>
+                I am a 4×4×4 speedcuber and have competed in official WCA competitions.
+                My official WCA results include a 34.22 single and a 41.46 average in 4×4×4.
+                My cubing profile is available
+                <a href="https://cubing.com/results/person/2021FENG07" target="_blank">here</a>.
+              </p>
+        
+              <div class="achievement-box">
+                <p>
+                  At Warwick Winter 2025, I won 1st place in the 4×4×4 event with a 36.95-second average,
+                  ranking first in the university-wide competition for this event.
+                </p>
+              </div>
+        
+              <div class="image-grid">
+                <img src="warwick-winter-2025-podium.jpg" alt="Top three finishers in the Warwick Winter 2025 4x4x4 event">
+                <img src="warwick-winter-2025-certificate.jpg" alt="Warwick Winter 2025 4x4x4 first-place certificate">
+              </div>
+            </div>
+          </details>
         </section>
 
         <section id="projects">
