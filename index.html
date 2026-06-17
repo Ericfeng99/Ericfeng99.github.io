@@ -363,6 +363,27 @@
       background: #ffffff;
       padding: 4px;
     }
+
+    .cube-video-box {
+      margin-top: 14px;
+      padding: 4px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+    
+    .cube-video-box video {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #000000;
+    }
+    
+    .video-caption {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
     
     @media (max-width: 720px) {
       .fold-card summary {
@@ -635,6 +656,14 @@
                 </p>
               </div>
         
+              <div class="cube-video-box">
+                <video controls preload="metadata" playsinline>
+                  <source src="rubiks-4x4-solve.mp4" type="video/mp4">
+                  你的浏览器不支持 HTML5 视频播放。
+                </video>
+                <p class="video-caption">四阶魔方复原视频。</p>
+              </div>
+              
               <div class="image-grid">
                 <img src="warwick-winter-2025-podium.jpg" alt="Warwick Winter 2025 四阶魔方前三名合影">
                 <img src="warwick-winter-2025-certificate.jpg" alt="Warwick Winter 2025 四阶魔方冠军证书">
