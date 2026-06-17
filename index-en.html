@@ -363,6 +363,27 @@
       background: #ffffff;
       padding: 4px;
     }
+
+    .cube-video-box {
+      margin-top: 14px;
+      padding: 4px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+    
+    .cube-video-box video {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #000000;
+    }
+    
+    .video-caption {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
     
     @media (max-width: 720px) {
       .fold-card summary {
@@ -641,6 +662,14 @@
                 </p>
               </div>
         
+              <div class="cube-video-box">
+                <video controls preload="metadata" playsinline>
+                  <source src="rubiks-4x4-solve.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback.
+                </video>
+                <p class="video-caption">A 4×4×4 cube solve video.</p>
+              </div>
+              
               <div class="image-grid">
                 <img src="warwick-winter-2025-podium.jpg" alt="Top three finishers in the Warwick Winter 2025 4x4x4 event">
                 <img src="warwick-winter-2025-certificate.jpg" alt="Warwick Winter 2025 4x4x4 first-place certificate">
