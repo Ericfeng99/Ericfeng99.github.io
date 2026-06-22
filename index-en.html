@@ -585,9 +585,9 @@
         <section class="hero">
           <p>
             I am an undergraduate student in Mathematics at the University of Warwick,
-            with interests in random matrix theory, high-dimensional statistics,
-            spectral representation learning, the mathematical theory of machine learning,
-            and algebraic methods in quantum computing.
+            with interests in the mathematical theory of machine learning, infinite-width
+            neural networks, neural-network parameterizations and training dynamics,
+            as well as algebraic methods in quantum computing.
           </p>
 
           <div class="hero-actions">
@@ -603,18 +603,24 @@
 
             <p>
               I am an undergraduate student in Mathematics at the University of Warwick,
-              with academic interests in random matrix theory, high-dimensional statistics,
-              spectral methods, the mathematical theory of machine learning, and linear
-              algebraic structures in quantum computing.
+              with academic interests in the mathematical theory of machine learning,
+              infinite-width neural networks, neural-network parameterizations,
+              training dynamics, and linear-algebraic structures in quantum computing.
             </p>
 
             <p>
-              My current work focuses on spectral representation learning in high dimensions,
-              especially PCA under the spiked covariance model, phase transitions in principal
-              component estimation, and the implications of these high-dimensional phenomena
-              for downstream generalisation in machine learning. I am also interested in
-              stabilizer formalism, Pauli operators, Clifford operations, and symplectic
-              linear algebraic methods in quantum computing.
+              My current work focuses on learning-rate transfer under the Maximal Update
+              Parametrization (µP): whether the optimal learning rate converges to a non-zero
+              constant as network width grows, allowing learning rates tuned on smaller models
+              to transfer to wider models without large-scale retuning. Starting from linear
+              multilayer perceptrons, I study wide-width limits, feature learning, and the
+              dependence of training loss on the learning rate under µP, Standard
+              Parametrization (SP), and Neural Tangent Parametrization (NTP).
+            </p>
+
+            <p>
+              I am also interested in stabilizer formalism, Pauli operators, Clifford
+              operations, and symplectic linear-algebraic methods in quantum computing.
             </p>
 
             <p>
@@ -629,10 +635,10 @@
           <h2>Research Interests</h2>
 
           <ul class="interest-list">
-            <li>Random matrix theory and high-dimensional statistics</li>
-            <li>Spiked PCA and the spiked covariance model</li>
-            <li>Spectral representation learning and phase transitions</li>
-            <li>Mathematical theory of machine learning</li>
+            <li>Mathematical theory of machine learning and infinite-width neural networks</li>
+            <li>µP (Maximal Update Parametrization) and hyperparameter transfer</li>
+            <li>Learning-rate transfer, training dynamics, and feature learning</li>
+            <li>Tensor Programs and wide-width limits of neural networks</li>
           </ul>
         </section>
 
@@ -682,12 +688,17 @@
           <h2>Projects</h2>
 
           <div class="item">
-            <h3>Spectral Representation Learning in High Dimensions</h3>
-            <p class="meta">Summer research plan / random matrix theory, Spiked PCA, and machine learning theory</p>
+            <h3>Learning Rate Transfer under µP</h3>
+            <p class="meta">Summer research project / neural-network parameterizations, wide-width limits, and learning-rate transfer</p>
             <p>
-              A planned research project with Professor Fanghui Liu on spectral representation learning
-              in high dimensions, focusing on Spiked PCA, phase transitions, and downstream
-              generalisation in machine learning.
+              My current summer research project is centred on <em>A Proof of Learning Rate
+              Transfer under µP</em>. It studies learning-rate transfer under the Maximal Update
+              Parametrization: whether the optimal learning rate converges to a non-zero limit
+              as network width grows, and how this supports tuning hyperparameters on smaller
+              models before transferring them to wider ones. Starting from the training dynamics
+              of linear multilayer perceptrons, the project considers the polynomial dependence
+              of training loss on the learning rate, feature learning under µP, and the contrast
+              between µP, Standard Parametrization, and Neural Tangent Parametrization.
             </p>
           </div>
 
@@ -740,7 +751,7 @@
       </main>
 
       <footer>
-        Last updated: June 2026 · 
+        Last updated: June 2026 ·
       </footer>
     </div>
   </div>
