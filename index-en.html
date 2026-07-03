@@ -552,6 +552,179 @@
         padding: 14px 14px;
       }
     }
+
+
+    /* Motion and interaction layer */
+    :root {
+      --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    html {
+      scroll-padding-top: 24px;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .top-bar {
+      background-size: 200% 100%;
+      animation: top-bar-flow 12s ease-in-out infinite;
+    }
+
+    a,
+    .button,
+    .header-logo,
+    .item,
+    .interest-list li,
+    .fold-card,
+    .achievement-box,
+    .profile-photo {
+      transition:
+        transform 0.24s var(--motion-ease),
+        box-shadow 0.24s var(--motion-ease),
+        border-color 0.24s ease,
+        background 0.24s ease,
+        color 0.2s ease;
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 3px;
+      transition: color 0.2s ease;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.22s var(--motion-ease);
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      transform: scaleX(1);
+    }
+
+    nav a.active {
+      color: var(--link-dark);
+      font-weight: 700;
+    }
+
+    .button {
+      will-change: transform;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(11, 61, 145, 0.16);
+    }
+
+    .button.secondary:hover {
+      box-shadow: 0 8px 18px rgba(15, 35, 70, 0.08);
+    }
+
+    .header-logo {
+      will-change: transform;
+    }
+
+    .fold-card[open] {
+      box-shadow: 0 12px 28px rgba(15, 35, 70, 0.07);
+    }
+
+    .fold-card[open] summary {
+      border-bottom: 1px solid rgba(216, 222, 232, 0.9);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .header-logo:hover {
+        transform: translateY(-3px) rotate(2deg);
+        border-color: rgba(11, 61, 145, 0.35);
+        box-shadow: 0 10px 22px rgba(15, 35, 70, 0.1);
+      }
+
+      .hero:hover {
+        box-shadow: 0 14px 30px rgba(15, 35, 70, 0.06);
+      }
+
+      .item:hover,
+      .fold-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(11, 61, 145, 0.34);
+        box-shadow: 0 14px 30px rgba(15, 35, 70, 0.08);
+      }
+
+      .interest-list li:hover {
+        transform: translateX(5px);
+        background: #f2f5fa;
+      }
+
+      .achievement-box:hover {
+        border-color: rgba(180, 138, 44, 0.42);
+        box-shadow: 0 10px 22px rgba(15, 35, 70, 0.06);
+      }
+
+      .profile-photo:hover {
+        transform: translateY(-4px);
+        border-color: rgba(180, 138, 44, 0.52);
+        box-shadow: 0 14px 26px rgba(15, 35, 70, 0.12);
+      }
+    }
+
+    body.motion-ready [data-intro],
+    body.motion-ready [data-reveal] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition:
+        opacity 0.62s var(--motion-ease) var(--motion-delay, 0ms),
+        transform 0.62s var(--motion-ease) var(--motion-delay, 0ms);
+      will-change: opacity, transform;
+    }
+
+    body.motion-ready [data-intro].is-visible,
+    body.motion-ready [data-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes top-bar-flow {
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      body.motion-ready [data-intro],
+      body.motion-ready [data-reveal] {
+        opacity: 1;
+        transform: none;
+      }
+    }
   </style>
 </head>
 
@@ -750,10 +923,96 @@
         </section>
       </main>
 
-      <footer>
-        Last updated: June 2026 ·
-      </footer>
     </div>
   </div>
+
+  <script>
+    (() => {
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      const navLinks = [...document.querySelectorAll("nav a[href^='#']")];
+      const sections = [...document.querySelectorAll("main > section[id]")];
+
+      const updateActiveNav = () => {
+        const referenceLine = window.innerHeight * 0.34;
+        let activeId = "";
+
+        sections.forEach((section) => {
+          if (section.getBoundingClientRect().top <= referenceLine) {
+            activeId = section.id;
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === `#${activeId}`
+          );
+        });
+      };
+
+      updateActiveNav();
+      window.addEventListener("scroll", updateActiveNav, { passive: true });
+
+      if (prefersReducedMotion) return;
+
+      const introTargets = [
+        document.querySelector(".name"),
+        document.querySelector(".subtitle"),
+        document.querySelector("nav"),
+        document.querySelector(".header-logo"),
+        document.querySelector(".hero")
+      ].filter(Boolean);
+
+      const revealTargets = [
+        ...document.querySelectorAll("main > section:not(.hero)")
+      ];
+
+      introTargets.forEach((element, index) => {
+        element.setAttribute("data-intro", "");
+        element.style.setProperty("--motion-delay", `${index * 90}ms`);
+      });
+
+      revealTargets.forEach((element) => {
+        element.setAttribute("data-reveal", "");
+      });
+
+      document.body.classList.add("motion-ready");
+
+      requestAnimationFrame(() => {
+        introTargets.forEach((element) => {
+          element.classList.add("is-visible");
+        });
+      });
+
+      if (!("IntersectionObserver" in window)) {
+        revealTargets.forEach((element) => {
+          element.classList.add("is-visible");
+        });
+        return;
+      }
+
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -42px 0px"
+        }
+      );
+
+      revealTargets.forEach((element) => {
+        revealObserver.observe(element);
+      });
+    })();
+  </script>
 </body>
 </html>
