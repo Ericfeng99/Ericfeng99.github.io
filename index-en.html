@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Siyuan Feng, Mathematics undergraduate at the University of Warwick, working in machine learning theory." />
+
+  <meta
+    name="description"
+    content="Siyuan Feng, Mathematics undergraduate at the University of Warwick, working in machine learning theory."
+  />
+
   <title>Siyuan Feng | Mathematics Undergraduate</title>
 
   <link rel="icon" type="image/png" href="favicon.png" />
@@ -34,14 +39,21 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 92px;
+      scroll-padding-top: 96px;
     }
 
     body {
       margin: 0;
+      overflow-x: hidden;
       background: var(--bg);
       color: var(--text);
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
       line-height: 1.75;
     }
 
@@ -56,8 +68,8 @@
 
     img,
     video {
-      max-width: 100%;
       display: block;
+      max-width: 100%;
     }
 
     .container {
@@ -65,46 +77,61 @@
       margin: 0 auto;
     }
 
+    /* Header */
+
     .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
-      border-bottom: 1px solid rgba(220, 226, 232, 0.9);
-      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid rgba(220, 226, 232, 0.92);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(16px);
     }
 
     .nav-wrap {
-      min-height: 72px;
+      min-height: 74px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 28px;
     }
 
     .brand {
       display: flex;
       align-items: center;
+      flex-shrink: 0;
       gap: 12px;
       color: var(--text);
       font-weight: 750;
       letter-spacing: -0.02em;
     }
 
+    .brand:hover {
+      color: var(--text);
+    }
+
     .brand img {
       width: 38px;
       height: 38px;
-      object-fit: contain;
       padding: 4px;
+      object-fit: contain;
       border: 1px solid var(--line);
       border-radius: 10px;
-      background: #fff;
+      background: #ffffff;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 22px;
+      min-width: 0;
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 20px;
       font-size: 14px;
     }
 
@@ -119,7 +146,7 @@
       position: absolute;
       left: 0;
       right: 0;
-      bottom: -7px;
+      bottom: -8px;
       height: 2px;
       border-radius: 999px;
       background: var(--gold);
@@ -133,16 +160,43 @@
       transform: scaleX(1);
     }
 
-    .lang-link {
-      padding: 7px 11px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: #fff;
-      font-size: 13px;
+    nav a.active {
+      color: var(--blue-dark);
+      font-weight: 700;
     }
 
+    .lang-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      min-height: 38px;
+      padding: 0 16px;
+      border: 1px solid var(--blue);
+      border-radius: 999px;
+      background: var(--blue);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      transition:
+        transform 0.2s var(--ease),
+        background 0.2s ease,
+        box-shadow 0.2s var(--ease);
+    }
+
+    .lang-link:hover {
+      color: #ffffff;
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 7px 18px rgba(23, 63, 122, 0.18);
+    }
+
+    /* Introduction */
+
     main {
-      padding: 54px 0 84px;
+      padding: 52px 0 86px;
     }
 
     .intro {
@@ -150,7 +204,7 @@
       grid-template-columns: minmax(0, 1fr) 280px;
       gap: 68px;
       align-items: center;
-      padding: 46px 0 64px;
+      padding: 44px 0 66px;
       border-bottom: 1px solid var(--line);
     }
 
@@ -166,7 +220,7 @@
     .intro h1 {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(42px, 6vw, 68px);
+      font-size: clamp(44px, 6vw, 68px);
       line-height: 1.08;
       letter-spacing: -0.045em;
       font-weight: 600;
@@ -181,8 +235,8 @@
     .intro-lead {
       max-width: 720px;
       margin: 26px 0 0;
-      font-size: 17px;
       color: #344256;
+      font-size: 17px;
     }
 
     .intro-meta {
@@ -194,9 +248,9 @@
 
     .tag {
       padding: 7px 11px;
-      border-radius: 999px;
       border: 1px solid var(--line);
-      background: #fff;
+      border-radius: 999px;
+      background: #ffffff;
       color: #445166;
       font-size: 13px;
     }
@@ -214,26 +268,29 @@
       justify-content: center;
       min-height: 44px;
       padding: 0 17px;
-      border-radius: 10px;
       border: 1px solid var(--blue);
+      border-radius: 10px;
       background: var(--blue);
-      color: #fff;
+      color: #ffffff;
       font-size: 14px;
       font-weight: 700;
-      transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), background 0.2s ease;
+      transition:
+        transform 0.2s var(--ease),
+        box-shadow 0.2s var(--ease),
+        background 0.2s ease;
     }
 
     .button:hover {
-      color: #fff;
+      color: #ffffff;
       background: var(--blue-dark);
       transform: translateY(-2px);
       box-shadow: 0 10px 24px rgba(23, 63, 122, 0.16);
     }
 
     .button.secondary {
-      color: var(--blue);
-      background: #fff;
       border-color: var(--line);
+      background: #ffffff;
+      color: var(--blue);
     }
 
     .button.secondary:hover {
@@ -245,7 +302,7 @@
       padding: 10px;
       border: 1px solid var(--line);
       border-radius: 22px;
-      background: #fff;
+      background: #ffffff;
       box-shadow: var(--shadow);
     }
 
@@ -265,15 +322,13 @@
       text-align: center;
     }
 
+    /* General sections */
+
     section {
       padding: 72px 0 0;
     }
 
     .section-head {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(280px, 460px);
-      gap: 36px;
-      align-items: end;
       margin-bottom: 28px;
     }
 
@@ -301,15 +356,15 @@
       line-height: 1.35;
     }
 
-    .section-desc {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
+    p {
+      margin-top: 0;
     }
+
+    /* About */
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 24px;
     }
 
@@ -331,9 +386,9 @@
 
     .quick-row {
       display: grid;
-      grid-template-columns: 110px 1fr;
+      grid-template-columns: 112px 1fr;
       gap: 18px;
-      padding-bottom: 12px;
+      padding-bottom: 13px;
       border-bottom: 1px solid var(--line);
     }
 
@@ -345,13 +400,16 @@
     .quick-row strong {
       color: var(--blue);
       font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
     }
 
     .quick-row span {
       color: #3f4d60;
     }
+
+    /* Research interests */
 
     .interest-grid {
       display: grid;
@@ -364,7 +422,10 @@
       border: 1px solid var(--line);
       border-radius: 15px;
       background: var(--paper);
-      transition: transform 0.22s var(--ease), box-shadow 0.22s var(--ease), border-color 0.22s ease;
+      transition:
+        transform 0.22s var(--ease),
+        box-shadow 0.22s var(--ease),
+        border-color 0.22s ease;
     }
 
     .interest-card:hover {
@@ -373,7 +434,7 @@
       box-shadow: 0 12px 28px rgba(22, 43, 72, 0.08);
     }
 
-    .interest-card span {
+    .interest-number {
       display: block;
       margin-bottom: 8px;
       color: var(--gold);
@@ -388,9 +449,11 @@
       font-size: 14px;
     }
 
+    /* Current research */
+
     .research-feature {
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+      grid-template-columns: minmax(0, 1.42fr) minmax(285px, 0.58fr);
       gap: 22px;
       align-items: stretch;
     }
@@ -399,11 +462,11 @@
     .research-status {
       border: 1px solid var(--line);
       border-radius: 20px;
-      background: var(--paper);
     }
 
     .research-main {
       padding: 32px;
+      background: var(--paper);
     }
 
     .research-main .meta {
@@ -427,7 +490,7 @@
 
     .result-list {
       margin: 0;
-      padding-left: 20px;
+      padding-left: 21px;
       color: #3d4a5d;
     }
 
@@ -438,7 +501,7 @@
     .research-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 16px;
       margin-top: 24px;
       font-size: 14px;
       font-weight: 700;
@@ -447,16 +510,16 @@
     .research-status {
       padding: 28px;
       background: linear-gradient(180deg, var(--blue-dark), #0c2346);
-      color: #fff;
+      color: #ffffff;
     }
 
     .research-status h3 {
-      color: #fff;
+      color: #ffffff;
       font-size: 19px;
     }
 
     .status-item {
-      padding: 18px 0;
+      padding: 19px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
 
@@ -486,6 +549,8 @@
       color: #c9d3df;
       font-size: 14px;
     }
+
+    /* Projects and notes */
 
     .project-grid {
       display: grid;
@@ -520,19 +585,21 @@
       font-weight: 750;
     }
 
+    /* Personal interests */
+
     .personal-card {
+      overflow: hidden;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: var(--paper);
-      overflow: hidden;
     }
 
     .personal-card summary {
       cursor: pointer;
       list-style: none;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 18px;
       padding: 24px 26px;
     }
@@ -586,7 +653,7 @@
     .image-stack img {
       border: 1px solid var(--line);
       border-radius: 12px;
-      background: #fff;
+      background: #ffffff;
     }
 
     .video-box {
@@ -596,7 +663,7 @@
     .video-box video {
       width: 100%;
       border-radius: 8px;
-      background: #000;
+      background: #000000;
     }
 
     .video-caption {
@@ -615,6 +682,8 @@
       padding: 5px;
     }
 
+    /* Contact */
+
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -626,6 +695,10 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: var(--paper);
+    }
+
+    .contact-card p:last-child {
+      margin-bottom: 0;
     }
 
     footer {
@@ -640,10 +713,14 @@
       flex-wrap: wrap;
     }
 
+    /* Motion */
+
     [data-reveal] {
       opacity: 0;
       transform: translateY(18px);
-      transition: opacity 0.58s var(--ease), transform 0.58s var(--ease);
+      transition:
+        opacity 0.58s var(--ease),
+        transform 0.58s var(--ease);
     }
 
     [data-reveal].visible {
@@ -651,9 +728,13 @@
       transform: translateY(0);
     }
 
-    @media (max-width: 900px) {
-      nav {
+    @media (max-width: 980px) {
+      .nav-right {
         gap: 15px;
+      }
+
+      nav {
+        gap: 14px;
       }
 
       .intro {
@@ -665,14 +746,13 @@
       .research-feature {
         grid-template-columns: 1fr;
       }
-
-      .section-head {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 760px) {
+      html {
+        scroll-padding-top: 20px;
+      }
+
       .container {
         width: min(calc(100% - 24px), var(--max-width));
       }
@@ -683,15 +763,27 @@
 
       .nav-wrap {
         align-items: flex-start;
-        padding: 14px 0;
         flex-direction: column;
-        gap: 12px;
+        padding: 14px 0;
+        gap: 13px;
+      }
+
+      .nav-right {
+        width: 100%;
+        align-items: flex-start;
+        flex-direction: column-reverse;
+        gap: 13px;
       }
 
       nav {
         width: 100%;
         overflow-x: auto;
-        padding-bottom: 4px;
+        padding: 0 0 5px;
+      }
+
+      .lang-link {
+        min-height: 36px;
+        padding: 0 15px;
       }
 
       main {
@@ -701,11 +793,15 @@
       .intro {
         grid-template-columns: 1fr;
         gap: 30px;
-        padding-top: 28px;
+        padding: 28px 0 54px;
       }
 
       .portrait-card {
         width: min(100%, 320px);
+      }
+
+      section {
+        padding-top: 58px;
       }
 
       .interest-grid,
@@ -720,8 +816,39 @@
         gap: 4px;
       }
 
-      section {
-        padding-top: 58px;
+      .research-main,
+      .research-status,
+      .panel,
+      .project-card,
+      .note-card {
+        padding: 23px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .intro h1 {
+        font-size: 42px;
+      }
+
+      .intro-subtitle {
+        font-size: 17px;
+      }
+
+      .intro-lead {
+        font-size: 15.5px;
+      }
+
+      h2 {
+        font-size: 31px;
+      }
+
+      .actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
       }
     }
 
@@ -745,6 +872,7 @@
     }
   </style>
 </head>
+
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
@@ -753,16 +881,19 @@
         <span>Siyuan Feng</span>
       </a>
 
-      <nav aria-label="Website navigation">
-        <a href="#about">About</a>
-        <a href="#interests">Research Interests</a>
-        <a href="#research">Current Research</a>
-        <a href="#projects">Projects</a>
-        <a href="#notes">Essays & Notes</a>
-        <a href="#personal">Personal</a>
-        <a href="#contact">Contact</a>
-        <a class="lang-link" href="index.html">中文</a>
-      </nav>
+      <div class="nav-right">
+        <nav aria-label="Website navigation">
+          <a href="#about">About</a>
+          <a href="#interests">Research Interests</a>
+          <a href="#research">Current Research</a>
+          <a href="#projects">Projects</a>
+          <a href="#notes">Essays & Notes</a>
+          <a href="#personal">Personal</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a class="lang-link" href="index.html">中文版本</a>
+      </div>
     </div>
   </header>
 
@@ -770,63 +901,88 @@
     <div class="container">
       <section class="intro" aria-labelledby="intro-title">
         <div>
-          <p class="intro-kicker">University of Warwick · Mathematics</p>
+          <p class="intro-kicker">
+            University of Warwick · Mathematics
+          </p>
+
           <h1 id="intro-title">Siyuan Feng</h1>
-          <p class="intro-subtitle">Undergraduate Student in Mathematics</p>
+
+          <p class="intro-subtitle">
+            Undergraduate Student in Mathematics
+          </p>
 
           <p class="intro-lead">
-            I work in machine learning theory, with current interests in infinite-width neural networks,
-            Maximal Update Parametrization (µP), learning-rate transfer, and training dynamics.
-            I am also interested in high-dimensional statistics, random matrix theory,
-            and algebraic methods in quantum computing.
+            My research direction is machine learning theory, with current
+            interests in infinite-width neural networks, Maximal Update
+            Parametrization (µP), learning-rate transfer, and training
+            dynamics. I am also interested in algebraic methods in quantum
+            computing.
           </p>
 
           <div class="intro-meta" aria-label="Research tags">
             <span class="tag">Machine Learning Theory</span>
             <span class="tag">Infinite-Width Neural Networks</span>
-            <span class="tag">High-Dimensional Statistics</span>
+            <span class="tag">Quantum Computing</span>
           </div>
 
           <div class="actions">
             <a class="button" href="cv-en.pdf">View CV</a>
-            <a class="button secondary" href="#research">Current Research</a>
-            <a class="button secondary" href="#contact">Contact</a>
+            <a class="button secondary" href="#research">
+              Current Research
+            </a>
+            <a class="button secondary" href="#contact">
+              Contact
+            </a>
           </div>
         </div>
 
         <div class="portrait-card">
-          <img src="profile.jpg" alt="Siyuan Feng" class="profile-photo" />
-          <p class="portrait-caption">Mathematics · Machine Learning Theory</p>
+          <img
+            src="profile.jpg"
+            alt="Siyuan Feng"
+            class="profile-photo"
+          />
+
+          <p class="portrait-caption">
+            Mathematics · Machine Learning Theory
+          </p>
         </div>
       </section>
 
       <section id="about" data-reveal>
         <div class="section-head">
-          <div>
-            <span class="section-kicker">Profile</span>
-            <h2>About</h2>
-          </div>
-          <p class="section-desc">
-            This section introduces my academic background and current interests before presenting the research project in detail.
-          </p>
+          <span class="section-kicker">Profile</span>
+          <h2>About</h2>
         </div>
 
         <div class="about-grid">
           <div class="panel">
             <p>
-              I am an undergraduate student in Mathematics at the University of Warwick.
-              My main research direction is machine learning theory, with a current focus on
-              neural-network parameterization, training dynamics, and hyperparameter transfer under width scaling.
+              I am an undergraduate student in Mathematics at the University
+              of Warwick. My main research direction is machine learning
+              theory, with a current focus on neural-network parameterization,
+              training dynamics, and hyperparameter transfer under width
+              scaling.
             </p>
+
             <p>
-              My current project studies learning-rate transfer under µP: whether the optimal learning rate
-              stabilises at a non-zero limit as network width grows, and under which mathematical conditions
-              such a statement is valid. I mainly use asymptotic analysis, Tensor Programs, and polynomial methods.
+              Under the supervision of
+              <a
+                href="https://ins.sjtu.edu.cn/people/fanghui/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Professor Fanghui Liu</a>,
+              I am conducting theoretical research on learning-rate transfer
+              under µP: whether the optimal learning rate stabilises at a
+              non-zero limit as network width grows, and under which
+              mathematical conditions such a statement is valid. I mainly use
+              asymptotic analysis, Tensor Programs, and polynomial methods.
             </p>
+
             <p>
-              I also plan to study high-dimensional PCA, spiked covariance models, and random-matrix phase transitions,
-              while continuing to work on stabilizer formalism, Pauli operators, Clifford operations,
-              and symplectic linear algebra in quantum computing.
+              I am also interested in stabilizer formalism, Pauli operators,
+              Clifford operations, and symplectic linear algebra in quantum
+              computing.
             </p>
           </div>
 
@@ -835,18 +991,28 @@
               <strong>Education</strong>
               <span>University of Warwick, BSc Mathematics</span>
             </div>
+
             <div class="quick-row">
               <strong>Research</strong>
               <span>Machine Learning Theory</span>
             </div>
+
             <div class="quick-row">
               <strong>Current Focus</strong>
-              <span>µP, learning-rate transfer, and infinite-width limits</span>
+              <span>
+                µP, learning-rate transfer, and infinite-width limits
+              </span>
             </div>
+
             <div class="quick-row">
               <strong>Supervisor</strong>
+
               <span>
-                <a href="https://ins.sjtu.edu.cn/people/fanghui/" target="_blank" rel="noopener noreferrer">Professor Fanghui Liu</a>
+                <a
+                  href="https://ins.sjtu.edu.cn/people/fanghui/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Professor Fanghui Liu</a>
               </span>
             </div>
           </div>
@@ -855,87 +1021,161 @@
 
       <section id="interests" data-reveal>
         <div class="section-head">
-          <div>
-            <span class="section-kicker">Research Interests</span>
-            <h2>Research Interests</h2>
-          </div>
-          <p class="section-desc">
-            My research interests are organised around machine learning theory, width scaling, training dynamics, and high-dimensional statistics.
-          </p>
+          <span class="section-kicker">Research Interests</span>
+          <h2>Research Interests</h2>
         </div>
 
         <div class="interest-grid">
           <article class="interest-card">
-            <span>01</span>
+            <span class="interest-number">01</span>
+
             <h3>Machine Learning Theory</h3>
-            <p>Rigorous mathematical properties of learning models, including parameterization, optimisation dynamics, and scaling behaviour.</p>
+
+            <p>
+              Rigorous mathematical properties of learning models, including
+              parameterization, optimisation dynamics, and scaling behaviour.
+            </p>
           </article>
+
           <article class="interest-card">
-            <span>02</span>
+            <span class="interest-number">02</span>
+
             <h3>Infinite-Width Networks and µP</h3>
-            <p>Feature learning, Tensor Programs, and the wide-width limits induced by different neural-network parameterizations.</p>
+
+            <p>
+              Feature learning, Tensor Programs, and wide-width limits under
+              different neural-network parameterizations.
+            </p>
           </article>
+
           <article class="interest-card">
-            <span>03</span>
+            <span class="interest-number">03</span>
+
             <h3>Hyperparameter Transfer</h3>
-            <p>How optimal learning rates vary with width, and the distinction between compact and global minimizer statements.</p>
+
+            <p>
+              The behaviour of optimal learning rates under width scaling and
+              its relationship with training dynamics and parameterization.
+            </p>
           </article>
+
           <article class="interest-card">
-            <span>04</span>
-            <h3>High-Dimensional Statistics</h3>
-            <p>Spiked covariance models, high-dimensional PCA, and BBP-type phase transitions.</p>
+            <span class="interest-number">04</span>
+
+            <h3>Algebraic Methods in Quantum Computing</h3>
+
+            <p>
+              Stabilizer formalism, Pauli operators, Clifford operations, and
+              symplectic linear-algebraic structures.
+            </p>
           </article>
         </div>
       </section>
 
       <section id="research" data-reveal>
         <div class="section-head">
-          <div>
-            <span class="section-kicker">Current Research</span>
-            <h2>Learning-Rate Transfer under µP</h2>
-          </div>
-          <p class="section-desc">
-            The project retains the original problem and motivation while clearly separating my proof audit, corrections, and new theoretical results.
-          </p>
+          <span class="section-kicker">Current Research</span>
+          <h2>Learning-Rate Transfer under µP</h2>
         </div>
 
         <div class="research-feature">
           <article class="research-main">
             <h3>Background and Current Work</h3>
-            <p class="meta">Summer research project · Supervisor: Professor Fanghui Liu</p>
+
+            <p class="meta">
+              Research Project in Machine Learning Theory · Supervised by
+              <a
+                href="https://ins.sjtu.edu.cn/people/fanghui/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Professor Fanghui Liu</a>
+            </p>
 
             <div class="research-label">Background</div>
+
             <p>
-              Maximal Update Parametrization (µP) is designed to preserve non-trivial feature learning
-              as neural-network width increases. One of its most important empirical properties is
-              hyperparameter transfer: a learning rate tuned on a smaller model may remain effective
-              for substantially wider models. The original paper studies this question for deep linear MLPs,
-              expresses the fixed-step network output as a polynomial in the learning rate,
-              and uses Tensor Programs to analyse the infinite-width limits of the loss and its minimizers.
+              Maximal Update Parametrization (µP) is designed to preserve
+              non-trivial feature learning as neural-network width increases.
+              One of its most important empirical properties is
+              hyperparameter transfer: a learning rate tuned on a smaller
+              model may remain effective for substantially wider models,
+              reducing the cost of hyperparameter search at scale.
+            </p>
+
+            <p>
+              The original paper studies this question for deep linear
+              multilayer perceptrons trained by full-batch gradient descent.
+              Its central approach is to express the network output after a
+              fixed number of training steps as a polynomial in the learning
+              rate, and then use Tensor Programs to analyse the infinite-width
+              limits of the loss and its minimizers. It gives a detailed
+              one-step analysis and proposes a general fixed-step result.
             </p>
 
             <div class="research-label">My Work</div>
+
             <p>
-              My work provides a rigorous audit and completion of the general fixed-step argument,
-              and clarifies the precise scope of the theorem. Rather than merely restating the proof,
-              I examine whether the polynomial structure, Tensor Program representation,
-              coefficient convergence, compact-uniform convergence, and argmin stability
-              are sufficient to support each claimed conclusion.
+              My work provides a rigorous audit, completion, and correction of
+              the general fixed-step argument, while clarifying the precise
+              scope of the theorem. I examine whether the polynomial
+              structure, Tensor Program representation, coefficient
+              convergence, compact-uniform convergence, and argmin stability
+              are sufficient to justify each claimed conclusion.
             </p>
 
-            <div class="research-label">Current Findings</div>
+            <div class="research-label">Main Results</div>
+
             <ul class="result-list">
-              <li>Established a width-independent polynomial degree bound for the full training trajectory.</li>
-              <li>Constructed an exact full-batch gradient-descent Tensor Program and verified the Master Theorem hypotheses one by one.</li>
-              <li>Used finite evaluations and Vandermonde inversion to prove coefficient convergence, yielding compact-uniform convergence of outputs, losses, and fixed derivatives.</li>
-              <li>Corrected the compact argmin theorem and completed a rigorous fixed-step compact-interval learning-rate-transfer theorem under uniqueness.</li>
-              <li>Constructed an exact in-model counterexample showing that arbitrary global-minimizer selections need not transfer.</li>
-              <li>Showed that limiting minimizers need not be unique and that general-step rates require additional quantitative estimates.</li>
+              <li>
+                Established a width-independent polynomial degree bound,
+                placing the training trajectories at all widths in one
+                finite-dimensional coefficient space.
+              </li>
+
+              <li>
+                Constructed an exact Tensor Program for the full-batch
+                gradient-descent trajectory and verified the hypotheses of
+                the Tensor Programs IV Master Theorem individually.
+              </li>
+
+              <li>
+                Used evaluations at finitely many learning rates and
+                Vandermonde inversion to prove coefficient convergence,
+                yielding compact-uniform convergence of outputs, losses, and
+                fixed derivatives.
+              </li>
+
+              <li>
+                Corrected the compact argmin theorem and completed a rigorous
+                fixed-step compact-interval learning-rate-transfer theorem
+                under a uniqueness assumption.
+              </li>
+
+              <li>
+                Constructed an exact counterexample within the deep-linear
+                neural-network model showing that arbitrary selections of
+                global minimizers need not transfer.
+              </li>
+
+              <li>
+                Showed that the limiting optimal learning rate need not be
+                unique and that general-step convergence rates require
+                additional quantitative estimates.
+              </li>
             </ul>
 
             <div class="research-links">
-              <a href="https://arxiv.org/abs/2511.01734" target="_blank" rel="noopener noreferrer">Original paper →</a>
-              <a href="https://ins.sjtu.edu.cn/people/fanghui/" target="_blank" rel="noopener noreferrer">Supervisor's page →</a>
+              <a
+                href="https://arxiv.org/abs/2511.01734"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Original paper →</a>
+
+              <a
+                href="https://ins.sjtu.edu.cn/people/fanghui/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Supervisor's page →</a>
             </div>
           </article>
 
@@ -944,20 +1184,46 @@
 
             <div class="status-item">
               <small>Compact interval</small>
+
               <strong>Valid under explicit conditions</strong>
-              <p>Fixed training time, a prescribed compact interval, and a unique limiting minimizer inside that interval.</p>
+
+              <p>
+                Fixed training time, a prescribed compact interval, and a
+                unique limiting minimizer.
+              </p>
             </div>
 
             <div class="status-item">
               <small>Global argmin</small>
+
               <strong>False for arbitrary selections</strong>
-              <p>Finite-width models can contain global minimizers escaping to infinity, so the full argmin family is not uniformly bounded.</p>
+
+              <p>
+                Finite-width models may contain global minimizers escaping to
+                infinity, so the full argmin family is not uniformly bounded.
+              </p>
             </div>
 
             <div class="status-item">
-              <small>Uniqueness & rates</small>
-              <strong>Require further assumptions</strong>
-              <p>The limiting optimum need not be unique, and the qualitative Tensor Program limit alone gives no general convergence rate.</p>
+              <small>Uniqueness</small>
+
+              <strong>Not automatic</strong>
+
+              <p>
+                Even in a small deep-linear model, the limiting loss can have
+                several positive global minimizers.
+              </p>
+            </div>
+
+            <div class="status-item">
+              <small>Rates</small>
+
+              <strong>Require quantitative tools</strong>
+
+              <p>
+                The qualitative Tensor Program limit alone does not imply a
+                general fixed-step convergence rate.
+              </p>
             </div>
           </aside>
         </div>
@@ -965,34 +1231,40 @@
 
       <section id="projects" data-reveal>
         <div class="section-head">
-          <div>
-            <span class="section-kicker">Selected Projects</span>
-            <h2>Projects</h2>
-          </div>
-          <p class="section-desc">
-            This section retains my current research project and planned work in high-dimensional statistics.
-          </p>
+          <span class="section-kicker">Selected Projects</span>
+          <h2>Projects</h2>
         </div>
 
         <div class="project-grid">
           <article class="project-card">
             <h3>Learning-Rate Transfer under µP</h3>
-            <p class="meta">Machine learning theory · Summer research</p>
-            <p>
-              A rigorous audit, completion, and refinement of the general-step proof,
-              with further results on compact convergence, global-minimizer counterexamples,
-              limiting nonuniqueness, and convergence rates.
+
+            <p class="meta">
+              Machine Learning Theory · Theoretical Research Project
             </p>
-            <a class="text-link" href="#research">Read the full overview →</a>
+
+            <p>
+              Under the supervision of Professor Fanghui Liu, I am conducting
+              a rigorous audit, completion, and refinement of the general-step
+              proof, with further results on compact convergence,
+              global-minimizer counterexamples, limiting nonuniqueness, and
+              convergence rates.
+            </p>
+
+            <a class="text-link" href="#research">
+              Read the full overview →
+            </a>
           </article>
 
           <article class="project-card">
-            <h3>Third-Year Essay: Phase Transitions in High-Dimensional PCA</h3>
-            <p class="meta">Random matrix theory · High-dimensional statistics</p>
+            <h3>Third-Year Essay</h3>
+
+            <p class="meta">
+              Planned third-year academic essay
+            </p>
+
             <p>
-              A planned essay on high-dimensional PCA under the spiked covariance model,
-              focusing on BBP-type phase transitions, alignment between sample principal components
-              and the true signal direction, and implications for modern machine learning theory.
+              Topic to be determined.
             </p>
           </article>
         </div>
@@ -1000,70 +1272,97 @@
 
       <section id="notes" data-reveal>
         <div class="section-head">
-          <div>
-            <span class="section-kicker">Essays & Notes</span>
-            <h2>Essays & Notes</h2>
-          </div>
-          <p class="section-desc">
-            This section collects completed expository work and future study materials.
-          </p>
+          <span class="section-kicker">Essays & Notes</span>
+          <h2>Essays & Notes</h2>
         </div>
 
         <article class="note-card">
-          <h3>A Symplectic-Linear Proof of the Gottesman–Knill Theorem</h3>
-          <p class="meta">Expository essay · Zenodo · DOI: 10.5281/zenodo.19615972</p>
-          <p>
-            An expository essay on the Gottesman–Knill theorem, using a symplectic-linear framework
-            to describe Pauli operators, Clifford updates, and tableau simulation.
+          <h3>
+            A Symplectic-Linear Proof of the Gottesman–Knill Theorem
+          </h3>
+
+          <p class="meta">
+            Expository essay · Zenodo · DOI: 10.5281/zenodo.19615972
           </p>
-          <a class="text-link" href="https://doi.org/10.5281/zenodo.19615972" target="_blank" rel="noopener noreferrer">View on Zenodo →</a>
+
+          <p>
+            An expository essay on the Gottesman–Knill theorem, using a
+            symplectic-linear framework to describe Pauli operators, Clifford
+            updates, and tableau simulation.
+          </p>
+
+          <a
+            class="text-link"
+            href="https://doi.org/10.5281/zenodo.19615972"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on Zenodo →
+          </a>
         </article>
       </section>
 
       <section id="personal" data-reveal>
         <div class="section-head">
-          <div>
-            <span class="section-kicker">Personal</span>
-            <h2>Personal Interests</h2>
-          </div>
-          <p class="section-desc">
-            Personal interests remain visible but appear after the academic sections so that they do not compete with the main research profile.
-          </p>
+          <span class="section-kicker">Personal</span>
+          <h2>Personal Interests</h2>
         </div>
 
         <details class="personal-card">
           <summary>
             <span>
               <strong>4×4×4 Speedcubing</strong>
-              <span class="fold-subtitle">Official WCA results and Warwick Winter 2025 champion</span>
+
+              <span class="fold-subtitle">
+                Official WCA results and Warwick Winter 2025 champion
+              </span>
             </span>
           </summary>
 
           <div class="personal-content">
             <p>
-              I am a 4×4×4 speedcuber and have competed in official WCA competitions.
-              My official results include a 34.22-second single and a 41.46-second average.
-              My cubing profile is available
-              <a href="https://cubing.com/results/person/2021FENG07" target="_blank" rel="noopener noreferrer">here</a>.
+              I am a 4×4×4 speedcuber and have competed in official WCA
+              competitions. My official results include a 34.22-second single
+              and a 41.46-second average. My cubing profile is available
+              <a
+                href="https://cubing.com/results/person/2021FENG07"
+                target="_blank"
+                rel="noopener noreferrer"
+              >here</a>.
             </p>
 
             <div class="achievement">
-              At Warwick Winter 2025, I won the 4×4×4 event with a 36.95-second average,
-              placing first in the university-wide competition for this event.
+              At Warwick Winter 2025, I won the 4×4×4 event with a
+              36.95-second average, placing first in the university-wide
+              competition for this event.
             </div>
 
             <div class="media-grid">
               <div class="video-box">
                 <video controls preload="metadata" playsinline>
-                  <source src="rubiks-4x4-solve.mp4" type="video/mp4" />
+                  <source
+                    src="rubiks-4x4-solve.mp4"
+                    type="video/mp4"
+                  />
+
                   Your browser does not support HTML5 video playback.
                 </video>
-                <p class="video-caption">A 4×4×4 cube solve</p>
+
+                <p class="video-caption">
+                  A 4×4×4 cube solve
+                </p>
               </div>
 
               <div class="image-stack">
-                <img src="warwick-winter-2025-podium.jpg" alt="Top three finishers in the Warwick Winter 2025 4x4x4 event" />
-                <img src="warwick-winter-2025-certificate.jpg" alt="Warwick Winter 2025 4x4x4 first-place certificate" />
+                <img
+                  src="warwick-winter-2025-podium.jpg"
+                  alt="Top three finishers in the Warwick Winter 2025 4x4x4 event"
+                />
+
+                <img
+                  src="warwick-winter-2025-certificate.jpg"
+                  alt="Warwick Winter 2025 4x4x4 first-place certificate"
+                />
               </div>
             </div>
           </div>
@@ -1072,18 +1371,14 @@
 
       <section id="contact" data-reveal>
         <div class="section-head">
-          <div>
-            <span class="section-kicker">CV & Contact</span>
-            <h2>CV & Contact</h2>
-          </div>
-          <p class="section-desc">
-            My CV is available in English and Chinese. Please feel free to contact me by email.
-          </p>
+          <span class="section-kicker">CV & Contact</span>
+          <h2>CV & Contact</h2>
         </div>
 
         <div class="contact-grid">
           <div class="contact-card">
             <h3>Curriculum Vitae</h3>
+
             <p>
               <a href="cv-en.pdf">CV (English)</a><br />
               <a href="cv-zh.pdf">CV (Chinese)</a>
@@ -1092,8 +1387,12 @@
 
           <div class="contact-card">
             <h3>Contact</h3>
+
             <p>
-              Email: <a href="mailto:eric_feng2006@outlook.com">eric_feng2006@outlook.com</a>
+              Email:
+              <a href="mailto:eric_feng2006@outlook.com">
+                eric_feng2006@outlook.com
+              </a>
             </p>
           </div>
         </div>
@@ -1108,28 +1407,49 @@
 
   <script>
     (() => {
-      const links = [...document.querySelectorAll("nav a[href^='#']")];
-      const sections = [...document.querySelectorAll("main section[id]")];
+      const navLinks = [
+        ...document.querySelectorAll("nav a[href^='#']")
+      ];
+
+      const sections = [
+        ...document.querySelectorAll("main section[id]")
+      ];
 
       const updateActiveLink = () => {
-        const line = window.innerHeight * 0.34;
-        let active = "";
+        const referenceLine = window.innerHeight * 0.34;
+        let activeId = "";
 
         sections.forEach((section) => {
-          if (section.getBoundingClientRect().top <= line) active = section.id;
+          if (section.getBoundingClientRect().top <= referenceLine) {
+            activeId = section.id;
+          }
         });
 
-        links.forEach((link) => {
-          link.classList.toggle("active", link.getAttribute("href") === `#${active}`);
+        navLinks.forEach((link) => {
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === `#${activeId}`
+          );
         });
       };
 
       updateActiveLink();
-      window.addEventListener("scroll", updateActiveLink, { passive: true });
 
-      const targets = [...document.querySelectorAll("[data-reveal]")];
+      window.addEventListener(
+        "scroll",
+        updateActiveLink,
+        { passive: true }
+      );
+
+      const revealTargets = [
+        ...document.querySelectorAll("[data-reveal]")
+      ];
+
       if (!("IntersectionObserver" in window)) {
-        targets.forEach((target) => target.classList.add("visible"));
+        revealTargets.forEach((target) => {
+          target.classList.add("visible");
+        });
+
         return;
       }
 
@@ -1137,14 +1457,20 @@
         (entries) => {
           entries.forEach((entry) => {
             if (!entry.isIntersecting) return;
+
             entry.target.classList.add("visible");
             observer.unobserve(entry.target);
           });
         },
-        { threshold: 0.12, rootMargin: "0px 0px -36px 0px" }
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -36px 0px"
+        }
       );
 
-      targets.forEach((target) => observer.observe(target));
+      revealTargets.forEach((target) => {
+        observer.observe(target);
+      });
     })();
   </script>
 </body>
