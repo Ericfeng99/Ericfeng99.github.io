@@ -3,81 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Siyuan Feng | Mathematics Undergraduate</title>
-
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
-
   <style>
     :root {
-      --bg: #f7f8fb;
-      --paper: #ffffff;
-      --text: #1f2933;
-      --muted: #5f6b7a;
-      --line: #d8dee8;
-      --link: #0b3d91;
-      --link-dark: #082b66;
-      --accent: #b48a2c;
-      --accent-soft: #f4ecd7;
-      --soft: #f8f9fb;
-      --shadow: 0 12px 32px rgba(15, 35, 70, 0.08);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
+      --bg: #ffffff;
+      --text: #222222;
+      --muted: #666666;
+      --line: #dddddd;
+      --link: #0645ad;
+      --soft: #f7f7f7;
     }
 
     body {
       margin: 0;
-      background:
-        linear-gradient(180deg, rgba(11, 61, 145, 0.08), rgba(255, 255, 255, 0) 260px),
-        var(--bg);
+      background: var(--bg);
       color: var(--text);
       font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.65;
-    }
-
-    a {
-      color: var(--link);
-      text-decoration-thickness: 1px;
-      text-underline-offset: 2px;
-    }
-
-    a:hover {
-      color: var(--link-dark);
-    }
-
-    .top-bar {
-      height: 6px;
-      background: linear-gradient(90deg, var(--link-dark), var(--link), var(--accent));
+      line-height: 1.6;
     }
 
     .container {
-      max-width: 960px;
+      max-width: 920px;
       margin: 0 auto;
-      padding: 30px 24px 60px;
-    }
-
-    .page-card {
-      background: var(--paper);
-      border: 1px solid rgba(216, 222, 232, 0.9);
-      box-shadow: var(--shadow);
-      padding: 30px 34px 38px;
+      padding: 32px 24px 60px;
     }
 
     header {
       position: relative;
       border-bottom: 1px solid var(--line);
-      padding-bottom: 20px;
+      padding-bottom: 18px;
       margin-bottom: 28px;
-      padding-right: 100px;
+      padding-right: 95px;
     }
-
+    
     .header-logo {
       position: absolute;
       top: 0;
@@ -85,19 +45,14 @@
       width: 76px;
       height: 76px;
       object-fit: contain;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: #ffffff;
-      padding: 6px;
+      border: none;
+      background: transparent;
     }
 
     .name {
-      font-size: 36px;
-      line-height: 1.15;
-      margin: 0 0 8px;
+      font-size: 34px;
+      margin: 0 0 6px;
       font-weight: 600;
-      letter-spacing: 0.01em;
-      color: #172033;
     }
 
     .subtitle {
@@ -107,12 +62,11 @@
     }
 
     .lang-link {
-      font-size: 0.58em;
+      font-size: 0.65em;
       margin-left: 10px;
       color: var(--link);
       text-decoration: none;
       font-weight: 400;
-      white-space: nowrap;
     }
 
     .lang-link:hover {
@@ -120,108 +74,41 @@
     }
 
     nav {
-      margin-top: 20px;
+      margin-top: 18px;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 15px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 18px;
     }
 
     nav a {
       color: var(--link);
       text-decoration: none;
-      white-space: nowrap;
+      margin-right: 18px;
     }
 
     nav a:hover {
       text-decoration: underline;
     }
 
-    .hero {
-      margin: 26px 0 8px;
-      padding: 22px 24px;
-      background: linear-gradient(135deg, rgba(11, 61, 145, 0.08), rgba(180, 138, 44, 0.08));
-      border: 1px solid var(--line);
-      border-left: 4px solid var(--accent);
-    }
-
-    .hero p {
-      margin: 0 0 14px;
-      font-size: 17px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-family: Arial, Helvetica, sans-serif;
-      margin-top: 12px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 6px;
-      border: 1px solid var(--link);
-      background: var(--link);
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 14px;
-      line-height: 1.2;
-    }
-
-    .button:hover {
-      background: var(--link-dark);
-      color: #ffffff;
-      text-decoration: none;
-    }
-
-    .button.secondary {
-      background: #ffffff;
-      color: var(--link);
-      border-color: var(--line);
-    }
-
-    .button.secondary:hover {
-      border-color: var(--link);
-      color: var(--link-dark);
-      background: #f7f9fd;
-    }
-
     h2 {
       font-size: 23px;
-      color: #172033;
       border-bottom: 1px solid var(--line);
-      padding-bottom: 6px;
-      margin-top: 36px;
-      margin-bottom: 16px;
-      position: relative;
-    }
-
-    h2::after {
-      content: "";
-      display: block;
-      width: 52px;
-      height: 2px;
-      background: var(--accent);
-      margin-top: 6px;
+      padding-bottom: 4px;
+      margin-top: 34px;
     }
 
     h3 {
       font-size: 18px;
-      margin: 0 0 5px;
-      color: #1f2933;
+      margin-bottom: 4px;
     }
 
-    p {
-      margin-top: 0;
+    a {
+      color: var(--link);
     }
 
     .profile {
       display: grid;
       grid-template-columns: 1fr 180px;
-      gap: 30px;
+      gap: 28px;
       align-items: start;
     }
 
@@ -232,8 +119,6 @@
       object-position: center;
       border: 1px solid var(--line);
       display: block;
-      background: #ffffff;
-      padding: 4px;
     }
 
     ul {
@@ -245,163 +130,13 @@
     }
 
     .item {
-      margin-bottom: 16px;
-      padding: 16px 18px;
-      border: 1px solid var(--line);
-      background: #ffffff;
-      border-left: 3px solid var(--link);
-    }
-
-    .item p:last-child {
-      margin-bottom: 0;
+      margin-bottom: 18px;
     }
 
     .meta {
       color: var(--muted);
       font-size: 15px;
       margin-top: 0;
-      margin-bottom: 8px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .interest-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px 20px;
-      padding-left: 0;
-      list-style: none;
-    }
-
-    .interest-list li {
-      border-left: 3px solid var(--accent);
-      background: var(--soft);
-      padding: 8px 12px;
-      margin-bottom: 0;
-    }
-
-    .personal-box {
-      padding: 16px 18px;
-      border: 1px solid var(--line);
-      background: linear-gradient(135deg, #ffffff, var(--accent-soft));
-      border-left: 3px solid var(--accent);
-    }
-
-    .fold-card {
-      border: 1px solid var(--line);
-      background: linear-gradient(135deg, #ffffff, var(--accent-soft));
-      border-left: 3px solid var(--accent);
-      margin-bottom: 16px;
-    }
-    
-    .fold-card summary {
-      cursor: pointer;
-      list-style: none;
-      padding: 16px 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-    }
-    
-    .fold-card summary::-webkit-details-marker {
-      display: none;
-    }
-    
-    .fold-card summary::after {
-      content: "+";
-      color: var(--link);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 22px;
-      line-height: 1;
-    }
-    
-    .fold-card[open] summary::after {
-      content: "−";
-    }
-    
-    .fold-title {
-      font-weight: 600;
-      color: #172033;
-    }
-    
-    .fold-subtitle {
-      display: block;
-      margin-top: 3px;
-      color: var(--muted);
-      font-size: 14px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 400;
-    }
-    
-    .fold-content {
-      padding: 0 18px 18px;
-    }
-    
-    .achievement-box {
-      margin-top: 14px;
-      padding: 13px 15px;
-      background: rgba(255, 255, 255, 0.68);
-      border: 1px solid rgba(216, 222, 232, 0.9);
-    }
-    
-    .achievement-box p:last-child {
-      margin-bottom: 0;
-    }
-    
-    .image-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 14px;
-    }
-    
-    .image-grid img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border: 1px solid var(--line);
-      background: #ffffff;
-      padding: 4px;
-    }
-
-    .cube-video-box {
-      margin-top: 14px;
-      padding: 4px;
-      border: 1px solid var(--line);
-      background: #ffffff;
-    }
-    
-    .cube-video-box video {
-      width: 100%;
-      height: auto;
-      display: block;
-      background: #000000;
-    }
-    
-    .video-caption {
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-size: 14px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    
-    @media (max-width: 720px) {
-      .fold-card summary {
-        padding: 15px 16px;
-        align-items: flex-start;
-      }
-    
-      .fold-content {
-        padding: 0 16px 16px;
-      }
-    
-      .image-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    
-    .contact-lines {
-      font-family: Arial, Helvetica, sans-serif;
     }
 
     footer {
@@ -414,605 +149,134 @@
     }
 
     @media (max-width: 720px) {
-      .container {
-        padding: 18px 14px 42px;
-      }
-
-      .page-card {
-        padding: 24px 18px 32px;
-      }
-
-      header {
-        padding-right: 72px;
-        padding-bottom: 18px;
-        margin-bottom: 24px;
-      }
-
-      .header-logo {
-        width: 56px;
-        height: 56px;
-        border-radius: 10px;
-        padding: 4px;
-      }
-
-      .name {
-        font-size: 30px;
-        line-height: 1.2;
-        margin-bottom: 8px;
-      }
-
-      .lang-link {
-        font-size: 0.52em;
-        margin-left: 8px;
-        display: inline-block;
-        vertical-align: baseline;
-      }
-
-      .subtitle {
-        font-size: 15px;
-        line-height: 1.45;
-      }
-
-      nav {
-        gap: 8px 14px;
-        margin-top: 16px;
-        line-height: 1.4;
-        font-size: 14.5px;
-      }
-
-      .hero {
-        padding: 18px 16px;
-      }
-
-      .hero p {
-        font-size: 15.5px;
-      }
-
-      .hero-actions {
-        gap: 8px;
-      }
-
-      .button {
-        padding: 8px 12px;
-        font-size: 13.5px;
-      }
-
-      h2 {
-        font-size: 22px;
-        margin-top: 30px;
-      }
-
-      h3 {
-        font-size: 17px;
-      }
-
       .profile {
         grid-template-columns: 1fr;
-        gap: 18px;
       }
 
-      .profile-photo {
-        width: 160px;
-        height: 200px;
-        margin-top: 4px;
-      }
-
-      .interest-list {
-        grid-template-columns: 1fr;
-      }
-
-      ul {
-        padding-left: 22px;
-      }
-    }
-
-    @media (max-width: 430px) {
-      .container {
-        padding: 14px 10px 38px;
-      }
-
-      .page-card {
-        padding: 22px 14px 30px;
-      }
-
-      header {
-        padding-right: 60px;
-      }
-
-      .header-logo {
-        width: 50px;
-        height: 50px;
-      }
-
-      .name {
-        font-size: 28px;
-      }
-
-      .lang-link {
-        font-size: 0.5em;
-        margin-left: 6px;
-      }
-
-      .subtitle {
-        font-size: 14.5px;
-      }
-
-      nav {
-        gap: 7px 12px;
-        font-size: 14px;
-      }
-
-      .profile-photo {
-        width: 150px;
-        height: 190px;
-      }
-
-      .item,
-      .personal-box {
-        padding: 14px 14px;
-      }
-    }
-
-
-    /* Motion and interaction layer */
-    :root {
-      --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    html {
-      scroll-padding-top: 24px;
-    }
-
-    body {
-      overflow-x: hidden;
-    }
-
-    .top-bar {
-      background-size: 200% 100%;
-      animation: top-bar-flow 12s ease-in-out infinite;
-    }
-
-    a,
-    .button,
-    .header-logo,
-    .item,
-    .interest-list li,
-    .fold-card,
-    .achievement-box,
-    .profile-photo {
-      transition:
-        transform 0.24s var(--motion-ease),
-        box-shadow 0.24s var(--motion-ease),
-        border-color 0.24s ease,
-        background 0.24s ease,
-        color 0.2s ease;
-    }
-
-    nav a {
-      position: relative;
-      padding-bottom: 3px;
-      transition: color 0.2s ease;
-    }
-
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -1px;
-      height: 2px;
-      border-radius: 999px;
-      background: var(--accent);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.22s var(--motion-ease);
-    }
-
-    nav a:hover::after,
-    nav a.active::after {
-      transform: scaleX(1);
-    }
-
-    nav a.active {
-      color: var(--link-dark);
-      font-weight: 700;
-    }
-
-    .button {
-      will-change: transform;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 18px rgba(11, 61, 145, 0.16);
-    }
-
-    .button.secondary:hover {
-      box-shadow: 0 8px 18px rgba(15, 35, 70, 0.08);
-    }
-
-    .header-logo {
-      will-change: transform;
-    }
-
-    .fold-card[open] {
-      box-shadow: 0 12px 28px rgba(15, 35, 70, 0.07);
-    }
-
-    .fold-card[open] summary {
-      border-bottom: 1px solid rgba(216, 222, 232, 0.9);
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-      .header-logo:hover {
-        transform: translateY(-3px) rotate(2deg);
-        border-color: rgba(11, 61, 145, 0.35);
-        box-shadow: 0 10px 22px rgba(15, 35, 70, 0.1);
-      }
-
-      .hero:hover {
-        box-shadow: 0 14px 30px rgba(15, 35, 70, 0.06);
-      }
-
-      .item:hover,
-      .fold-card:hover {
-        transform: translateY(-4px);
-        border-color: rgba(11, 61, 145, 0.34);
-        box-shadow: 0 14px 30px rgba(15, 35, 70, 0.08);
-      }
-
-      .interest-list li:hover {
-        transform: translateX(5px);
-        background: #f2f5fa;
-      }
-
-      .achievement-box:hover {
-        border-color: rgba(180, 138, 44, 0.42);
-        box-shadow: 0 10px 22px rgba(15, 35, 70, 0.06);
-      }
-
-      .profile-photo:hover {
-        transform: translateY(-4px);
-        border-color: rgba(180, 138, 44, 0.52);
-        box-shadow: 0 14px 26px rgba(15, 35, 70, 0.12);
-      }
-    }
-
-    body.motion-ready [data-intro],
-    body.motion-ready [data-reveal] {
-      opacity: 0;
-      transform: translateY(20px);
-      transition:
-        opacity 0.62s var(--motion-ease) var(--motion-delay, 0ms),
-        transform 0.62s var(--motion-ease) var(--motion-delay, 0ms);
-      will-change: opacity, transform;
-    }
-
-    body.motion-ready [data-intro].is-visible,
-    body.motion-ready [data-reveal].is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @keyframes top-bar-flow {
-      0%,
-      100% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-      }
-
-      body.motion-ready [data-intro],
-      body.motion-ready [data-reveal] {
-        opacity: 1;
-        transform: none;
+      .photo-box {
+        width: 180px;
       }
     }
   </style>
 </head>
-
 <body>
-  <div class="top-bar"></div>
-
   <div class="container">
-    <div class="page-card">
-      <header>
-        <h1 class="name">
-          Siyuan Feng
-          <a href="index.html" class="lang-link">[中文版本]</a>
-        </h1>
+    <header>
+      <h1 class="name">Siyuan Feng <a href="index.html" class="lang-link">[中文版本]</a></h1>
+      <p class="subtitle">Undergraduate Student in Mathematics, University of Warwick</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#interests">Research Interests</a>
+        <a href="#projects">Projects</a>
+        <a href="#notes">Notes</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    
+      <img src="favicon.png" alt="Siyuan Feng logo" class="header-logo" />
+    </header>
 
-        <p class="subtitle">Undergraduate Student in Mathematics, University of Warwick</p>
+    <main>
+      <section id="about" class="profile">
+      <div>
+        <h2>About</h2>
+        <p>
+          I am an undergraduate student in Mathematics at the University of Warwick,
+          with academic interests in quantum computing, mathematical foundations of
+          machine learning, and combinatorial optimisation.
+        </p>
+        <p>
+          My current work focuses on using linear algebraic and structural methods
+          to study problems in quantum information and machine learning, including
+          stabilizer formalism, symplectic linear algebra and
+          graph-theoretic optimisation.
+        </p>
+        <p>
+          This website collects selected essays, projects, notes, and academic materials.
+        </p>
+      </div>
+    
+      <img src="profile.jpg" alt="Siyuan Feng" class="profile-photo" />
+    </section>
 
-        <nav>
-          <a href="#about">About</a>
-          <a href="#interests">Research</a>
-          <a href="#personal">Personal</a>
-          <a href="#projects">Projects</a>
-          <a href="#notes">Notes</a>
-          <a href="#cv">CV</a>
-          <a href="#contact">Contact</a>
-        </nav>
+      <section id="interests">
+      <h2>Research Interests</h2>
+      <ul>
+        <li>Quantum computing and stabilizer formalism</li>
+        <li>Symplectic linear algebra and quantum information</li>
+        <li>Mathematical foundations of machine learning</li>
+        <li>Combinatorial optimisation and graph-theoretic methods</li>
+      </ul>
+    </section>
 
-        <img src="favicon.png" alt="Siyuan Feng logo" class="header-logo" />
-      </header>
+      <section id="projects">
+        <h2>Projects</h2>
 
-      <main>
-        <section class="hero">
+        <div class="item">
+          <h3>LoRA-One and One-Step Gradient Alignment</h3>
+          <p class="meta">Scientific communication essay / machine learning theory</p>
           <p>
-            I am an undergraduate student in Mathematics at the University of Warwick,
-            with interests in the mathematical theory of machine learning, infinite-width
-            neural networks, neural-network parameterizations and training dynamics,
-            as well as algebraic methods in quantum computing.
+            A mathematical exposition on low-rank adaptation, one-step gradient alignment,
+            and related linear algebraic structures.
           </p>
+        </div>
 
-          <div class="hero-actions">
-            <a class="button" href="cv-en.pdf">View CV</a>
-            <a class="button secondary" href="#projects">View Projects</a>
-            <a class="button secondary" href="#contact">Contact</a>
-          </div>
-        </section>
-
-        <section id="about" class="profile">
-          <div>
-            <h2>About</h2>
-
-            <p>
-              I am an undergraduate student in Mathematics at the University of Warwick,
-              with academic interests in the mathematical theory of machine learning,
-              infinite-width neural networks, neural-network parameterizations,
-              training dynamics, and linear-algebraic structures in quantum computing.
-            </p>
-
-            <p>
-              My current work focuses on learning-rate transfer under the Maximal Update
-              Parametrization (µP): whether the optimal learning rate converges to a non-zero
-              constant as network width grows, allowing learning rates tuned on smaller models
-              to transfer to wider models without large-scale retuning. Starting from linear
-              multilayer perceptrons, I study wide-width limits, feature learning, and the
-              dependence of training loss on the learning rate under µP, Standard
-              Parametrization (SP), and Neural Tangent Parametrization (NTP).
-            </p>
-
-            <p>
-              I am also interested in stabilizer formalism, Pauli operators, Clifford
-              operations, and symplectic linear-algebraic methods in quantum computing.
-            </p>
-
-            <p>
-              This website collects selected essays, projects, notes, and academic materials.
-            </p>
-          </div>
-
-          <img src="profile.jpg" alt="Siyuan Feng" class="profile-photo" />
-        </section>
-
-        <section id="interests">
-          <h2>Research Interests</h2>
-
-          <ul class="interest-list">
-            <li>Mathematical theory of machine learning and infinite-width neural networks</li>
-            <li>µP (Maximal Update Parametrization) and hyperparameter transfer</li>
-            <li>Learning-rate transfer, training dynamics, and feature learning</li>
-            <li>Tensor Programs and wide-width limits of neural networks</li>
-          </ul>
-        </section>
-
-        <section id="personal">
-          <h2>Personal Interests</h2>
-        
-          <details class="fold-card">
-            <summary>
-              <span>
-                <span class="fold-title">4×4×4 Speedcubing</span>
-                <span class="fold-subtitle">Official WCA results and Warwick Winter 2025 champion</span>
-              </span>
-            </summary>
-        
-            <div class="fold-content">
-              <p>
-                I am a 4×4×4 speedcuber and have competed in official WCA competitions.
-                My official WCA results include a 34.22 single and a 41.46 average in 4×4×4.
-                My cubing profile is available
-                <a href="https://cubing.com/results/person/2021FENG07" target="_blank">here</a>.
-              </p>
-        
-              <div class="achievement-box">
-                <p>
-                  At Warwick Winter 2025, I won 1st place in the 4×4×4 event with a 36.95-second average,
-                  ranking first in the university-wide competition for this event.
-                </p>
-              </div>
-        
-              <div class="cube-video-box">
-                <video controls preload="metadata" playsinline>
-                  <source src="rubiks-4x4-solve.mp4" type="video/mp4">
-                  Your browser does not support HTML5 video playback.
-                </video>
-                <p class="video-caption">A 4×4×4 cube solve video.</p>
-              </div>
-              
-              <div class="image-grid">
-                <img src="warwick-winter-2025-podium.jpg" alt="Top three finishers in the Warwick Winter 2025 4x4x4 event">
-                <img src="warwick-winter-2025-certificate.jpg" alt="Warwick Winter 2025 4x4x4 first-place certificate">
-              </div>
-            </div>
-          </details>
-        </section>
-
-        <section id="projects">
-          <h2>Projects</h2>
-
-          <div class="item">
-            <h3>Learning Rate Transfer under µP</h3>
-            <p class="meta">Summer research project / neural-network parameterizations, wide-width limits, and learning-rate transfer</p>
-            <p>
-              Under the supervision of
-              <a href="https://ins.sjtu.edu.cn/people/fanghui/" target="_blank" rel="noopener noreferrer">Professor Fanghui Liu</a>,
-              my current summer research project is centred on <em>A Proof of Learning Rate Transfer under µP</em>.
-              It studies learning-rate transfer under the Maximal Update Parametrization:
-              whether the optimal learning rate converges to a non-zero limit as network width grows,
-              and how this supports tuning hyperparameters on smaller models before transferring them
-              to wider ones. Starting from the training dynamics of linear multilayer perceptrons,
-              the project considers the polynomial dependence of training loss on the learning rate,
-              feature learning under µP, and the contrast between µP, Standard Parametrization,
-              and Neural Tangent Parametrization.
-            </p>
-          </div>
-          <div class="item">
-            <h3>Third-Year Essay Plan: Phase Transitions in High-Dimensional PCA</h3>
-            <p class="meta">Planned third-year essay / random matrix theory and high-dimensional statistics</p>
-            <p>
-              A planned essay on high-dimensional PCA under the spiked covariance model, with emphasis
-              on BBP-type phase transitions, alignment between sample principal components and the true
-              signal direction, and the model's relevance to modern machine learning theory.
-            </p>
-          </div>
-        </section>
-
-        <section id="notes">
-          <h2>Essays & Notes</h2>
-
-          <div class="item">
-            <h3>A Symplectic-Linear Proof of the Gottesman–Knill Theorem</h3>
-            <p class="meta">Essay, archived on Zenodo. DOI: 10.5281/zenodo.19615972</p>
-            <p>
-              An expository essay on the Gottesman–Knill theorem, focusing on a
-              symplectic-linear framework for Pauli operators, Clifford updates,
-              and tableau simulation.
-            </p>
-            <p>
-              <a href="https://doi.org/10.5281/zenodo.19615972" target="_blank">View on Zenodo</a>
-            </p>
-          </div>
-        </section>
-
-        <section id="cv">
-          <h2>CV</h2>
-        
+        <div class="item">
+          <h3>URSS Research Project</h3>
+          <p class="meta">University of Warwick, summer research project</p>
           <p>
-            My CV is available in both English and Chinese:
-            <a href="cv-en.pdf">CV (English)</a> ·
-            <a href="cv-zh.pdf">CV (Chinese)</a>.
+            A research project on mathematical aspects of machine learning theory.
+            Details will be updated as the project develops.
           </p>
-        </section>
+        </div>
 
-        <section id="contact">
-          <h2>Contact</h2>
-
-          <p class="contact-lines">
-            Email: <a href="mailto:eric_feng2006@outlook.com">eric_feng2006@outlook.com</a><br />
+        <div class="item">
+          <h3>Selected Coursework Projects</h3>
+          <p class="meta">Mathematics, numerical methods, quantum computing, and programming</p>
+          <p>
+            Selected academic and programming projects from undergraduate mathematics modules.
           </p>
-        </section>
-      </main>
+        </div>
+      </section>
 
-    </div>
+      <section id="notes">
+      <h2>Essays & Notes</h2>
+    
+      <div class="item">
+        <h3>A Symplectic-Linear Proof of the Gottesman–Knill Theorem</h3>
+        <p class="meta">Essay, archived on Zenodo. DOI: 10.5281/zenodo.19615972</p>
+        <p>
+          An expository essay on the Gottesman–Knill theorem, focusing on a
+          symplectic-linear framework for Pauli operators, Clifford updates,
+          and tableau simulation.
+        </p>
+        <p>
+          <a href="https://doi.org/10.5281/zenodo.19615972">View on Zenodo</a>
+        </p>
+      </div>
+    </section>
+
+      <section id="cv">
+      <h2>CV</h2>
+      <p>
+        My CV is currently available in Chinese:
+        <a href="cv-zh.pdf">CV (Chinese)</a>.
+        An English version will be added later.
+      </p>
+    </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          Email: <a href="mailto:eric_feng2006@outlook.com">eric_feng2006@outlook.com</a><br />
+          GitHub: <a href="https://github.com/Ericfeng99">Ericfeng99</a><br />
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      Last updated: May 2026. Built with HTML and CSS.
+    </footer>
   </div>
-
-  <script>
-    (() => {
-      const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      ).matches;
-
-      const navLinks = [...document.querySelectorAll("nav a[href^='#']")];
-      const sections = [...document.querySelectorAll("main > section[id]")];
-
-      const updateActiveNav = () => {
-        const referenceLine = window.innerHeight * 0.34;
-        let activeId = "";
-
-        sections.forEach((section) => {
-          if (section.getBoundingClientRect().top <= referenceLine) {
-            activeId = section.id;
-          }
-        });
-
-        navLinks.forEach((link) => {
-          link.classList.toggle(
-            "active",
-            link.getAttribute("href") === `#${activeId}`
-          );
-        });
-      };
-
-      updateActiveNav();
-      window.addEventListener("scroll", updateActiveNav, { passive: true });
-
-      if (prefersReducedMotion) return;
-
-      const introTargets = [
-        document.querySelector(".name"),
-        document.querySelector(".subtitle"),
-        document.querySelector("nav"),
-        document.querySelector(".header-logo"),
-        document.querySelector(".hero")
-      ].filter(Boolean);
-
-      const revealTargets = [
-        ...document.querySelectorAll("main > section:not(.hero)")
-      ];
-
-      introTargets.forEach((element, index) => {
-        element.setAttribute("data-intro", "");
-        element.style.setProperty("--motion-delay", `${index * 90}ms`);
-      });
-
-      revealTargets.forEach((element) => {
-        element.setAttribute("data-reveal", "");
-      });
-
-      document.body.classList.add("motion-ready");
-
-      requestAnimationFrame(() => {
-        introTargets.forEach((element) => {
-          element.classList.add("is-visible");
-        });
-      });
-
-      if (!("IntersectionObserver" in window)) {
-        revealTargets.forEach((element) => {
-          element.classList.add("is-visible");
-        });
-        return;
-      }
-
-      const revealObserver = new IntersectionObserver(
-        (entries, observer) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          });
-        },
-        {
-          threshold: 0.12,
-          rootMargin: "0px 0px -42px 0px"
-        }
-      );
-
-      revealTargets.forEach((element) => {
-        revealObserver.observe(element);
-      });
-    })();
-  </script>
 </body>
 </html>
