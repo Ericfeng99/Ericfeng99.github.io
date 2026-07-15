@@ -6,10 +6,10 @@
 
   <meta
     name="description"
-    content="Siyuan Feng, Mathematics undergraduate at the University of Warwick, working in machine learning theory."
+    content="Siyuan Feng, a Mathematics undergraduate at the University of Warwick working in machine learning theory, µP, and optimal learning-rate geometry."
   />
 
-  <title>Siyuan Feng | Mathematics Undergraduate</title>
+  <title>Siyuan Feng | Mathematics and Machine Learning Theory</title>
 
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="favicon.png" />
@@ -876,17 +876,16 @@
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="#top" aria-label="Back to top">
+      <a class="brand" href="#top" aria-label="Return to homepage">
         <img src="favicon.png" alt="Siyuan Feng logo" />
         <span>Siyuan Feng</span>
       </a>
 
       <div class="nav-right">
-        <nav aria-label="Website navigation">
+        <nav aria-label="Site navigation">
           <a href="#about">About</a>
           <a href="#interests">Research Interests</a>
           <a href="#research">Current Research</a>
-          <a href="#projects">Projects</a>
           <a href="#notes">Essays & Notes</a>
           <a href="#personal">Personal</a>
           <a href="#contact">Contact</a>
@@ -912,27 +911,24 @@
           </p>
 
           <p class="intro-lead">
-            My research direction is machine learning theory, with current
-            interests in infinite-width neural networks, Maximal Update
-            Parametrization (µP), learning-rate transfer, and training
-            dynamics. I am also interested in algebraic methods in quantum
+            My research direction is machine learning theory, with a current
+            focus on neural-network parametrisation, learning-rate transfer,
+            and optimisation dynamics. I am studying the geometry of optimal
+            learning rates under the Maximal Update Parametrization (µP),
+            particularly their existence, uniqueness, and stability under data
+            perturbations. I am also interested in algebraic methods in quantum
             computing.
           </p>
 
           <div class="intro-meta" aria-label="Research tags">
             <span class="tag">Machine Learning Theory</span>
-            <span class="tag">Infinite-Width Neural Networks</span>
+            <span class="tag">Learning-Rate Geometry</span>
             <span class="tag">Quantum Computing</span>
           </div>
 
           <div class="actions">
-            <a class="button" href="cv-en.pdf">View CV</a>
-            <a class="button secondary" href="#research">
-              Current Research
-            </a>
-            <a class="button secondary" href="#contact">
-              Contact
-            </a>
+            <a class="button" href="#research">Current Research</a>
+            <a class="button secondary" href="#contact">Contact</a>
           </div>
         </div>
 
@@ -958,11 +954,12 @@
         <div class="about-grid">
           <div class="panel">
             <p>
-              I am an undergraduate student in Mathematics at the University
-              of Warwick. My main research direction is machine learning
-              theory, with a current focus on neural-network parameterization,
-              training dynamics, and hyperparameter transfer under width
-              scaling.
+              I am a Mathematics undergraduate at the University of Warwick,
+              primarily interested in the mathematical theory of machine
+              learning. I am particularly drawn to rigorous structures behind
+              neural-network training, including model parametrisation,
+              optimisation dynamics, hyperparameter transfer, and the way these
+              properties change with model scale.
             </p>
 
             <p>
@@ -973,16 +970,25 @@
                 rel="noopener noreferrer"
               >Professor Fanghui Liu</a>,
               I am conducting theoretical research on learning-rate transfer
-              under µP: whether the optimal learning rate stabilises at a
-              non-zero limit as network width grows, and under which
-              mathematical conditions such a statement is valid. I mainly use
-              asymptotic analysis, Tensor Programs, and polynomial methods.
+              under µP. My current work focuses on the optimal learning-rate
+              landscape after two gradient updates: when the optimum is unique,
+              how nonuniqueness arises, and how optimal solutions behave under
+              small perturbations of the data.
             </p>
 
             <p>
-              I am also interested in stabilizer formalism, Pauli operators,
-              Clifford operations, and symplectic linear algebra in quantum
-              computing.
+              The main tools in this work include asymptotic analysis,
+              polynomial methods, spectral decomposition, discriminants, and
+              stability analysis for minimisers. I am especially interested in
+              neural-network optimisation problems that can be reduced to
+              explicit algebraic structures and therefore analysed through
+              verifiable mathematical statements.
+            </p>
+
+            <p>
+              Beyond my current research, I am also interested in stabilizer
+              formalism, Pauli operators, Clifford operations, and symplectic
+              linear algebra in quantum computing.
             </p>
           </div>
 
@@ -999,9 +1005,7 @@
 
             <div class="quick-row">
               <strong>Current Focus</strong>
-              <span>
-                µP, learning-rate transfer, and infinite-width limits
-              </span>
+              <span>µP, learning-rate geometry, optimisation dynamics</span>
             </div>
 
             <div class="quick-row">
@@ -1033,29 +1037,32 @@
 
             <p>
               Rigorous mathematical properties of learning models, including
-              parameterization, optimisation dynamics, and scaling behaviour.
+              parametrisation, optimisation dynamics, asymptotic behaviour,
+              and scaling laws.
             </p>
           </article>
 
           <article class="interest-card">
             <span class="interest-number">02</span>
 
-            <h3>Infinite-Width Networks and µP</h3>
+            <h3>Neural-Network Parametrisation and µP</h3>
 
             <p>
-              Feature learning, Tensor Programs, and wide-width limits under
-              different neural-network parameterizations.
+              How different parametrisations affect feature learning,
+              training stability, infinite-width limits, and hyperparameter
+              transfer.
             </p>
           </article>
 
           <article class="interest-card">
             <span class="interest-number">03</span>
 
-            <h3>Hyperparameter Transfer</h3>
+            <h3>Learning-Rate Geometry and Optimisation</h3>
 
             <p>
-              The behaviour of optimal learning rates under width scaling and
-              its relationship with training dynamics and parameterization.
+              The geometry of training loss as a function of the learning
+              rate, including existence, uniqueness, nonuniqueness, and
+              perturbative stability of optimal rates.
             </p>
           </article>
 
@@ -1075,12 +1082,12 @@
       <section id="research" data-reveal>
         <div class="section-head">
           <span class="section-kicker">Current Research</span>
-          <h2>Learning-Rate Transfer under µP</h2>
+          <h2>Two-Step Optimal Learning-Rate Geometry under µP</h2>
         </div>
 
         <div class="research-feature">
           <article class="research-main">
-            <h3>Background and Current Work</h3>
+            <h3>Generic Uniqueness, Exceptional Nonuniqueness, and Perturbative Stability</h3>
 
             <p class="meta">
               Research Project in Machine Learning Theory · Supervised by
@@ -1089,88 +1096,98 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >Professor Fanghui Liu</a>
+              · Research manuscript · 2026
             </p>
 
             <div class="research-label">Background</div>
 
             <p>
-              Maximal Update Parametrization (µP) is designed to preserve
-              non-trivial feature learning as neural-network width increases.
-              One of its most important empirical properties is
-              hyperparameter transfer: a learning rate tuned on a smaller
-              model may remain effective for substantially wider models,
-              reducing the cost of hyperparameter search at scale.
+              A rigorous theory of learning-rate transfer requires more than
+              convergence of loss curves across widths: the optimal learning
+              rates themselves must also have stable limits. After one gradient
+              update, the limiting loss has a relatively simple quadratic
+              structure. After two updates, however, the weights learned at the
+              first step feed back into the second gradient, producing a
+              genuinely nonlinear learning-rate landscape in which uniqueness
+              is no longer automatic.
             </p>
 
+            <div class="research-label">Model</div>
+
             <p>
-              The original paper studies this question for deep linear
-              multilayer perceptrons trained by full-batch gradient descent.
-              Its central approach is to express the network output after a
-              fixed number of training steps as a polynomial in the learning
-              rate, and then use Tensor Programs to analyse the infinite-width
-              limits of the loss and its minimizers. It gives a detailed
-              one-step analysis and proposes a general fixed-step result.
+              I study a deep linear network under µP with two trainable square
+              matrices, two simultaneous full-batch gradient updates, squared
+              loss, and an arbitrary fixed number of training samples. The
+              model is simple enough to admit exact formulae, yet already
+              contains the nonlinear feedback created by multi-step training,
+              making it suitable for a direct analysis of the global geometry
+              of optimal learning rates.
             </p>
 
-            <div class="research-label">My Work</div>
+            <div class="research-label">Exact Structure</div>
 
             <p>
-              My work provides a rigorous audit, completion, and correction of
-              the general fixed-step argument, while clarifying the precise
-              scope of the theorem. I examine whether the polynomial
-              structure, Tensor Program representation, coefficient
-              convergence, compact-uniform convergence, and argmin stability
-              are sufficient to justify each claimed conclusion.
+              I derive an exact finite-width state compression and the
+              deterministic wide-limit dynamics for every fixed sample size.
+              The limiting residual after two updates can be expressed as a
+              linear combination of the data Gram matrix and its square acting
+              on the label vector, with explicit polynomial coefficients in
+              the learning rate. In the nondegenerate case, the residual has
+              exact degree five and the corresponding loss has exact degree
+              ten.
             </p>
 
             <div class="research-label">Main Results</div>
 
             <ul class="result-list">
               <li>
-                Established a width-independent polynomial degree bound,
-                placing the training trajectories at all widths in one
-                finite-dimensional coefficient space.
+                Derived an exact finite-width compression and a closed
+                deterministic two-step wide limit for an arbitrary fixed
+                number of samples, yielding explicit polynomial formulae for
+                the residual and loss.
               </li>
 
               <li>
-                Constructed an exact Tensor Program for the full-batch
-                gradient-descent trajectory and verified the hypotheses of
-                the Tensor Programs IV Master Theorem individually.
+                Proved that, for at least two samples with a positive-definite
+                data Gram matrix, the optimal learning rate is unique on an
+                open dense, full-measure set of data. Uniqueness is therefore
+                generic, but not universal.
               </li>
 
               <li>
-                Used evaluations at finitely many learning rates and
-                Vandermonde inversion to prove coefficient convergence,
-                yielding compact-uniform convergence of outputs, losses, and
-                fixed derivatives.
+                Showed that the minimal one-sample model can already have at
+                least three distinct positive global optimal learning rates,
+                and constructed an explicit full-rank multisample family with
+                exactly three positive nondegenerate global minima.
               </li>
 
               <li>
-                Corrected the compact argmin theorem and completed a rigorous
-                fixed-step compact-interval learning-rate-transfer theorem
-                under a uniqueness assumption.
+                Proved that every positive-definite parameter point can be
+                approximated arbitrarily closely by data with a unique optimal
+                learning rate, while establishing one-sided stability of the
+                global argmin set under arbitrary data perturbations.
               </li>
 
               <li>
-                Constructed an exact counterexample within the deep-linear
-                neural-network model showing that arbitrary selections of
-                global minimizers need not transfer.
-              </li>
-
-              <li>
-                Showed that the limiting optimal learning rate need not be
-                unique and that general-step convergence rates require
-                additional quantitative estimates.
+                Obtained finite-width learning-rate transfer on compact
+                intervals in the unique regime, and persistent finite-width
+                local-minimum branches around each isolated nondegenerate
+                limiting minimum in the nonunique regime.
               </li>
             </ul>
 
-            <div class="research-links">
-              <a
-                href="https://arxiv.org/abs/2511.01734"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Original paper →</a>
+            <div class="research-label">Significance</div>
 
+            <p>
+              These results show that uniqueness has a stable generic
+              structure for ordinary data, while exceptional datasets can
+              still produce several equal-depth global optima. In the
+              nonunique regime, the mathematically correct limiting object is
+              therefore the complete optimiser set rather than an arbitrarily
+              selected learning-rate constant.
+            </p>
+
+            <div class="research-links">
               <a
                 href="https://ins.sjtu.edu.cn/people/fanghui/"
                 target="_blank"
@@ -1179,94 +1196,64 @@
             </div>
           </article>
 
-          <aside class="research-status" aria-label="Theoretical status">
-            <h3>Theoretical Status</h3>
+          <aside class="research-status" aria-label="Research overview">
+            <h3>Research Overview</h3>
 
             <div class="status-item">
-              <small>Compact interval</small>
+              <small>Model</small>
 
-              <strong>Valid under explicit conditions</strong>
+              <strong>Two-step deep linear µP network</strong>
 
               <p>
-                Fixed training time, a prescribed compact interval, and a
-                unique limiting minimizer.
+                Two trainable matrices, two full-batch gradient updates, and
+                an arbitrary fixed sample size.
               </p>
             </div>
 
             <div class="status-item">
-              <small>Global argmin</small>
+              <small>Landscape</small>
 
-              <strong>False for arbitrary selections</strong>
+              <strong>Exact polynomial geometry</strong>
 
               <p>
-                Finite-width models may contain global minimizers escaping to
-                infinity, so the full argmin family is not uniformly bounded.
+                In the nondegenerate case, the limiting residual has degree
+                five and the training loss has degree ten.
               </p>
             </div>
 
             <div class="status-item">
-              <small>Uniqueness</small>
+              <small>Generic Case</small>
 
-              <strong>Not automatic</strong>
+              <strong>Unique global optimum</strong>
 
               <p>
-                Even in a small deep-linear model, the limiting loss can have
-                several positive global minimizers.
+                For positive-definite multisample data, uniqueness holds on
+                an open dense, full-measure set.
               </p>
             </div>
 
             <div class="status-item">
-              <small>Rates</small>
+              <small>Exceptional Case</small>
 
-              <strong>Require quantitative tools</strong>
+              <strong>Three global optima</strong>
 
               <p>
-                The qualitative Tensor Program limit alone does not imply a
-                general fixed-step convergence rate.
+                An explicit full-rank family has three positive global optimal
+                learning rates.
+              </p>
+            </div>
+
+            <div class="status-item">
+              <small>Stability</small>
+
+              <strong>Set-valued limit</strong>
+
+              <p>
+                In the nonunique regime, the full optimiser set and its local
+                minimum branches are the appropriate limiting objects.
               </p>
             </div>
           </aside>
-        </div>
-      </section>
-
-      <section id="projects" data-reveal>
-        <div class="section-head">
-          <span class="section-kicker">Selected Projects</span>
-          <h2>Projects</h2>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card">
-            <h3>Learning-Rate Transfer under µP</h3>
-
-            <p class="meta">
-              Machine Learning Theory · Theoretical Research Project
-            </p>
-
-            <p>
-              Under the supervision of Professor Fanghui Liu, I am conducting
-              a rigorous audit, completion, and refinement of the general-step
-              proof, with further results on compact convergence,
-              global-minimizer counterexamples, limiting nonuniqueness, and
-              convergence rates.
-            </p>
-
-            <a class="text-link" href="#research">
-              Read the full overview →
-            </a>
-          </article>
-
-          <article class="project-card">
-            <h3>Third-Year Essay</h3>
-
-            <p class="meta">
-              Planned third-year academic essay
-            </p>
-
-            <p>
-              Topic to be determined.
-            </p>
-          </article>
         </div>
       </section>
 
