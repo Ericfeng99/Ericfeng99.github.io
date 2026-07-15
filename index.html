@@ -6,10 +6,10 @@
 
   <meta
     name="description"
-    content="冯思远，英国华威大学数学系本科生，研究方向为机器学习数学理论。"
+    content="冯思远，英国华威大学数学系本科生，研究方向为机器学习数学理论，当前聚焦 µP 与最优学习率几何。"
   />
 
-  <title>冯思远 | 数学系本科生</title>
+  <title>冯思远 | 数学与机器学习理论</title>
 
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="favicon.png" />
@@ -892,7 +892,6 @@
           <a href="#about">关于</a>
           <a href="#interests">研究兴趣</a>
           <a href="#research">当前研究</a>
-          <a href="#projects">项目</a>
           <a href="#notes">论文与笔记</a>
           <a href="#personal">个人</a>
           <a href="#contact">联系</a>
@@ -914,20 +913,20 @@
           <p class="intro-subtitle">英国华威大学数学系本科生</p>
 
           <p class="intro-lead">
-            我的研究方向是机器学习数学理论，当前重点关注无限宽神经网络、
-            Maximal Update Parametrization（µP）、学习率迁移与训练动力学。
+            我的研究方向是机器学习数学理论，当前主要关注神经网络参数化、
+            学习率迁移与优化动力学。我正在研究 µP 参数化下最优学习率的
+            几何结构，尤其关注其存在性、唯一性以及对数据扰动的稳定性。
             我也对量子计算中的代数方法感兴趣。
           </p>
 
           <div class="intro-meta" aria-label="研究标签">
             <span class="tag">机器学习数学理论</span>
-            <span class="tag">无限宽神经网络</span>
+            <span class="tag">学习率几何</span>
             <span class="tag">量子计算</span>
           </div>
 
           <div class="actions">
-            <a class="button" href="cv-zh.pdf">查看中文简历</a>
-            <a class="button secondary" href="#research">查看当前研究</a>
+            <a class="button" href="#research">查看当前研究</a>
             <a class="button secondary" href="#contact">联系方式</a>
           </div>
         </div>
@@ -954,26 +953,33 @@
         <div class="about-grid">
           <div class="panel">
             <p>
-              我是英国华威大学数学专业本科生。我的主要方向是机器学习数学理论，
-              目前研究神经网络宽度扩展下的参数化、训练动力学与超参数迁移问题。
+              我是英国华威大学数学系本科生，主要关注机器学习中的数学理论。
+              我对神经网络训练过程背后的严格数学结构尤其感兴趣，包括模型参数化、
+              优化动力学、超参数迁移，以及这些性质如何随网络规模变化。
             </p>
 
             <p>
-              当前在
+              当前，我在
               <a
                 href="https://ins.sjtu.edu.cn/people/fanghui/"
                 target="_blank"
                 rel="noopener noreferrer"
               >刘方辉教授</a>
-              指导下，开展关于 µP 参数化下学习率迁移的理论研究：
-              当网络宽度增大时，最优学习率能否稳定到一个非零极限，
-              以及这一现象在什么数学条件下成立。
-              我主要使用渐近分析、Tensor Programs 与多项式方法研究这一问题。
+              指导下开展 µP 参数化下学习率迁移的理论研究。
+              我的工作聚焦于两次梯度更新后的最优学习率景观：
+              在什么条件下最优学习率是唯一的，非唯一性如何产生，
+              以及数据发生微小扰动时最优解如何变化。
             </p>
 
             <p>
-              此外，我也持续关注量子计算中的 stabilizer formalism、
-              Pauli operators、Clifford operations 与辛线性代数方法。
+              在这项研究中，我主要使用渐近分析、多项式方法、谱分解、
+              判别式与极小值稳定性等工具。我尤其关注能够转化为明确代数结构的
+              神经网络优化问题，从而对训练损失和最优超参数给出可验证的结论。
+            </p>
+
+            <p>
+              除当前研究外，我也对量子计算中的 stabilizer formalism、
+              Pauli operators、Clifford operations 与辛线性代数方法感兴趣。
             </p>
           </div>
 
@@ -990,7 +996,7 @@
 
             <div class="quick-row">
               <strong>Current Focus</strong>
-              <span>µP、学习率迁移、无限宽极限</span>
+              <span>µP、学习率几何、优化动力学</span>
             </div>
 
             <div class="quick-row">
@@ -1020,27 +1026,30 @@
             <h3>机器学习数学理论</h3>
 
             <p>
-              研究机器学习模型的严格数学性质，包括参数化、优化动力学与尺度扩展规律。
+              研究机器学习模型背后的严格数学性质，包括参数化、
+              优化动力学、渐近行为与尺度扩展规律。
             </p>
           </article>
 
           <article class="interest-card">
             <span class="interest-number">02</span>
 
-            <h3>无限宽神经网络与 µP</h3>
+            <h3>神经网络参数化与 µP</h3>
 
             <p>
-              关注 feature learning、Tensor Programs，以及不同参数化下的宽度极限。
+              关注不同参数化方式如何影响特征学习、训练稳定性、
+              宽度极限与超参数迁移。
             </p>
           </article>
 
           <article class="interest-card">
             <span class="interest-number">03</span>
 
-            <h3>超参数迁移与训练动力学</h3>
+            <h3>学习率几何与优化动力学</h3>
 
             <p>
-              研究最优学习率如何随模型宽度变化，以及训练损失与参数化之间的理论关系。
+              研究训练损失关于学习率的几何结构，以及最优学习率的
+              存在性、唯一性、非唯一性与扰动稳定性。
             </p>
           </article>
 
@@ -1060,12 +1069,12 @@
       <section id="research" data-reveal>
         <div class="section-head">
           <span class="section-kicker">Current Research</span>
-          <h2>Learning-Rate Transfer under µP</h2>
+          <h2>Two-Step Optimal Learning-Rate Geometry under µP</h2>
         </div>
 
         <div class="research-feature">
           <article class="research-main">
-            <h3>项目背景与当前工作</h3>
+            <h3>最优学习率的唯一性、非唯一性与扰动稳定性</h3>
 
             <p class="meta">
               机器学习数学理论研究项目 · 指导教师：
@@ -1074,75 +1083,80 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >刘方辉教授</a>
+              · 研究手稿 · 2026
             </p>
 
-            <div class="research-label">Background</div>
+            <div class="research-label">研究背景</div>
 
             <p>
-              Maximal Update Parametrization（µP）旨在使神经网络在宽度增加时
-              仍保持非平凡的 feature learning。其重要经验现象之一是超参数迁移：
-              在较小模型上调出的学习率，有可能直接迁移到更宽的模型，
-              从而减少大规模模型的超参数搜索成本。
+              学习率迁移的严格表述不仅要求不同宽度下的损失曲线收敛，
+              还要求这些损失函数的最优学习率具有稳定的极限。
+              一次梯度更新后，极限损失具有较简单的二次结构；
+              但在两次更新后，第一步学习到的权重会进入第二步梯度，
+              从而产生真正非线性的学习率景观，最优解的唯一性也不再自动成立。
             </p>
+
+            <div class="research-label">研究模型</div>
 
             <p>
-              原论文从深度线性多层感知机出发，研究全批量梯度下降下的学习率迁移。
-              其核心思路是将固定训练步数后的网络输出表示为学习率的多项式，
-              再借助 Tensor Programs 分析损失函数及其最优学习率的无限宽极限。
-              原论文首先完整分析一步训练的情形，并进一步给出一般固定训练步数下的结论。
+              本研究考虑 µP 参数化下的深度线性神经网络，包含两个可训练的方阵、
+              两次同步全批量梯度更新、平方损失以及任意固定数量的训练样本。
+              这一模型足够简单，可以得到精确公式；同时又已经包含多步训练所产生的
+              非线性反馈，因此能够直接研究最优学习率的全局几何。
             </p>
 
-            <div class="research-label">My Work</div>
+            <div class="research-label">精确结构</div>
 
             <p>
-              我的工作主要对一般训练步数下的证明进行严格审查、补全与修正，
-              并重新界定定理的准确适用范围。
-              核心问题是逐步验证多项式结构、Tensor Program 表示、系数收敛、
-              紧区间一致收敛与 argmin 稳定性是否足以支持原文所声称的结论。
+              我推导了训练动力学的精确有限宽状态压缩，并得到任意固定样本数下的
+              确定性宽度极限。两步训练后的极限残差可以写成
+              数据 Gram 矩阵及其平方作用于标签向量的线性组合，
+              其系数是学习率的显式多项式。当相关数据方向非退化时，
+              极限残差具有精确五次次数，相应训练损失具有精确十次次数。
             </p>
 
-            <div class="research-label">Main Results</div>
+            <div class="research-label">主要结果</div>
 
             <ul class="result-list">
               <li>
-                给出与网络宽度无关的多项式次数上界，
-                将不同宽度下的训练轨迹统一到有限维系数空间中。
+                对任意固定样本数推导精确有限宽压缩和确定性两步宽度极限，
+                从而获得残差与损失关于学习率的闭式多项式表达。
               </li>
 
               <li>
-                构造完整的 full-batch gradient-descent Tensor Program，
-                并逐项验证 Tensor Programs IV Master Theorem 的假设。
+                证明当样本数至少为二且数据 Gram 矩阵正定时，
+                最优学习率在一个开稠密、满测度的数据集合上是唯一的；
+                因而唯一性是泛型现象，但不是无条件结论。
               </li>
 
               <li>
-                通过有限学习率取值与 Vandermonde inversion 证明多项式系数收敛，
-                从而得到输出、损失与固定阶导数在紧区间上的一致收敛。
+                证明最小的单样本模型已经可以出现至少三个不同的正全局最优学习率，
+                并进一步构造满秩、多样本的显式例外族，
+                其中极限损失恰有三个正的非退化全局极小值。
               </li>
 
               <li>
-                修正 compact argmin theorem，
-                并在极限损失具有唯一极小值的条件下，
-                完成 fixed-step compact-interval learning-rate transfer 的严格证明。
+                证明任意正定参数点都可以通过任意小的扰动逼近为具有唯一最优学习率的数据，
+                同时建立任意数据扰动下全局最优解集合的单侧稳定性。
               </li>
 
               <li>
-                构造深度线性神经网络模型内部的精确反例，
-                说明任意全局极小值选择并不一定发生学习率迁移。
-              </li>
-
-              <li>
-                证明极限损失的最优学习率可能不唯一，
-                并澄清一般训练步数下的收敛率需要额外的定量估计。
+                在唯一情形下得到紧学习率区间上的有限宽学习率迁移；
+                在非唯一情形下，每个孤立的非退化极小值都会产生相应的
+                有限宽局部极小值分支。
               </li>
             </ul>
 
-            <div class="research-links">
-              <a
-                href="https://arxiv.org/abs/2511.01734"
-                target="_blank"
-                rel="noopener noreferrer"
-              >查看原论文 →</a>
+            <div class="research-label">研究意义</div>
 
+            <p>
+              这些结果说明，最优学习率的唯一性在一般数据上具有稳定的泛型结构，
+              但特殊数据仍可能产生多个同深度的全局最优解。
+              因此，在非唯一情形下，正确的极限对象是整个最优解集合，
+              而不是任意选择的单个学习率常数。
+            </p>
+
+            <div class="research-links">
               <a
                 href="https://ins.sjtu.edu.cn/people/fanghui/"
                 target="_blank"
@@ -1151,90 +1165,59 @@
             </div>
           </article>
 
-          <aside class="research-status" aria-label="理论结论概览">
-            <h3>理论结论概览</h3>
+          <aside class="research-status" aria-label="研究概况">
+            <h3>研究概况</h3>
 
             <div class="status-item">
-              <small>Compact interval</small>
+              <small>Model</small>
 
-              <strong>在明确条件下成立</strong>
+              <strong>Two-step deep linear µP network</strong>
 
               <p>
-                固定训练步数、固定紧区间，并假设极限损失具有唯一最小值。
+                两个可训练矩阵、两次全批量梯度更新与任意固定样本数。
               </p>
             </div>
 
             <div class="status-item">
-              <small>Global argmin</small>
+              <small>Landscape</small>
 
-              <strong>任意选择一般不成立</strong>
+              <strong>Exact polynomial geometry</strong>
 
               <p>
-                有限宽模型可以出现逃向无穷远的全局极小值，
-                因此整个 argmin 集并不一致有界。
+                非退化情形下，极限残差为五次多项式，训练损失为十次多项式。
               </p>
             </div>
 
             <div class="status-item">
-              <small>Uniqueness</small>
+              <small>Generic Case</small>
 
-              <strong>并非自动成立</strong>
+              <strong>Unique global optimum</strong>
 
               <p>
-                即使在最简单的深度网络中，
-                极限损失也可能具有多个正的全局极小值。
+                对正定多样本数据，唯一性在开稠密、满测度意义下成立。
               </p>
             </div>
 
             <div class="status-item">
-              <small>Rates</small>
+              <small>Exceptional Case</small>
 
-              <strong>需要额外定量工具</strong>
+              <strong>Three global optima</strong>
 
               <p>
-                定性的 Tensor Program 极限本身不足以推出一般训练步数的收敛速度。
+                存在显式满秩数据族，使极限损失具有三个正全局最优学习率。
+              </p>
+            </div>
+
+            <div class="status-item">
+              <small>Stability</small>
+
+              <strong>Set-valued limit</strong>
+
+              <p>
+                非唯一情形应追踪整个最优解集合及其局部极小值分支。
               </p>
             </div>
           </aside>
-        </div>
-      </section>
-
-      <section id="projects" data-reveal>
-        <div class="section-head">
-          <span class="section-kicker">Selected Projects</span>
-          <h2>项目</h2>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card">
-            <h3>Learning-Rate Transfer under µP</h3>
-
-            <p class="meta">
-              机器学习数学理论 · 理论研究项目
-            </p>
-
-            <p>
-              在刘方辉教授指导下，对原论文的一般步数证明进行严格审查、
-              补全与修正，并进一步研究紧区间学习率迁移、
-              全局极小值反例、极限损失非唯一性和收敛率问题。
-            </p>
-
-            <a class="text-link" href="#research">
-              查看详细介绍 →
-            </a>
-          </article>
-
-          <article class="project-card">
-            <h3>大三 Essay</h3>
-
-            <p class="meta">
-              第三年学术论文计划
-            </p>
-
-            <p>
-              选题待定。
-            </p>
-          </article>
         </div>
       </section>
 
