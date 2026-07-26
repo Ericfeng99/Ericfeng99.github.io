@@ -458,6 +458,15 @@
       align-items: stretch;
     }
 
+    .experience-list {
+      display: grid;
+      gap: 24px;
+    }
+
+    .experience-head {
+      margin-bottom: 18px;
+    }
+
     .research-main,
     .research-status {
       border: 1px solid var(--line);
@@ -1153,20 +1162,13 @@
       </section>
 
       <section id="experience" data-reveal>
-        <div class="section-head">
+        <div class="section-head experience-head">
           <span class="section-kicker">Research Experience</span>
-          <h2>
-            <a
-              class="paper-title-link"
-              href="./two-step-optimal-learning-rate-geometry-under-mup.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              type="application/pdf"
-            >Two-Step Optimal Learning-Rate Geometry under µP</a>
-          </h2>
         </div>
 
-        <div class="research-feature">
+        <div class="experience-list">
+          <!-- Add future research experiences here by duplicating a research-feature block -->
+          <div class="research-feature">
           <article class="research-main">
             <h3>Generic Uniqueness, Exceptional Nonuniqueness, and Perturbative Stability</h3>
 
@@ -1246,6 +1248,7 @@
               <p>Stability under data perturbations and persistence of finite-width local-minimum branches.</p>
             </div>
           </aside>
+          </div>
         </div>
       </section>
 
