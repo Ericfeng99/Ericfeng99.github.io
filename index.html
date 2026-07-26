@@ -460,6 +460,15 @@
       align-items: stretch;
     }
 
+    .experience-list {
+      display: grid;
+      gap: 24px;
+    }
+
+    .experience-head {
+      margin-bottom: 18px;
+    }
+
     .research-main,
     .research-status {
       border: 1px solid var(--line);
@@ -1142,20 +1151,13 @@
       </section>
 
       <section id="experience" data-reveal>
-        <div class="section-head">
+        <div class="section-head experience-head">
           <span class="section-kicker">Research Experience</span>
-          <h2>
-            <a
-              class="paper-title-link"
-              href="./two-step-optimal-learning-rate-geometry-under-mup.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              type="application/pdf"
-            >Two-Step Optimal Learning-Rate Geometry under µP</a>
-          </h2>
         </div>
 
-        <div class="research-feature">
+        <div class="experience-list">
+          <!-- 后续科研经历可继续复制 research-feature 区块并添加在这里 -->
+          <div class="research-feature">
           <article class="research-main">
             <h3>最优学习率的唯一性、非唯一性与扰动稳定性</h3>
 
@@ -1229,6 +1231,7 @@
               <p>建立数据扰动下的最优解集合稳定性与有限宽局部极小值分支保持。</p>
             </div>
           </aside>
+          </div>
         </div>
       </section>
 
