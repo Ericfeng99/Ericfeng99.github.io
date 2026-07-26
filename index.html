@@ -651,14 +651,35 @@
     }
 
     .personal-card summary::after {
-      content: "+";
-      color: var(--blue);
-      font-size: 24px;
+      content: "展开详情 ↓";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      min-height: 38px;
+      padding: 0 15px;
+      border: 1px solid var(--blue);
+      border-radius: 999px;
+      background: var(--blue);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 750;
       line-height: 1;
+      white-space: nowrap;
+      transition:
+        transform 0.2s var(--ease),
+        background 0.2s ease,
+        box-shadow 0.2s var(--ease);
+    }
+
+    .personal-card summary:hover::after {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 7px 18px rgba(23, 63, 122, 0.18);
     }
 
     .personal-card[open] summary::after {
-      content: "−";
+      content: "收起详情 ↑";
     }
 
     .personal-card[open] summary {
@@ -896,6 +917,16 @@
       .button {
         width: 100%;
       }
+
+      .personal-card summary {
+        align-items: flex-start;
+      }
+
+      .personal-card summary::after {
+        min-height: 34px;
+        padding: 0 12px;
+        font-size: 12px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -932,7 +963,7 @@
           <a href="#about">关于</a>
           <a href="#interests">研究兴趣</a>
           <a href="#research">当前研究</a>
-          <a href="#urss">URSS科研</a>
+          <a href="#experience">科研经历</a>
           <a href="#notes">论文与笔记</a>
           <a href="#personal">个人</a>
           <a href="#contact">联系</a>
@@ -955,7 +986,7 @@
 
           <p class="intro-lead">
             我的研究方向是机器学习数学理论，关注机器学习模型背后的严格数学结构。
-            我已在刘方辉指导下完成一项关于 µP 学习率迁移的 URSS 科研，
+            我已在刘方辉指导下完成一项关于 µP 学习率迁移的理论研究，
             目前正在准备下一阶段的进阶研究。
           </p>
 
@@ -966,7 +997,7 @@
           </div>
 
           <div class="actions">
-            <a class="button" href="#urss">查看科研经历</a>
+            <a class="button" href="#experience">查看科研经历</a>
             <a class="button secondary" href="#contact">联系方式</a>
           </div>
         </div>
@@ -1004,7 +1035,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >刘方辉</a>
-              现为我的正式科研导师。我们已完成一项关于 µP 学习率迁移的 URSS 科研，
+              现为我的正式科研导师。我们已完成一项关于 µP 学习率迁移的理论研究，
               目前正在筹备下一阶段的进阶研究，具体题目将在确定后更新。
             </p>
 
@@ -1110,9 +1141,9 @@
         </article>
       </section>
 
-      <section id="urss" data-reveal>
+      <section id="experience" data-reveal>
         <div class="section-head">
-          <span class="section-kicker">Completed URSS Research</span>
+          <span class="section-kicker">Research Experience</span>
           <h2>
             <a
               class="paper-title-link"
@@ -1126,7 +1157,6 @@
 
         <div class="research-feature">
           <article class="research-main">
-            <span class="completed-badge">URSS科研 · 已完成</span>
             <h3>最优学习率的唯一性、非唯一性与扰动稳定性</h3>
 
             <p class="meta">
@@ -1178,7 +1208,7 @@
             </div>
           </article>
 
-          <aside class="research-status" aria-label="URSS科研概况">
+          <aside class="research-status" aria-label="科研项目概况">
             <h3>研究概况</h3>
 
             <div class="status-item">
@@ -1194,9 +1224,9 @@
             </div>
 
             <div class="status-item">
-              <small>Status</small>
-              <strong>URSS completed</strong>
-              <p>完整研究手稿与有限宽稳定性结论已完成。</p>
+              <small>Stability</small>
+              <strong>Argmin-set stability</strong>
+              <p>建立数据扰动下的最优解集合稳定性与有限宽局部极小值分支保持。</p>
             </div>
           </aside>
         </div>
@@ -1218,7 +1248,7 @@
               type="application/pdf"
             >Two-Step Optimal Learning-Rate Geometry under µP</a>
           </h3>
-          <p class="meta">URSS 科研论文 · 2026</p>
+          <p class="meta">机器学习理论研究论文 · 2026</p>
           <p>
             研究两步深度线性 µP 网络中最优学习率的泛型唯一性、
             结构化非唯一性与扰动稳定性。
