@@ -756,6 +756,46 @@
       padding: 5px;
     }
 
+
+    /* 全球访客 */
+
+    .visitor-card {
+      overflow: hidden;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      text-align: center;
+    }
+
+    .visitor-card > p {
+      max-width: 680px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+    }
+
+    .visitor-widget {
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: auto;
+      padding: 8px;
+    }
+
+    .visitor-widget > * {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .visitor-widget iframe,
+    .visitor-widget canvas,
+    .visitor-widget img,
+    .visitor-widget object,
+    .visitor-widget embed {
+      max-width: 100% !important;
+    }
+
     /* 联系 */
 
     .contact-grid {
@@ -1367,6 +1407,30 @@
             </p>
           </div>
         </div>
+      </section>
+
+
+      <section id="visitors">
+        <div class="section-head">
+          <span class="section-kicker">Visitors</span>
+          <h2>全球访客</h2>
+        </div>
+
+        <article class="visitor-card">
+          <p>
+            下方地球展示本站访客的大致地理分布。位置由 IP 地址近似推断，
+            不代表精确位置。
+          </p>
+
+          <div class="visitor-widget" aria-label="全球访客分布地球">
+            <script
+              type="text/javascript"
+              id="mmvst_globe"
+              src="https://mapmyvisitors.com/globe.js?d=5Q7E1M6Nuvz4TCTsK0dPLVj2bcum1BkLjtcaiboX8G8"
+            ></script>
+            <noscript>请启用 JavaScript 以查看全球访客分布。</noscript>
+          </div>
+        </article>
       </section>
 
       <footer>
