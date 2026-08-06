@@ -605,20 +605,22 @@
     }
 
 
-    .research-placeholder {
+    .current-research-card {
       padding: 30px;
-      border: 1px dashed rgba(23, 63, 122, 0.42);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--blue);
       border-radius: var(--radius);
       background: linear-gradient(135deg, #ffffff, var(--blue-soft));
+      box-shadow: 0 12px 30px rgba(22, 43, 72, 0.05);
     }
 
-    .research-placeholder .meta {
+    .current-research-card .meta {
       margin: 8px 0 0;
       color: var(--muted);
       font-size: 14px;
     }
 
-    .research-placeholder p:last-child {
+    .current-research-card p:last-child {
       margin-bottom: 0;
     }
 
@@ -994,15 +996,15 @@
           <p class="intro-subtitle">英国华威大学数学系本科生</p>
 
           <p class="intro-lead">
-            我的研究方向是机器学习数学理论，关注机器学习模型背后的严格数学结构。
+            我的研究方向是机器学习数学理论，关注神经网络训练背后的严格数学结构。
             我已在刘方辉指导下完成一项关于 µP 学习率迁移的理论研究，
-            目前正在准备下一阶段的进阶研究。
+            目前正围绕 Functional Scaling Law（FSL）与 µP 下的 WSD 学习率调度迁移开展进阶研究。
           </p>
 
           <div class="intro-meta" aria-label="研究标签">
             <span class="tag">机器学习数学理论</span>
-            <span class="tag">神经网络理论</span>
-            <span class="tag">优化动力学</span>
+            <span class="tag">Functional Scaling Laws</span>
+            <span class="tag">µP 与学习率调度迁移</span>
           </div>
 
           <div class="actions">
@@ -1044,8 +1046,9 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >刘方辉</a>
-              现为我的正式科研导师。我们已完成一项关于 µP 学习率迁移的理论研究，
-              目前正在筹备下一阶段的进阶研究，具体题目将在确定后更新。
+              现为我的正式科研导师。我们已完成一项关于 µP 学习率迁移的理论研究；
+              当前项目进一步研究 µP 下 WSD 学习率调度的跨宽度迁移，并结合
+              Functional Scaling Law 分析 peak learning rate、decay ratio 与训练时长的稳定性。
             </p>
 
             <p>
@@ -1068,7 +1071,7 @@
 
             <div class="quick-row">
               <strong>Current Focus</strong>
-              <span>机器学习数学理论</span>
+              <span>Functional Scaling Laws 与 µP 学习率调度迁移</span>
             </div>
 
             <div class="quick-row">
@@ -1096,32 +1099,32 @@
             <span class="interest-number">01</span>
             <h3>机器学习数学理论</h3>
             <p>
-              研究学习模型背后的严格数学性质，包括可证明性、泛化、
-              优化与尺度扩展规律。
+              研究学习模型背后的严格数学性质，包括泛化、优化、
+              可证明性与尺度扩展规律。
             </p>
           </article>
 
           <article class="interest-card">
             <span class="interest-number">02</span>
-            <h3>神经网络理论</h3>
+            <h3>神经网络、宽度缩放与 µP</h3>
             <p>
-              关注神经网络参数化、表示学习、宽度极限与训练动力学的理论结构。
+              关注参数化、特征学习、无限宽极限以及超参数的跨宽度迁移。
             </p>
           </article>
 
           <article class="interest-card">
             <span class="interest-number">03</span>
-            <h3>优化与学习动力学</h3>
+            <h3>Functional Scaling Laws 与学习率调度</h3>
             <p>
-              研究优化算法、超参数与模型训练轨迹之间的数学关系及其稳定性。
+              研究完整 loss trajectory、intrinsic time、WSD 调度及其尺度效率。
             </p>
           </article>
 
           <article class="interest-card">
             <span class="interest-number">04</span>
-            <h3>概率与渐近方法</h3>
+            <h3>优化动力学与概率方法</h3>
             <p>
-              使用概率、谱分析与渐近工具研究高维学习系统中的确定性极限与波动。
+              使用优化、概率、谱分析与渐近工具研究训练轨迹、稳定性和确定性极限。
             </p>
           </article>
         </div>
@@ -1133,8 +1136,8 @@
           <h2>当前研究</h2>
         </div>
 
-        <article class="research-placeholder">
-          <h3>研究题目待定</h3>
+        <article class="current-research-card">
+          <h3>µP 下的 Warmup–Stable–Decay 学习率调度迁移</h3>
           <p class="meta">
             机器学习数学理论 · 指导教师：
             <a
@@ -1142,10 +1145,15 @@
               target="_blank"
               rel="noopener noreferrer"
             >刘方辉</a>
-            · 准备中
+            · 进行中
           </p>
           <p>
-            下一阶段进阶科研正在筹备，具体题目与研究内容将在确定后添加。
+            本项目将 µP 下的单一最优学习率迁移推广到整条 WSD schedule 的跨宽度迁移，
+            重点研究 peak learning rate、final learning rate、decay ratio 与训练时长随模型宽度的稳定性。
+          </p>
+          <p>
+            研究结合 Functional Scaling Law 对完整 loss dynamics 与 intrinsic time 的刻画，
+            以及 µP 的宽度稳定训练动力学，旨在识别 schedule transfer 的成立区间、有限宽偏差与失效边界。
           </p>
         </article>
       </section>
