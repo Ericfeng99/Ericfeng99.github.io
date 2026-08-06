@@ -603,20 +603,22 @@
     }
 
 
-    .research-placeholder {
+    .current-research-card {
       padding: 30px;
-      border: 1px dashed rgba(23, 63, 122, 0.42);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--blue);
       border-radius: var(--radius);
       background: linear-gradient(135deg, #ffffff, var(--blue-soft));
+      box-shadow: 0 12px 30px rgba(22, 43, 72, 0.05);
     }
 
-    .research-placeholder .meta {
+    .current-research-card .meta {
       margin: 8px 0 0;
       color: var(--muted);
       font-size: 14px;
     }
 
-    .research-placeholder p:last-child {
+    .current-research-card p:last-child {
       margin-bottom: 0;
     }
 
@@ -992,17 +994,17 @@
           </p>
 
           <p class="intro-lead">
-            My research direction is machine learning theory, with an emphasis
-            on rigorous mathematical structures underlying learning systems.
-            I have completed a theoretical research project on µP learning-rate
-            transfer under the supervision of Fanghui Liu and am now preparing
-            for the next stage of advanced research.
+            My research focuses on the mathematical theory of machine learning,
+            especially rigorous structures underlying neural-network training.
+            After completing a theoretical project on µP learning-rate transfer
+            under the supervision of Fanghui Liu, I am now studying Functional
+            Scaling Laws and WSD schedule transfer under µP.
           </p>
 
           <div class="intro-meta" aria-label="Research tags">
             <span class="tag">Machine Learning Theory</span>
-            <span class="tag">Neural-Network Theory</span>
-            <span class="tag">Optimisation Dynamics</span>
+            <span class="tag">Functional Scaling Laws</span>
+            <span class="tag">µP and Schedule Transfer</span>
           </div>
 
           <div class="actions">
@@ -1046,10 +1048,11 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >Fanghui Liu</a>
-              is now my formal research supervisor. We have completed a
-              theoretical research project on learning-rate transfer under µP and are
-              preparing the next stage of advanced research. The specific topic
-              will be added once it is determined.
+              is my formal research supervisor. We have completed a theoretical
+              project on learning-rate transfer under µP. Our current project studies
+              cross-width transfer of WSD learning-rate schedules under µP, using
+              Functional Scaling Laws to analyse the stability of the peak rate,
+              decay ratio, and training horizon.
             </p>
 
             <p>
@@ -1073,7 +1076,7 @@
 
             <div class="quick-row">
               <strong>Current Focus</strong>
-              <span>Mathematical theory of machine learning</span>
+              <span>Functional Scaling Laws and µP schedule transfer</span>
             </div>
 
             <div class="quick-row">
@@ -1100,38 +1103,37 @@
         <div class="interest-grid">
           <article class="interest-card">
             <span class="interest-number">01</span>
-            <h3>Machine Learning Theory</h3>
+            <h3>Mathematical Machine Learning Theory</h3>
             <p>
-              Rigorous mathematical properties of learning models, including
-              provability, generalisation, optimisation, and scaling laws.
+              Rigorous properties of learning models, including generalisation,
+              optimisation, provability, and scaling behaviour.
             </p>
           </article>
 
           <article class="interest-card">
             <span class="interest-number">02</span>
-            <h3>Neural-Network Theory</h3>
+            <h3>Neural Networks, Width Scaling, and µP</h3>
             <p>
-              Parametrisation, representation learning, infinite-width limits,
-              and the mathematical structure of training dynamics.
+              Parametrisation, feature learning, infinite-width limits, and
+              cross-width transfer of hyperparameters.
             </p>
           </article>
 
           <article class="interest-card">
             <span class="interest-number">03</span>
-            <h3>Optimisation and Learning Dynamics</h3>
+            <h3>Functional Scaling Laws and LR Schedules</h3>
             <p>
-              Mathematical relations among optimisation algorithms,
-              hyperparameters, training trajectories, and stability.
+              Full loss trajectories, intrinsic time, WSD schedules, and the
+              scaling efficiency of learning-rate design.
             </p>
           </article>
 
           <article class="interest-card">
             <span class="interest-number">04</span>
-            <h3>Probabilistic and Asymptotic Methods</h3>
+            <h3>Optimisation Dynamics and Probabilistic Methods</h3>
             <p>
-              Probability, spectral analysis, and asymptotic tools for
-              deterministic limits and fluctuations in high-dimensional
-              learning systems.
+              Optimisation, probability, spectral analysis, and asymptotic tools
+              for training trajectories, stability, and deterministic limits.
             </p>
           </article>
         </div>
@@ -1143,8 +1145,8 @@
           <h2>Current Research</h2>
         </div>
 
-        <article class="research-placeholder">
-          <h3>Topic to be determined</h3>
+        <article class="current-research-card">
+          <h3>Warmup–Stable–Decay Schedule Transfer under µP</h3>
           <p class="meta">
             Machine Learning Theory · Supervised by
             <a
@@ -1152,11 +1154,17 @@
               target="_blank"
               rel="noopener noreferrer"
             >Fanghui Liu</a>
-            · In preparation
+            · Ongoing
           </p>
           <p>
-            The next stage of advanced research is being prepared. The topic
-            and research details will be added once they are determined.
+            This project extends scalar learning-rate transfer under µP to the
+            cross-width transfer of an entire WSD schedule, focusing on the peak
+            and final learning rates, decay ratio, and training horizon.
+          </p>
+          <p>
+            It combines the Functional Scaling Law description of full loss
+            dynamics and intrinsic time with width-stable µP dynamics, aiming to
+            identify transfer regimes, finite-width deviations, and failure boundaries.
           </p>
         </article>
       </section>
