@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <!-- Build: visitor-globe-v2-2026-08-07 -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -757,56 +756,6 @@
       padding: 5px;
     }
 
-
-    /* Visitor globe */
-
-    .visitor-card {
-      padding: 30px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--paper);
-      text-align: center;
-    }
-
-    .visitor-card > p {
-      max-width: 700px;
-      margin: 0 auto 22px;
-      color: var(--muted);
-    }
-
-    .visitor-widget {
-      width: 100%;
-      min-height: 320px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      padding: 8px;
-      border-radius: 14px;
-      background: var(--soft);
-    }
-
-    .visitor-widget iframe,
-    .visitor-widget canvas,
-    .visitor-widget img,
-    .visitor-widget object,
-    .visitor-widget embed {
-      display: block;
-      max-width: 100% !important;
-      margin: 0 auto !important;
-    }
-
-    @media (max-width: 760px) {
-      .visitor-card {
-        padding: 22px 14px;
-      }
-
-      .visitor-widget {
-        min-height: 260px;
-        overflow-x: auto;
-      }
-    }
-
     /* 联系 */
 
     .contact-grid {
@@ -1029,7 +978,6 @@
           <a href="#notes">论文与笔记</a>
           <a href="#personal">个人</a>
           <a href="#contact">联系</a>
-          <a href="#visitors">访客</a>
         </nav>
 
         <a class="lang-link" href="index-en.html">English</a>
@@ -1419,26 +1367,6 @@
             </p>
           </div>
         </div>
-      </section>
-
-
-      <!-- visitor-globe-v2-2026-08-07 -->
-      <section id="visitors" data-reveal>
-        <div class="section-head">
-          <span class="section-kicker">Visitors</span>
-          <h2>全球访客</h2>
-        </div>
-
-        <article class="visitor-card">
-          <p>
-            下方地球展示本站访客的大致地理分布。
-          </p>
-
-          <div class="visitor-widget" aria-label="全球访客分布">
-            <script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=5Q7E1M6Nuvz4TCTsK0dPLVj2bcum1BkLjtcaiboX8G8"></script>
-            <noscript>请启用 JavaScript 以查看全球访客分布。</noscript>
-          </div>
-        </article>
       </section>
 
       <footer>
