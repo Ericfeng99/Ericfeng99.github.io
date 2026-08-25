@@ -6,7 +6,7 @@
 
   <meta
     name="description"
-    content="冯思远，英国华威大学数学系本科生，研究方向为机器学习数学理论。"
+    content="冯思远，英国华威大学数学系本科生，研究方向为机器学习数学理论，主要研究 μP、神经网络训练动力学与学习率调度迁移。"
   />
 
   <title>冯思远 | 机器学习数学理论</title>
@@ -589,6 +589,10 @@
       color: #435064;
     }
 
+    .note-card + .note-card {
+      margin-top: 18px;
+    }
+
     .text-link {
       display: inline-flex;
       margin-top: 8px;
@@ -997,14 +1001,14 @@
 
           <p class="intro-lead">
             我的研究方向是机器学习数学理论，关注神经网络训练背后的严格数学结构。
-            我已在刘方辉指导下完成一项关于 µP 学习率迁移的理论研究，
-            目前正围绕 Functional Scaling Law（FSL）与 µP 下的 WSD 学习率调度迁移开展进阶研究。
+            在刘方辉教授指导下，我目前研究 μP 下 Warmup–Stable–Decay（WSD）
+            学习率调度在不同网络宽度与训练步数之间的迁移规律。
           </p>
 
           <div class="intro-meta" aria-label="研究标签">
             <span class="tag">机器学习数学理论</span>
-            <span class="tag">Functional Scaling Laws</span>
-            <span class="tag">µP 与学习率调度迁移</span>
+            <span class="tag">μP 与超参数迁移</span>
+            <span class="tag">WSD 学习率调度</span>
           </div>
 
           <div class="actions">
@@ -1037,7 +1041,7 @@
             <p>
               我是英国华威大学数学系本科生，未来研究领域聚焦于机器学习数学理论。
               我主要关注机器学习模型背后的严格数学性质，包括神经网络理论、
-              优化动力学、渐近行为与尺度扩展规律。
+              优化动力学、无限宽极限、超参数迁移与尺度扩展规律。
             </p>
 
             <p>
@@ -1046,9 +1050,10 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >刘方辉</a>
-              现为我的正式科研导师。我们已完成一项关于 µP 学习率迁移的理论研究；
-              当前项目进一步研究 µP 下 WSD 学习率调度的跨宽度迁移，并结合
-              Functional Scaling Law 分析 peak learning rate、decay ratio 与训练时长的稳定性。
+              现为我的正式科研导师。我们的当前研究将 μP 下的学习率迁移从单一
+              constant learning rate 推广到三参数 WSD schedule，并统一研究其跨网络宽度与
+              跨训练步数迁移。核心对象包括 peak learning rate、final learning rate、
+              decay fraction 以及最优调度随训练步数变化的轨迹。
             </p>
 
             <p>
@@ -1071,7 +1076,7 @@
 
             <div class="quick-row">
               <strong>Current Focus</strong>
-              <span>Functional Scaling Laws 与 µP 学习率调度迁移</span>
+              <span>μP 下 WSD 调度的跨宽度与跨训练步数迁移</span>
             </div>
 
             <div class="quick-row">
@@ -1099,32 +1104,32 @@
             <span class="interest-number">01</span>
             <h3>机器学习数学理论</h3>
             <p>
-              研究学习模型背后的严格数学性质，包括泛化、优化、
-              可证明性与尺度扩展规律。
+              研究学习模型背后的严格数学性质，包括优化、泛化、
+              渐近极限与尺度扩展规律。
             </p>
           </article>
 
           <article class="interest-card">
             <span class="interest-number">02</span>
-            <h3>神经网络、宽度缩放与 µP</h3>
+            <h3>神经网络、宽度缩放与 μP</h3>
             <p>
-              关注参数化、特征学习、无限宽极限以及超参数的跨宽度迁移。
+              关注参数化、特征学习、无限宽极限以及超参数的跨宽度稳定性。
             </p>
           </article>
 
           <article class="interest-card">
             <span class="interest-number">03</span>
-            <h3>Functional Scaling Laws 与学习率调度</h3>
+            <h3>学习率调度与超参数迁移</h3>
             <p>
-              研究完整 loss trajectory、intrinsic time、WSD 调度及其尺度效率。
+              研究 WSD 调度及其最优参数在不同网络宽度与训练步数之间的迁移规律。
             </p>
           </article>
 
           <article class="interest-card">
             <span class="interest-number">04</span>
-            <h3>优化动力学与概率方法</h3>
+            <h3>优化动力学与渐近方法</h3>
             <p>
-              使用优化、概率、谱分析与渐近工具研究训练轨迹、稳定性和确定性极限。
+              使用优化、概率、谱分析与渐近工具研究训练动力学、稳定性和确定性极限。
             </p>
           </article>
         </div>
@@ -1137,7 +1142,7 @@
         </div>
 
         <article class="current-research-card">
-          <h3>µP 下的 Warmup–Stable–Decay 学习率调度迁移</h3>
+          <h3>Warmup–Stable–Decay Schedule Transfer under μP Across Width and Training Steps</h3>
           <p class="meta">
             机器学习数学理论 · 指导教师：
             <a
@@ -1148,12 +1153,15 @@
             · 进行中
           </p>
           <p>
-            本项目将 µP 下的单一最优学习率迁移推广到整条 WSD schedule 的跨宽度迁移，
-            重点研究 peak learning rate、final learning rate、decay ratio 与训练时长随模型宽度的稳定性。
+            本项目将 μP 下的单一最优学习率迁移推广到三参数 WSD schedule，
+            统一研究整条调度在不同网络宽度与训练步数之间的迁移。
+            核心参数为 peak learning rate、final learning rate 与 decay fraction。
           </p>
           <p>
-            研究结合 Functional Scaling Law 对完整 loss dynamics 与 intrinsic time 的刻画，
-            以及 µP 的宽度稳定训练动力学，旨在识别 schedule transfer 的成立区间、有限宽偏差与失效边界。
+            在 deep nonlinear μP network 中，研究建立固定训练步数下的 compact-uniform
+            宽度极限，并由此刻画最优值、最优解集合、近最优调度与 source-to-target
+            performance 的跨宽度迁移；进一步研究最优 WSD 调度随训练步数变化的
+            可预测轨迹及其归一化规律。
           </p>
         </article>
       </section>
@@ -1161,10 +1169,82 @@
       <section id="experience" data-reveal>
         <div class="section-head experience-head">
           <span class="section-kicker">Research Experience</span>
+          <h2>科研经历</h2>
         </div>
 
         <div class="experience-list">
-          <!-- 后续科研经历可继续复制 research-feature 区块并添加在这里 -->
+          <div class="research-feature">
+          <article class="research-main">
+            <h3>Warmup–Stable–Decay Schedule Transfer under μP Across Width and Training Steps</h3>
+
+            <p class="meta">
+              指导教师：
+              <a
+                href="https://ins.sjtu.edu.cn/people/fanghui/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >刘方辉</a>
+              · 研究手稿 · 2026
+            </p>
+
+            <p>
+              本项目研究 deep nonlinear μP network 中三参数 WSD 学习率调度的迁移，
+              将固定训练步数下的跨宽度理论与最优调度随训练步数变化的规律统一起来。
+            </p>
+
+            <ul class="result-list">
+              <li>
+                建立固定训练步数下 WSD 目标函数在三维参数空间上的 compact-uniform
+                无限宽极限，并得到最优值与最优解集合的跨宽度迁移。
+              </li>
+              <li>
+                从参数、调度函数与 transferred performance 三个层面刻画迁移，
+                包括近最优集合控制与 source-to-target performance guarantee。
+              </li>
+              <li>
+                研究训练步数变化时的最优 WSD 参数轨迹，建立 finite-action
+                normalization、variational transfer 与 first-correction 理论。
+              </li>
+            </ul>
+
+            <p>
+              该研究将 μP 超参数迁移从单一学习率推广到整条学习率调度，
+              并说明 transfer 可以表现为最优调度随训练步数发生系统而可预测的变化。
+            </p>
+
+            <div class="research-links">
+              <a href="#research">查看项目概述 →</a>
+              <a
+                href="https://ins.sjtu.edu.cn/people/fanghui/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >导师主页 →</a>
+            </div>
+          </article>
+
+          <aside class="research-status" aria-label="WSD 科研项目概况">
+            <h3>研究概况</h3>
+
+            <div class="status-item">
+              <small>Model</small>
+              <strong>Deep nonlinear μP network</strong>
+              <p>三参数 WSD schedule 与全批量梯度下降。</p>
+            </div>
+
+            <div class="status-item">
+              <small>Width Transfer</small>
+              <strong>Compact-uniform convergence</strong>
+              <p>刻画最优解集合、近最优调度与跨宽度 performance transfer。</p>
+            </div>
+
+            <div class="status-item">
+              <small>Training Steps</small>
+              <strong>Optimal-schedule trajectory</strong>
+              <p>研究最优 WSD 参数随训练步数变化的归一化轨迹。</p>
+            </div>
+          </aside>
+          </div>
+
           <div class="research-feature">
           <article class="research-main">
             <h3>最优学习率的唯一性、非唯一性与扰动稳定性</h3>
@@ -1176,7 +1256,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >刘方辉</a>
-              · 研究手稿 · 2026
+              · URSS 研究项目 · 2026
             </p>
 
             <p>
@@ -1250,6 +1330,15 @@
         </div>
 
         <article class="note-card">
+          <h3>Warmup–Stable–Decay Schedule Transfer under μP Across Width and Training Steps</h3>
+          <p class="meta">机器学习理论研究手稿 · 2026</p>
+          <p>
+            研究 deep nonlinear μP network 中三参数 WSD 学习率调度在不同网络宽度与
+            训练步数之间的迁移，以及最优调度参数的可预测变化规律。
+          </p>
+        </article>
+
+        <article class="note-card">
           <h3>
             <a
               class="paper-title-link"
@@ -1259,7 +1348,7 @@
               type="application/pdf"
             >Two-Step Optimal Learning-Rate Geometry under µP</a>
           </h3>
-          <p class="meta">机器学习理论研究论文 · 2026</p>
+          <p class="meta">URSS 机器学习理论研究项目 · 2026</p>
           <p>
             研究两步深度线性 µP 网络中最优学习率的泛型唯一性、
             结构化非唯一性与扰动稳定性。
