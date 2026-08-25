@@ -6,7 +6,7 @@
 
   <meta
     name="description"
-    content="Siyuan Feng, a Mathematics undergraduate at the University of Warwick working in machine learning theory."
+    content="Siyuan Feng, a Mathematics undergraduate at the University of Warwick working on μP, neural-network training dynamics, and learning-rate schedule transfer."
   />
 
   <title>Siyuan Feng | Machine Learning Theory</title>
@@ -587,6 +587,10 @@
       color: #435064;
     }
 
+    .note-card + .note-card {
+      margin-top: 18px;
+    }
+
     .text-link {
       display: inline-flex;
       margin-top: 8px;
@@ -996,15 +1000,15 @@
           <p class="intro-lead">
             My research focuses on the mathematical theory of machine learning,
             especially rigorous structures underlying neural-network training.
-            After completing a theoretical project on µP learning-rate transfer
-            under the supervision of Fanghui Liu, I am now studying Functional
-            Scaling Laws and WSD schedule transfer under µP.
+            Under the supervision of Fanghui Liu, I currently study the transfer
+            of Warmup–Stable–Decay (WSD) learning-rate schedules under μP across
+            network widths and training steps.
           </p>
 
           <div class="intro-meta" aria-label="Research tags">
             <span class="tag">Machine Learning Theory</span>
-            <span class="tag">Functional Scaling Laws</span>
-            <span class="tag">µP and Schedule Transfer</span>
+            <span class="tag">μP and Hyperparameter Transfer</span>
+            <span class="tag">WSD Learning-Rate Schedules</span>
           </div>
 
           <div class="actions">
@@ -1039,7 +1043,7 @@
               with a long-term research focus on machine learning theory. I am
               primarily interested in rigorous mathematical properties of
               learning systems, including neural-network theory, optimisation
-              dynamics, asymptotic behaviour, and scaling laws.
+              dynamics, infinite-width limits, hyperparameter transfer, and scaling laws.
             </p>
 
             <p>
@@ -1048,11 +1052,11 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >Fanghui Liu</a>
-              is my formal research supervisor. We have completed a theoretical
-              project on learning-rate transfer under µP. Our current project studies
-              cross-width transfer of WSD learning-rate schedules under µP, using
-              Functional Scaling Laws to analyse the stability of the peak rate,
-              decay ratio, and training horizon.
+              is my formal research supervisor. Our current work extends learning-rate
+              transfer under μP from a single constant learning rate to a three-parameter
+              WSD schedule, and studies transfer jointly across network widths and training
+              steps. The main objects are the peak learning rate, final learning rate,
+              decay fraction, and the trajectory of optimal schedules as training steps vary.
             </p>
 
             <p>
@@ -1076,7 +1080,7 @@
 
             <div class="quick-row">
               <strong>Current Focus</strong>
-              <span>Functional Scaling Laws and µP schedule transfer</span>
+              <span>WSD transfer under μP across width and training steps</span>
             </div>
 
             <div class="quick-row">
@@ -1105,35 +1109,35 @@
             <span class="interest-number">01</span>
             <h3>Mathematical Machine Learning Theory</h3>
             <p>
-              Rigorous properties of learning models, including generalisation,
-              optimisation, provability, and scaling behaviour.
+              Rigorous properties of learning models, including optimisation,
+              generalisation, asymptotic limits, and scaling behaviour.
             </p>
           </article>
 
           <article class="interest-card">
             <span class="interest-number">02</span>
-            <h3>Neural Networks, Width Scaling, and µP</h3>
+            <h3>Neural Networks, Width Scaling, and μP</h3>
             <p>
               Parametrisation, feature learning, infinite-width limits, and
-              cross-width transfer of hyperparameters.
+              the cross-width stability of hyperparameters.
             </p>
           </article>
 
           <article class="interest-card">
             <span class="interest-number">03</span>
-            <h3>Functional Scaling Laws and LR Schedules</h3>
+            <h3>Learning-Rate Schedules and Hyperparameter Transfer</h3>
             <p>
-              Full loss trajectories, intrinsic time, WSD schedules, and the
-              scaling efficiency of learning-rate design.
+              WSD schedules and the transfer of their optimal parameters across
+              network widths and training steps.
             </p>
           </article>
 
           <article class="interest-card">
             <span class="interest-number">04</span>
-            <h3>Optimisation Dynamics and Probabilistic Methods</h3>
+            <h3>Optimisation Dynamics and Asymptotic Methods</h3>
             <p>
               Optimisation, probability, spectral analysis, and asymptotic tools
-              for training trajectories, stability, and deterministic limits.
+              for training dynamics, stability, and deterministic limits.
             </p>
           </article>
         </div>
@@ -1146,7 +1150,7 @@
         </div>
 
         <article class="current-research-card">
-          <h3>Warmup–Stable–Decay Schedule Transfer under µP</h3>
+          <h3>Warmup–Stable–Decay Schedule Transfer under μP Across Width and Training Steps</h3>
           <p class="meta">
             Machine Learning Theory · Supervised by
             <a
@@ -1157,14 +1161,17 @@
             · Ongoing
           </p>
           <p>
-            This project extends scalar learning-rate transfer under µP to the
-            cross-width transfer of an entire WSD schedule, focusing on the peak
-            and final learning rates, decay ratio, and training horizon.
+            This project extends scalar learning-rate transfer under μP to a
+            three-parameter WSD schedule and develops a unified account of schedule
+            transfer across network widths and training steps. The key parameters
+            are the peak learning rate, final learning rate, and decay fraction.
           </p>
           <p>
-            It combines the Functional Scaling Law description of full loss
-            dynamics and intrinsic time with width-stable µP dynamics, aiming to
-            identify transfer regimes, finite-width deviations, and failure boundaries.
+            For deep nonlinear μP networks, the project develops a compact-uniform
+            width limit at fixed training steps, yielding transfer results for optimal
+            values, optimiser sets, near-optimal schedules, and source-to-target
+            performance. It then studies predictable trajectories and normalised laws
+            for optimal WSD schedules as the number of training steps changes.
           </p>
         </article>
       </section>
@@ -1172,10 +1179,86 @@
       <section id="experience" data-reveal>
         <div class="section-head experience-head">
           <span class="section-kicker">Research Experience</span>
+          <h2>Research Experience</h2>
         </div>
 
         <div class="experience-list">
-          <!-- Add future research experiences here by duplicating a research-feature block -->
+          <div class="research-feature">
+          <article class="research-main">
+            <h3>Warmup–Stable–Decay Schedule Transfer under μP Across Width and Training Steps</h3>
+
+            <p class="meta">
+              Supervised by
+              <a
+                href="https://ins.sjtu.edu.cn/people/fanghui/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Fanghui Liu</a>
+              · Research manuscript · 2026
+            </p>
+
+            <p>
+              This project studies the transfer of three-parameter WSD learning-rate
+              schedules in deep nonlinear μP networks, unifying cross-width theory at
+              fixed training steps with the evolution of optimal schedules across training steps.
+            </p>
+
+            <ul class="result-list">
+              <li>
+                Established a compact-uniform infinite-width limit for the WSD objective
+                on its three-dimensional parameter space at fixed training steps, yielding
+                transfer of optimal values and optimiser sets across widths.
+              </li>
+              <li>
+                Characterised transfer at the levels of parameters, schedule functions,
+                and performance, including near-optimal-set control and source-to-target
+                performance guarantees.
+              </li>
+              <li>
+                Studied trajectories of optimal WSD parameters across training steps through
+                finite-action normalisation, variational transfer, and first-correction theory.
+              </li>
+            </ul>
+
+            <p>
+              The project extends μP hyperparameter transfer from a single learning rate
+              to an entire schedule and shows how transfer can take the form of systematic,
+              predictable changes in the optimal schedule across training steps.
+            </p>
+
+            <div class="research-links">
+              <a href="#research">View project overview →</a>
+              <a
+                href="https://ins.sjtu.edu.cn/people/fanghui/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Supervisor's page →</a>
+            </div>
+          </article>
+
+          <aside class="research-status" aria-label="WSD research project overview">
+            <h3>Research Overview</h3>
+
+            <div class="status-item">
+              <small>Model</small>
+              <strong>Deep nonlinear μP network</strong>
+              <p>Three-parameter WSD schedules with full-batch gradient descent.</p>
+            </div>
+
+            <div class="status-item">
+              <small>Width Transfer</small>
+              <strong>Compact-uniform convergence</strong>
+              <p>Optimiser sets, near-optimal schedules, and cross-width performance transfer.</p>
+            </div>
+
+            <div class="status-item">
+              <small>Training Steps</small>
+              <strong>Optimal-schedule trajectory</strong>
+              <p>Normalised trajectories of optimal WSD parameters across training steps.</p>
+            </div>
+          </aside>
+          </div>
+
           <div class="research-feature">
           <article class="research-main">
             <h3>Generic Uniqueness, Exceptional Nonuniqueness, and Perturbative Stability</h3>
@@ -1187,7 +1270,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >Fanghui Liu</a>
-              · Research manuscript · 2026
+              · URSS research project · 2026
             </p>
 
             <p>
@@ -1267,6 +1350,16 @@
         </div>
 
         <article class="note-card">
+          <h3>Warmup–Stable–Decay Schedule Transfer under μP Across Width and Training Steps</h3>
+          <p class="meta">Machine learning theory research manuscript · 2026</p>
+          <p>
+            A study of three-parameter WSD learning-rate schedule transfer in deep
+            nonlinear μP networks across network widths and training steps, including
+            predictable trajectories of optimal schedule parameters.
+          </p>
+        </article>
+
+        <article class="note-card">
           <h3>
             <a
               class="paper-title-link"
@@ -1276,7 +1369,7 @@
               type="application/pdf"
             >Two-Step Optimal Learning-Rate Geometry under µP</a>
           </h3>
-          <p class="meta">Machine learning theory research paper · 2026</p>
+          <p class="meta">URSS machine learning theory research project · 2026</p>
           <p>
             A study of generic uniqueness, structured nonuniqueness, and
             perturbative stability of optimal learning rates in a two-step deep
