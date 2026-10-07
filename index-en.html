@@ -452,10 +452,7 @@
     /* Current research */
 
     .research-feature {
-      display: grid;
-      grid-template-columns: minmax(0, 1.42fr) minmax(285px, 0.58fr);
-      gap: 22px;
-      align-items: stretch;
+      display: block;
     }
 
     .experience-list {
@@ -467,8 +464,7 @@
       margin-bottom: 18px;
     }
 
-    .research-main,
-    .research-status {
+    .research-main {
       border: 1px solid var(--line);
       border-radius: 20px;
     }
@@ -516,49 +512,6 @@
       font-weight: 700;
     }
 
-    .research-status {
-      padding: 28px;
-      background: linear-gradient(180deg, var(--blue-dark), #0c2346);
-      color: #ffffff;
-    }
-
-    .research-status h3 {
-      color: #ffffff;
-      font-size: 19px;
-    }
-
-    .status-item {
-      padding: 19px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
-    .status-item:last-child {
-      padding-bottom: 0;
-      border-bottom: 0;
-    }
-
-    .status-item small {
-      display: block;
-      margin-bottom: 5px;
-      color: #aebcd0;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .status-item strong {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 17px;
-    }
-
-    .status-item p {
-      margin: 0;
-      color: #c9d3df;
-      font-size: 14px;
-    }
-
     /* Projects and notes */
 
     .project-grid {
@@ -567,28 +520,21 @@
       gap: 18px;
     }
 
-    .project-card,
-    .note-card {
+    .project-card {
       padding: 26px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: var(--paper);
     }
 
-    .project-card .meta,
-    .note-card .meta {
+    .project-card .meta {
       margin: 8px 0 14px;
       color: var(--muted);
       font-size: 13px;
     }
 
-    .project-card p,
-    .note-card p {
+    .project-card p {
       color: #435064;
-    }
-
-    .note-card + .note-card {
-      margin-top: 18px;
     }
 
     .text-link {
@@ -596,14 +542,6 @@
       margin-top: 8px;
       font-size: 14px;
       font-weight: 750;
-    }
-
-    .paper-title-link {
-      color: inherit;
-    }
-
-    .paper-title-link:hover {
-      color: var(--blue);
     }
 
 
@@ -818,8 +756,7 @@
         gap: 38px;
       }
 
-      .about-grid,
-      .research-feature {
+      .about-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -893,10 +830,8 @@
       }
 
       .research-main,
-      .research-status,
       .panel,
-      .project-card,
-      .note-card {
+      .project-card {
         padding: 23px;
       }
     }
@@ -973,7 +908,6 @@
           <a href="#interests">Research Interests</a>
           <a href="#research">Current Research</a>
           <a href="#experience">Research Experience</a>
-          <a href="#notes">Essays & Notes</a>
           <a href="#personal">Personal</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -1052,11 +986,12 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >Fanghui Liu</a>
-              is my formal research supervisor. Our current work extends learning-rate
-              transfer under μP from a single constant learning rate to a three-parameter
-              WSD schedule, and studies transfer jointly across network widths and training
-              steps. The main objects are the peak learning rate, final learning rate,
-              decay fraction, and the trajectory of optimal schedules as training steps vary.
+              is my formal research supervisor. Our current research investigates
+              the transfer of three-parameter WSD learning-rate schedules under μP.
+              A central idea is cumulative-learning-rate normalisation, which puts
+              different step counts into a shared dynamical coordinate system and
+              enables prediction of longer-run objectives from shorter reference runs,
+              alongside transfer across model widths.
             </p>
 
             <p>
@@ -1161,17 +1096,20 @@
             · Ongoing
           </p>
           <p>
-            This project extends scalar learning-rate transfer under μP to a
-            three-parameter WSD schedule and develops a unified account of schedule
-            transfer across network widths and training steps. The key parameters
-            are the peak learning rate, final learning rate, and decay fraction.
+            The central idea of this project is a cumulative-learning-rate normalisation
+            of WSD schedules. It places different training-step counts in a common dynamical
+            coordinate system, while the final-to-peak ratio and decay fraction retain the
+            schedule shape. This avoids directly comparing raw learning-rate parameters
+            that no longer represent equivalent training across different step counts.
           </p>
           <p>
-            For deep nonlinear μP networks, the project develops a compact-uniform
-            width limit at fixed training steps, yielding transfer results for optimal
-            values, optimiser sets, near-optimal schedules, and source-to-target
-            performance. It then studies predictable trajectories and normalised laws
-            for optimal WSD schedules as the number of training steps changes.
+            In these coordinates, we derive a finite-step expansion of the complete
+            three-parameter WSD objective with a uniform second-order remainder.
+            We rigorously show that one complete objective at a shorter step count
+            is generally insufficient to determine the objective at a longer target,
+            whereas two shorter-step reference objectives can predict the full target
+            objective with second-order accuracy under suitable regularity conditions.
+            We also connect cross-step prediction to fixed-step width stability under μP.
           </p>
         </article>
       </section>
@@ -1198,32 +1136,44 @@
             </p>
 
             <p>
-              This project studies the transfer of three-parameter WSD learning-rate
-              schedules in deep nonlinear μP networks, unifying cross-width theory at
-              fixed training steps with the evolution of optimal schedules across training steps.
+              Rather than extrapolating only a scalar optimal peak learning rate,
+              this project studies the complete objective over three-parameter WSD
+              schedules: why one short-run reference is generally insufficient, and
+              how two references can predict schedule performance at longer step counts.
             </p>
 
             <ul class="result-list">
               <li>
-                Established a compact-uniform infinite-width limit for the WSD objective
-                on its three-dimensional parameter space at fixed training steps, yielding
-                transfer of optimal values and optimiser sets across widths.
+                <strong>Normalisation and finite-step theory:</strong> Introduced
+                cumulative-learning-rate normalisation to express WSD schedules at
+                different step counts in shared coordinates (cumulative rate,
+                final-to-peak ratio, and decay fraction). Derived a finite-step expansion
+                of the complete WSD objective with a common leading term, a first
+                correction, and a uniform second-order remainder.
               </li>
               <li>
-                Characterised transfer at the levels of parameters, schedule functions,
-                and performance, including near-optimal-set control and source-to-target
-                performance guarantees.
+                <strong>One-reference impossibility and two-reference prediction:</strong>
+                Proved that even a complete objective at one reference step count
+                cannot generally determine the objective at another. Established
+                that two suitably separated shorter-step reference objectives remove
+                the leading first-order prediction error, recover the full longer-step
+                target objective with second-order accuracy, and control the resulting
+                target-performance error.
               </li>
               <li>
-                Studied trajectories of optimal WSD parameters across training steps through
-                finite-action normalisation, variational transfer, and first-correction theory.
+                <strong>Width transfer and further extensions:</strong> Connected
+                cross-step prediction to fixed-target-step width stability under μP
+                and quantified the normalisation restriction gap. Derived conditional
+                power/near-power scaling laws for the optimal peak learning rate from
+                objective geometry, together with deterministic bounds for the effects
+                of dataset mismatch on prediction and target performance.
               </li>
             </ul>
 
             <p>
-              The project extends μP hyperparameter transfer from a single learning rate
-              to an entire schedule and shows how transfer can take the form of systematic,
-              predictable changes in the optimal schedule across training steps.
+              The framework provides a mathematical explanation of why shorter-run
+              information can predict the full WSD landscape at longer training budgets,
+              offering a theoretical basis for reducing repeated target-scale tuning.
             </p>
 
             <div class="research-links">
@@ -1235,28 +1185,6 @@
               >Supervisor's page →</a>
             </div>
           </article>
-
-          <aside class="research-status" aria-label="WSD research project overview">
-            <h3>Research Overview</h3>
-
-            <div class="status-item">
-              <small>Model</small>
-              <strong>Deep nonlinear μP network</strong>
-              <p>Three-parameter WSD schedules with full-batch gradient descent.</p>
-            </div>
-
-            <div class="status-item">
-              <small>Width Transfer</small>
-              <strong>Compact-uniform convergence</strong>
-              <p>Optimiser sets, near-optimal schedules, and cross-width performance transfer.</p>
-            </div>
-
-            <div class="status-item">
-              <small>Training Steps</small>
-              <strong>Optimal-schedule trajectory</strong>
-              <p>Normalised trajectories of optimal WSD parameters across training steps.</p>
-            </div>
-          </aside>
           </div>
 
           <div class="research-feature">
@@ -1317,71 +1245,8 @@
               >Supervisor's page →</a>
             </div>
           </article>
-
-          <aside class="research-status" aria-label="Research project overview">
-            <h3>Research Overview</h3>
-
-            <div class="status-item">
-              <small>Model</small>
-              <strong>Two-step deep linear µP network</strong>
-              <p>Two trainable matrices and two full-batch gradient updates.</p>
-            </div>
-
-            <div class="status-item">
-              <small>Main Result</small>
-              <strong>Generic uniqueness</strong>
-              <p>Unique for generic positive-definite data, with three optima in a structured exceptional family.</p>
-            </div>
-
-            <div class="status-item">
-              <small>Stability</small>
-              <strong>Argmin-set stability</strong>
-              <p>Stability under data perturbations and persistence of finite-width local-minimum branches.</p>
-            </div>
-          </aside>
           </div>
         </div>
-      </section>
-
-      <section id="notes" data-reveal>
-        <div class="section-head">
-          <span class="section-kicker">Essays & Notes</span>
-          <h2>Essays & Notes</h2>
-        </div>
-
-        <article class="note-card">
-          <h3>Warmup–Stable–Decay Schedule Transfer under μP Across Width and Training Steps</h3>
-          <p class="meta">Machine learning theory research manuscript · 2026</p>
-          <p>
-            A study of three-parameter WSD learning-rate schedule transfer in deep
-            nonlinear μP networks across network widths and training steps, including
-            predictable trajectories of optimal schedule parameters.
-          </p>
-        </article>
-
-        <article class="note-card">
-          <h3>
-            <a
-              class="paper-title-link"
-              href="./two-step-optimal-learning-rate-geometry-under-mup.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              type="application/pdf"
-            >Two-Step Optimal Learning-Rate Geometry under µP</a>
-          </h3>
-          <p class="meta">URSS machine learning theory research project · 2026</p>
-          <p>
-            A study of generic uniqueness, structured nonuniqueness, and
-            perturbative stability of optimal learning rates in a two-step deep
-            linear µP network.
-          </p>
-          <a
-            class="text-link"
-            href="./two-step-optimal-learning-rate-geometry-under-mup.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >View paper PDF →</a>
-        </article>
       </section>
 
       <section id="personal" data-reveal>
