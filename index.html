@@ -454,10 +454,7 @@
     /* 当前研究 */
 
     .research-feature {
-      display: grid;
-      grid-template-columns: minmax(0, 1.42fr) minmax(285px, 0.58fr);
-      gap: 22px;
-      align-items: stretch;
+      display: block;
     }
 
     .experience-list {
@@ -469,8 +466,7 @@
       margin-bottom: 18px;
     }
 
-    .research-main,
-    .research-status {
+    .research-main {
       border: 1px solid var(--line);
       border-radius: 20px;
     }
@@ -518,49 +514,6 @@
       font-weight: 700;
     }
 
-    .research-status {
-      padding: 28px;
-      background: linear-gradient(180deg, var(--blue-dark), #0c2346);
-      color: #ffffff;
-    }
-
-    .research-status h3 {
-      color: #ffffff;
-      font-size: 19px;
-    }
-
-    .status-item {
-      padding: 19px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
-    .status-item:last-child {
-      padding-bottom: 0;
-      border-bottom: 0;
-    }
-
-    .status-item small {
-      display: block;
-      margin-bottom: 5px;
-      color: #aebcd0;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .status-item strong {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 17px;
-    }
-
-    .status-item p {
-      margin: 0;
-      color: #c9d3df;
-      font-size: 14px;
-    }
-
     /* 项目和论文 */
 
     .project-grid {
@@ -569,28 +522,21 @@
       gap: 18px;
     }
 
-    .project-card,
-    .note-card {
+    .project-card {
       padding: 26px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: var(--paper);
     }
 
-    .project-card .meta,
-    .note-card .meta {
+    .project-card .meta {
       margin: 8px 0 14px;
       color: var(--muted);
       font-size: 13px;
     }
 
-    .project-card p,
-    .note-card p {
+    .project-card p {
       color: #435064;
-    }
-
-    .note-card + .note-card {
-      margin-top: 18px;
     }
 
     .text-link {
@@ -598,14 +544,6 @@
       margin-top: 8px;
       font-size: 14px;
       font-weight: 750;
-    }
-
-    .paper-title-link {
-      color: inherit;
-    }
-
-    .paper-title-link:hover {
-      color: var(--blue);
     }
 
 
@@ -822,8 +760,7 @@
         gap: 38px;
       }
 
-      .about-grid,
-      .research-feature {
+      .about-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -899,10 +836,8 @@
       }
 
       .research-main,
-      .research-status,
       .panel,
-      .project-card,
-      .note-card {
+      .project-card {
         padding: 23px;
       }
     }
@@ -979,7 +914,6 @@
           <a href="#interests">研究兴趣</a>
           <a href="#research">当前研究</a>
           <a href="#experience">科研经历</a>
-          <a href="#notes">论文与笔记</a>
           <a href="#personal">个人</a>
           <a href="#contact">联系</a>
         </nav>
@@ -1050,10 +984,9 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >刘方辉</a>
-              现为我的正式科研导师。我们的当前研究将 μP 下的学习率迁移从单一
-              constant learning rate 推广到三参数 WSD schedule，并统一研究其跨网络宽度与
-              跨训练步数迁移。核心对象包括 peak learning rate、final learning rate、
-              decay fraction 以及最优调度随训练步数变化的轨迹。
+              现为我的正式科研导师。我们的当前研究聚焦于 μP 下三参数 WSD 学习率调度的迁移：
+              利用累计学习率归一化，将不同训练步数放在统一的动力学坐标中，
+              进而研究如何从较短训练的完整目标函数预测更长训练的目标函数，并衔接跨宽度迁移。
             </p>
 
             <p>
@@ -1153,15 +1086,16 @@
             · 进行中
           </p>
           <p>
-            本项目将 μP 下的单一最优学习率迁移推广到三参数 WSD schedule，
-            统一研究整条调度在不同网络宽度与训练步数之间的迁移。
-            核心参数为 peak learning rate、final learning rate 与 decay fraction。
+            本研究的核心是提出一种以累计学习率（cumulative learning rate）为基础的
+            WSD 调度归一化方法：将不同训练步数的调度置于统一的动力学坐标中，
+            同时以 final-to-peak ratio 和 decay fraction 保留调度形状，
+            从而避免直接比较不同训练预算下不再等价的原始学习率参数。
           </p>
           <p>
-            在 deep nonlinear μP network 中，研究建立固定训练步数下的 compact-uniform
-            宽度极限，并由此刻画最优值、最优解集合、近最优调度与 source-to-target
-            performance 的跨宽度迁移；进一步研究最优 WSD 调度随训练步数变化的
-            可预测轨迹及其归一化规律。
+            基于这一归一化坐标，我们推导了完整三参数 WSD 目标函数的有限步展开及一致二阶余项，
+            并严格证明：单个较短训练步数上的完整参考目标函数一般不足以确定更长训练步数上的目标；
+            而在相应正则性条件下，两个较短训练步数的参考目标函数可以以二阶精度预测完整的目标 WSD 函数。
+            进一步将跨步数预测与 μP 下固定训练步数的跨宽度稳定性衔接。
           </p>
         </article>
       </section>
@@ -1188,28 +1122,34 @@
             </p>
 
             <p>
-              本项目研究 deep nonlinear μP network 中三参数 WSD 学习率调度的迁移，
-              将固定训练步数下的跨宽度理论与最优调度随训练步数变化的规律统一起来。
+              与仅外推一个最优 peak learning rate 不同，本项目直接研究三参数 WSD 调度的
+              完整目标函数，并回答：为什么一个短训练 reference 一般不够，
+              以及两个 reference 如何预测更长训练步数下不同调度的表现。
             </p>
 
             <ul class="result-list">
               <li>
-                建立固定训练步数下 WSD 目标函数在三维参数空间上的 compact-uniform
-                无限宽极限，并得到最优值与最优解集合的跨宽度迁移。
+                <strong>归一化与有限步理论：</strong>提出 cumulative-learning-rate normalization，
+                将不同训练步数下的 WSD 调度表示为统一坐标（累计学习率、末端与峰值学习率之比、衰减比例），
+                并证明完整 WSD 目标函数具有共享主项、一阶校正及一致二阶余项的有限步展开。
               </li>
               <li>
-                从参数、调度函数与 transferred performance 三个层面刻画迁移，
-                包括近最优集合控制与 source-to-target performance guarantee。
+                <strong>单参考不足与双参考预测：</strong>严格证明单个训练步数上的完整参考目标函数
+                在一般情形下仍不能决定另一训练步数上的目标函数；
+                而两个相互分离的较短训练步数参考目标可消除主导的一阶预测误差，
+                以二阶精度预测更长训练步数上的完整目标函数，并控制预测调度的目标性能误差。
               </li>
               <li>
-                研究训练步数变化时的最优 WSD 参数轨迹，建立 finite-action
-                normalization、variational transfer 与 first-correction 理论。
+                <strong>跨宽度与进一步推广：</strong>将跨步数预测衔接至 μP 下固定目标步数的跨宽度稳定性，
+                分析归一化引入的搜索域限制差距（restriction gap）；
+                进一步从目标函数几何推导有条件的最优 peak learning-rate 幂律／近幂律，
+                并建立数据集偏移对预测误差与目标性能误差影响的确定性界。
               </li>
             </ul>
 
             <p>
-              该研究将 μP 超参数迁移从单一学习率推广到整条学习率调度，
-              并说明 transfer 可以表现为最优调度随训练步数发生系统而可预测的变化。
+              这一框架从数学上解释了短训练参考信息为何能够预测更长训练预算下的完整调度表现，
+              并为减少目标规模上的重复调参提供理论依据。
             </p>
 
             <div class="research-links">
@@ -1221,28 +1161,6 @@
               >导师主页 →</a>
             </div>
           </article>
-
-          <aside class="research-status" aria-label="WSD 科研项目概况">
-            <h3>研究概况</h3>
-
-            <div class="status-item">
-              <small>Model</small>
-              <strong>Deep nonlinear μP network</strong>
-              <p>三参数 WSD schedule 与全批量梯度下降。</p>
-            </div>
-
-            <div class="status-item">
-              <small>Width Transfer</small>
-              <strong>Compact-uniform convergence</strong>
-              <p>刻画最优解集合、近最优调度与跨宽度 performance transfer。</p>
-            </div>
-
-            <div class="status-item">
-              <small>Training Steps</small>
-              <strong>Optimal-schedule trajectory</strong>
-              <p>研究最优 WSD 参数随训练步数变化的归一化轨迹。</p>
-            </div>
-          </aside>
           </div>
 
           <div class="research-feature">
@@ -1297,69 +1215,8 @@
               >导师主页 →</a>
             </div>
           </article>
-
-          <aside class="research-status" aria-label="科研项目概况">
-            <h3>研究概况</h3>
-
-            <div class="status-item">
-              <small>Model</small>
-              <strong>Two-step deep linear µP network</strong>
-              <p>两个可训练矩阵与两次全批量梯度更新。</p>
-            </div>
-
-            <div class="status-item">
-              <small>Main Result</small>
-              <strong>Generic uniqueness</strong>
-              <p>一般正定数据下唯一，结构化例外中可出现三个全局最优解。</p>
-            </div>
-
-            <div class="status-item">
-              <small>Stability</small>
-              <strong>Argmin-set stability</strong>
-              <p>建立数据扰动下的最优解集合稳定性与有限宽局部极小值分支保持。</p>
-            </div>
-          </aside>
           </div>
         </div>
-      </section>
-
-      <section id="notes" data-reveal>
-        <div class="section-head">
-          <span class="section-kicker">Essays & Notes</span>
-          <h2>论文与笔记</h2>
-        </div>
-
-        <article class="note-card">
-          <h3>Warmup–Stable–Decay Schedule Transfer under μP Across Width and Training Steps</h3>
-          <p class="meta">机器学习理论研究手稿 · 2026</p>
-          <p>
-            研究 deep nonlinear μP network 中三参数 WSD 学习率调度在不同网络宽度与
-            训练步数之间的迁移，以及最优调度参数的可预测变化规律。
-          </p>
-        </article>
-
-        <article class="note-card">
-          <h3>
-            <a
-              class="paper-title-link"
-              href="./two-step-optimal-learning-rate-geometry-under-mup.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              type="application/pdf"
-            >Two-Step Optimal Learning-Rate Geometry under µP</a>
-          </h3>
-          <p class="meta">URSS 机器学习理论研究项目 · 2026</p>
-          <p>
-            研究两步深度线性 µP 网络中最优学习率的泛型唯一性、
-            结构化非唯一性与扰动稳定性。
-          </p>
-          <a
-            class="text-link"
-            href="./two-step-optimal-learning-rate-geometry-under-mup.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >查看论文 PDF →</a>
-        </article>
       </section>
 
       <section id="personal" data-reveal>
