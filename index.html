@@ -11,6 +11,18 @@
 
   <title>冯思远 | 机器学习数学理论</title>
 
+  <!-- Redirect only the directory-root URL to English. /index.html stays Chinese. -->
+  <script>
+    (() => {
+      if (window.location.pathname.endsWith("/")) {
+        const englishUrl = new URL("index-en.html", window.location.href);
+        englishUrl.search = window.location.search;
+        englishUrl.hash = window.location.hash;
+        window.location.replace(englishUrl.href);
+      }
+    })();
+  </script>
+
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="favicon.png" />
 
