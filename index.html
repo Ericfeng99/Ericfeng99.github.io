@@ -592,6 +592,82 @@
       text-transform: uppercase;
     }
 
+
+    /* Concise research portfolio */
+
+    .research-projects {
+      display: grid;
+      gap: 22px;
+    }
+
+    .research-projects .research-main {
+      padding: 30px;
+    }
+
+    .research-item-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .research-item-type {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .research-item-status {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 3px 11px;
+      background: var(--blue-soft);
+      color: var(--blue-dark);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .research-projects h3 {
+      font-size: clamp(19px, 2.2vw, 23px);
+      line-height: 1.4;
+      letter-spacing: -0.015em;
+    }
+
+    .research-projects .meta,
+    .research-projects .current-research-card .meta,
+    .research-projects .research-main .meta {
+      margin: 9px 0 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .research-projects .project-summary {
+      max-width: 930px;
+      margin: 0;
+      color: #3d4a5d;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .research-projects .research-links {
+      margin-top: 15px;
+    }
+
+    @media (max-width: 760px) {
+      .research-projects .current-research-card,
+      .research-projects .research-main {
+        padding: 23px;
+      }
+
+      .research-projects .project-summary {
+        font-size: 15px;
+      }
+    }
+
     /* 个人兴趣 */
 
     .personal-card {
@@ -924,8 +1000,7 @@
         <nav aria-label="网站导航">
           <a href="#about">关于</a>
           <a href="#interests">研究兴趣</a>
-          <a href="#research">当前研究</a>
-          <a href="#experience">科研经历</a>
+          <a href="#research">科研</a>
           <a href="#personal">个人</a>
           <a href="#contact">联系</a>
         </nav>
@@ -947,8 +1022,7 @@
 
           <p class="intro-lead">
             我的研究方向是机器学习数学理论，关注神经网络训练背后的严格数学结构。
-            在刘方辉教授指导下，我目前研究 μP 下 Warmup–Stable–Decay（WSD）
-            学习率调度在不同网络宽度与训练步数之间的迁移规律。
+            目前我与刘方辉教授合作研究 μP 下学习率调度的跨尺度迁移。
           </p>
 
           <div class="intro-meta" aria-label="研究标签">
@@ -958,7 +1032,7 @@
           </div>
 
           <div class="actions">
-            <a class="button" href="#experience">查看科研经历</a>
+            <a class="button" href="#research">查看科研项目</a>
             <a class="button secondary" href="#contact">联系方式</a>
           </div>
         </div>
@@ -991,14 +1065,8 @@
             </p>
 
             <p>
-              <a
-                href="https://ins.sjtu.edu.cn/people/fanghui/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >刘方辉</a>
-              现为我的科研导师。我们的当前研究聚焦于 μP 下三参数 WSD 学习率调度的迁移：
-              利用累计学习率归一化，将不同训练步数放在统一的动力学坐标中，
-              进而研究如何从较短训练的完整目标函数预测更长训练的目标函数，并衔接跨宽度迁移。
+              我与<a href="https://ins.sjtu.edu.cn/people/fanghui/" target="_blank" rel="noopener noreferrer">刘方辉</a>教授共同开展科研，
+              目前研究学习率调度在不同网络宽度与训练预算之间的迁移问题。
             </p>
 
             <p>
@@ -1082,152 +1150,40 @@
 
       <section id="research" data-reveal>
         <div class="section-head">
-          <span class="section-kicker">Current Research</span>
-          <h2>当前研究</h2>
+          <span class="section-kicker">Research</span>
+          <h2>科研</h2>
         </div>
 
-        <article class="current-research-card">
-          <h3>Warmup–Stable–Decay Schedule Transfer under μP Across Width and Training Steps</h3>
-          <p class="meta">
-            机器学习数学理论 · 指导教师：
-            <a
-              href="https://ins.sjtu.edu.cn/people/fanghui/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >刘方辉</a>
-            · 进行中
-          </p>
-          <p>
-            本研究的核心是提出一种以累计学习率（cumulative learning rate）为基础的
-            WSD 调度归一化方法：将不同训练步数的调度置于统一的动力学坐标中，
-            同时以 final-to-peak ratio 和 decay fraction 保留调度形状，
-            从而避免直接比较不同训练预算下不再等价的原始学习率参数。
-          </p>
-          <p>
-            基于这一归一化坐标，我们推导了完整三参数 WSD 目标函数的有限步展开及一致二阶余项，
-            并严格证明：单个较短训练步数上的完整参考目标函数一般不足以确定更长训练步数上的目标；
-            而在相应正则性条件下，两个较短训练步数的参考目标函数可以以二阶精度预测完整的目标 WSD 函数。
-            进一步将跨步数预测与 μP 下固定训练步数的跨宽度稳定性衔接。
-          </p>
-        </article>
-      </section>
-
-      <section id="experience" data-reveal>
-        <div class="section-head experience-head">
-          <span class="section-kicker">Research Experience</span>
-          <h2>科研经历</h2>
-        </div>
-
-        <div class="experience-list">
-          <div class="research-feature">
-          <article class="research-main">
-            <h3>Warmup–Stable–Decay Schedule Transfer under μP Across Width and Training Steps</h3>
-
+        <div class="research-projects">
+          <article class="current-research-card" aria-labelledby="current-project-title">
+            <div class="research-item-top">
+              <span class="research-item-type">当前研究</span>
+              <span class="research-item-status">进行中</span>
+            </div>
+            <h3 id="current-project-title">跨尺度 WSD 学习率调度迁移：μP 下的几何与预测</h3>
             <p class="meta">
-              指导教师：
-              <a
-                href="https://ins.sjtu.edu.cn/people/fanghui/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >刘方辉</a>
-              · 研究手稿 · 2026
+              共同作者：<a href="https://ins.sjtu.edu.cn/people/fanghui/" target="_blank" rel="noopener noreferrer">刘方辉</a>教授 · 2026 年至今
             </p>
-
-            <p>
-              与仅外推一个最优 peak learning rate 不同，本项目直接研究三参数 WSD 调度的
-              完整目标函数，并回答：为什么一个短训练 reference 一般不够，
-              以及两个 reference 如何预测更长训练步数下不同调度的表现。
+            <p class="project-summary">
+              我研究学习率调度在不同网络宽度和训练预算之间迁移的数学基础，重点关注优化动力学、尺度扩展规律以及 μP 在其中的作用。
             </p>
+          </article>
 
-            <ul class="result-list">
-              <li>
-                <strong>归一化与有限步理论：</strong>提出 cumulative-learning-rate normalization，
-                将不同训练步数下的 WSD 调度表示为统一坐标（累计学习率、末端与峰值学习率之比、衰减比例），
-                并证明完整 WSD 目标函数具有共享主项、一阶校正及一致二阶余项的有限步展开。
-              </li>
-              <li>
-                <strong>单参考不足与双参考预测：</strong>严格证明单个训练步数上的完整参考目标函数
-                在一般情形下仍不能决定另一训练步数上的目标函数；
-                而两个相互分离的较短训练步数参考目标可消除主导的一阶预测误差，
-                以二阶精度预测更长训练步数上的完整目标函数，并控制预测调度的目标性能误差。
-              </li>
-              <li>
-                <strong>跨宽度与进一步推广：</strong>将跨步数预测衔接至 μP 下固定目标步数的跨宽度稳定性，
-                分析归一化引入的搜索域限制差距（restriction gap）；
-                进一步从目标函数几何推导有条件的最优 peak learning-rate 幂律／近幂律，
-                并建立数据集偏移对预测误差与目标性能误差影响的确定性界。
-              </li>
-            </ul>
-
-            <p>
-              这一框架从数学上解释了短训练参考信息为何能够预测更长训练预算下的完整调度表现，
-              并为减少目标规模上的重复调参提供理论依据。
+          <article class="research-main" aria-labelledby="previous-project-title">
+            <div class="research-item-top">
+              <span class="research-item-type">过往研究 · URSS 2026</span>
+            </div>
+            <h3 id="previous-project-title">两步 μP 网络中的最优学习率几何</h3>
+            <p class="meta">
+              指导教师：<a href="https://ins.sjtu.edu.cn/people/fanghui/" target="_blank" rel="noopener noreferrer">刘方辉</a> · 2026
             </p>
-
+            <p class="project-summary">
+              研究两步深度线性 μP 网络中最优学习率的全局几何，证明其泛型唯一性，构造具有三个不同全局最优点的满秩例外情形，并建立扰动下的稳定性结果。
+            </p>
             <div class="research-links">
-              <a href="#research">查看项目概述 →</a>
-              <a
-                href="https://ins.sjtu.edu.cn/people/fanghui/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >导师主页 →</a>
+              <a href="./two-step-optimal-learning-rate-geometry-under-mup.pdf" target="_blank" rel="noopener noreferrer">查看论文 PDF →</a>
             </div>
           </article>
-          </div>
-
-          <div class="research-feature">
-          <article class="research-main">
-            <h3>最优学习率的唯一性、非唯一性与扰动稳定性</h3>
-
-            <p class="meta">
-              指导教师：
-              <a
-                href="https://ins.sjtu.edu.cn/people/fanghui/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >刘方辉</a>
-              · URSS 研究项目 · 2026
-            </p>
-
-            <p>
-              本项目研究两步深度线性 µP 网络中，宽度极限损失关于学习率的
-              全局几何。核心问题是：当不同宽度下的损失曲线趋于稳定后，
-              最优学习率是否会被唯一确定。
-            </p>
-
-            <ul class="result-list">
-              <li>
-                推导精确的有限宽状态压缩与两步宽度极限，并得到关于学习率的
-                显式多项式损失。
-              </li>
-              <li>
-                证明正定多样本数据下最优学习率泛型唯一，同时构造恰有三个
-                正非退化全局最优学习率的满秩例外族。
-              </li>
-              <li>
-                建立数据扰动下的最优解集合稳定性，以及有限宽局部极小值分支的保持。
-              </li>
-            </ul>
-
-            <p>
-              结果表明，唯一性是稳定的泛型现象，但并非无条件成立；
-              在例外情形下，应追踪完整的最优解集合而非任意单个学习率。
-            </p>
-
-            <div class="research-links">
-              <a
-                href="./two-step-optimal-learning-rate-geometry-under-mup.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >查看论文 PDF →</a>
-              <a
-                href="https://ins.sjtu.edu.cn/people/fanghui/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >导师主页 →</a>
-            </div>
-          </article>
-          </div>
         </div>
       </section>
 
