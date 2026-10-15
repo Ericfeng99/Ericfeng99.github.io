@@ -593,6 +593,82 @@
       text-transform: uppercase;
     }
 
+
+    /* Concise research portfolio */
+
+    .research-projects {
+      display: grid;
+      gap: 22px;
+    }
+
+    .research-projects .research-main {
+      padding: 30px;
+    }
+
+    .research-item-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .research-item-type {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .research-item-status {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 3px 11px;
+      background: var(--blue-soft);
+      color: var(--blue-dark);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .research-projects h3 {
+      font-size: clamp(19px, 2.2vw, 23px);
+      line-height: 1.4;
+      letter-spacing: -0.015em;
+    }
+
+    .research-projects .meta,
+    .research-projects .current-research-card .meta,
+    .research-projects .research-main .meta {
+      margin: 9px 0 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .research-projects .project-summary {
+      max-width: 930px;
+      margin: 0;
+      color: #3d4a5d;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .research-projects .research-links {
+      margin-top: 15px;
+    }
+
+    @media (max-width: 760px) {
+      .research-projects .current-research-card,
+      .research-projects .research-main {
+        padding: 23px;
+      }
+
+      .research-projects .project-summary {
+        font-size: 15px;
+      }
+    }
+
     /* Personal interests */
 
     .personal-card {
@@ -921,8 +997,7 @@
         <nav aria-label="Site navigation">
           <a href="#about">About</a>
           <a href="#interests">Research Interests</a>
-          <a href="#research">Current Research</a>
-          <a href="#experience">Research Experience</a>
+          <a href="#research">Research</a>
           <a href="#personal">Personal</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -949,9 +1024,8 @@
           <p class="intro-lead">
             My research focuses on the mathematical theory of machine learning,
             especially rigorous structures underlying neural-network training.
-            Under the supervision of Fanghui Liu, I currently study the transfer
-            of Warmup–Stable–Decay (WSD) learning-rate schedules under μP across
-            network widths and training steps.
+            I currently collaborate with Fanghui Liu on cross-scale learning-rate
+            schedule transfer under μP.
           </p>
 
           <div class="intro-meta" aria-label="Research tags">
@@ -961,7 +1035,7 @@
           </div>
 
           <div class="actions">
-            <a class="button" href="#experience">View Research</a>
+            <a class="button" href="#research">View Research</a>
             <a class="button secondary" href="#contact">Contact</a>
           </div>
         </div>
@@ -996,17 +1070,9 @@
             </p>
 
             <p>
-              <a
-                href="https://ins.sjtu.edu.cn/people/fanghui/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Fanghui Liu</a>
-              is my research supervisor. Our current research investigates
-              the transfer of three-parameter WSD learning-rate schedules under μP.
-              A central idea is cumulative-learning-rate normalisation, which puts
-              different step counts into a shared dynamical coordinate system and
-              enables prediction of longer-run objectives from shorter reference runs,
-              alongside transfer across model widths.
+              <a href="https://ins.sjtu.edu.cn/people/fanghui/" target="_blank" rel="noopener noreferrer">Fanghui Liu</a>
+              is my research supervisor and collaborator. Our work focuses on
+              learning-rate schedule transfer across network widths and training budgets.
             </p>
 
             <p>
@@ -1095,172 +1161,40 @@
 
       <section id="research" data-reveal>
         <div class="section-head">
-          <span class="section-kicker">Current Research</span>
-          <h2>Current Research</h2>
+          <span class="section-kicker">Research</span>
+          <h2>Research</h2>
         </div>
 
-        <article class="current-research-card">
-          <h3>Warmup–Stable–Decay Schedule Transfer under μP Across Width and Training Steps</h3>
-          <p class="meta">
-            Machine Learning Theory · Supervised by
-            <a
-              href="https://ins.sjtu.edu.cn/people/fanghui/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Fanghui Liu</a>
-            · Ongoing
-          </p>
-          <p>
-            The central idea of this project is a cumulative-learning-rate normalisation
-            of WSD schedules. It places different training-step counts in a common dynamical
-            coordinate system, while the final-to-peak ratio and decay fraction retain the
-            schedule shape. This avoids directly comparing raw learning-rate parameters
-            that no longer represent equivalent training across different step counts.
-          </p>
-          <p>
-            In these coordinates, we derive a finite-step expansion of the complete
-            three-parameter WSD objective with a uniform second-order remainder.
-            We rigorously show that one complete objective at a shorter step count
-            is generally insufficient to determine the objective at a longer target,
-            whereas two shorter-step reference objectives can predict the full target
-            objective with second-order accuracy under suitable regularity conditions.
-            We also connect cross-step prediction to fixed-step width stability under μP.
-          </p>
-        </article>
-      </section>
-
-      <section id="experience" data-reveal>
-        <div class="section-head experience-head">
-          <span class="section-kicker">Research Experience</span>
-          <h2>Research Experience</h2>
-        </div>
-
-        <div class="experience-list">
-          <div class="research-feature">
-          <article class="research-main">
-            <h3>Warmup–Stable–Decay Schedule Transfer under μP Across Width and Training Steps</h3>
-
+        <div class="research-projects">
+          <article class="current-research-card" aria-labelledby="current-project-title">
+            <div class="research-item-top">
+              <span class="research-item-type">Current Research</span>
+              <span class="research-item-status">Ongoing</span>
+            </div>
+            <h3 id="current-project-title">Cross-Scale WSD Schedule Transfer: Geometry and Prediction under μP</h3>
             <p class="meta">
-              Supervised by
-              <a
-                href="https://ins.sjtu.edu.cn/people/fanghui/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Fanghui Liu</a>
-              · Research manuscript · 2026
+              Co-authored with <a href="https://ins.sjtu.edu.cn/people/fanghui/" target="_blank" rel="noopener noreferrer">Fanghui Liu</a> · 2026–Present
             </p>
-
-            <p>
-              Rather than extrapolating only a scalar optimal peak learning rate,
-              this project studies the complete objective over three-parameter WSD
-              schedules: why one short-run reference is generally insufficient, and
-              how two references can predict schedule performance at longer step counts.
+            <p class="project-summary">
+              I study the mathematical foundations of learning-rate schedule transfer across network widths and training budgets, focusing on optimisation dynamics, scaling behaviour, and the role of μP.
             </p>
+          </article>
 
-            <ul class="result-list">
-              <li>
-                <strong>Normalisation and finite-step theory:</strong> Introduced
-                cumulative-learning-rate normalisation to express WSD schedules at
-                different step counts in shared coordinates (cumulative rate,
-                final-to-peak ratio, and decay fraction). Derived a finite-step expansion
-                of the complete WSD objective with a common leading term, a first
-                correction, and a uniform second-order remainder.
-              </li>
-              <li>
-                <strong>One-reference impossibility and two-reference prediction:</strong>
-                Proved that even a complete objective at one reference step count
-                cannot generally determine the objective at another. Established
-                that two suitably separated shorter-step reference objectives remove
-                the leading first-order prediction error, recover the full longer-step
-                target objective with second-order accuracy, and control the resulting
-                target-performance error.
-              </li>
-              <li>
-                <strong>Width transfer and further extensions:</strong> Connected
-                cross-step prediction to fixed-target-step width stability under μP
-                and quantified the normalisation restriction gap. Derived conditional
-                power/near-power scaling laws for the optimal peak learning rate from
-                objective geometry, together with deterministic bounds for the effects
-                of dataset mismatch on prediction and target performance.
-              </li>
-            </ul>
-
-            <p>
-              The framework provides a mathematical explanation of why shorter-run
-              information can predict the full WSD landscape at longer training budgets,
-              offering a theoretical basis for reducing repeated target-scale tuning.
+          <article class="research-main" aria-labelledby="previous-project-title">
+            <div class="research-item-top">
+              <span class="research-item-type">Previous Research · URSS 2026</span>
+            </div>
+            <h3 id="previous-project-title">Two-Step Optimal Learning-Rate Geometry under μP</h3>
+            <p class="meta">
+              Supervised by <a href="https://ins.sjtu.edu.cn/people/fanghui/" target="_blank" rel="noopener noreferrer">Fanghui Liu</a> · 2026
             </p>
-
+            <p class="project-summary">
+              Studied the global geometry of optimal learning rates in a two-step deep linear μP network. Proved generic uniqueness, constructed full-rank examples with three distinct global optima, and established stability under perturbations.
+            </p>
             <div class="research-links">
-              <a href="#research">View project overview →</a>
-              <a
-                href="https://ins.sjtu.edu.cn/people/fanghui/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Supervisor's page →</a>
+              <a href="./two-step-optimal-learning-rate-geometry-under-mup.pdf" target="_blank" rel="noopener noreferrer">View paper PDF →</a>
             </div>
           </article>
-          </div>
-
-          <div class="research-feature">
-          <article class="research-main">
-            <h3>Generic Uniqueness, Exceptional Nonuniqueness, and Perturbative Stability</h3>
-
-            <p class="meta">
-              Supervised by
-              <a
-                href="https://ins.sjtu.edu.cn/people/fanghui/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Fanghui Liu</a>
-              · URSS research project · 2026
-            </p>
-
-            <p>
-              This project studies the global geometry of the wide-limit loss
-              as a function of the learning rate in a two-step deep linear µP
-              network. The central question is whether width-stable loss curves
-              identify a unique optimal learning rate.
-            </p>
-
-            <ul class="result-list">
-              <li>
-                Derived an exact finite-width state compression and a closed
-                two-step wide limit, yielding an explicit polynomial loss in
-                the learning rate.
-              </li>
-              <li>
-                Proved generic uniqueness for positive-definite multisample
-                data and constructed a full-rank exceptional family with exactly
-                three positive nondegenerate global optima.
-              </li>
-              <li>
-                Established stability of the global optimiser set under data
-                perturbations and persistence of finite-width local-minimum
-                branches.
-              </li>
-            </ul>
-
-            <p>
-              The results show that uniqueness is a stable generic phenomenon
-              rather than an unconditional law. In exceptional cases, the
-              correct limiting object is the full optimiser set.
-            </p>
-
-            <div class="research-links">
-              <a
-                href="./two-step-optimal-learning-rate-geometry-under-mup.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >View paper PDF →</a>
-              <a
-                href="https://ins.sjtu.edu.cn/people/fanghui/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Supervisor's page →</a>
-            </div>
-          </article>
-          </div>
         </div>
       </section>
 
