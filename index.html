@@ -668,6 +668,47 @@
       }
     }
 
+
+    /* Teaching experience */
+
+    .teaching-card {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+
+    .teaching-card h3 {
+      font-size: clamp(19px, 2.2vw, 23px);
+      line-height: 1.4;
+      letter-spacing: -0.015em;
+    }
+
+    .teaching-card .meta {
+      margin: 9px 0 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .teaching-card .teaching-description {
+      max-width: 930px;
+      margin: 0;
+      color: #3d4a5d;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    @media (max-width: 760px) {
+      .teaching-card {
+        padding: 23px;
+      }
+
+      .teaching-card .teaching-description {
+        font-size: 15px;
+      }
+    }
+
     /* 个人兴趣 */
 
     .personal-card {
@@ -1001,6 +1042,7 @@
           <a href="#about">关于</a>
           <a href="#interests">研究兴趣</a>
           <a href="#research">研究经历</a>
+          <a href="#teaching">教学经历</a>
           <a href="#personal">个人</a>
           <a href="#contact">联系</a>
         </nav>
@@ -1021,7 +1063,7 @@
           <p class="intro-subtitle">英国华威大学数学系本科生</p>
 
           <p class="intro-lead">
-            我的研究方向是机器学习数学理论，尤其关注神经网络训练背后的严格数学结构。目前，我作为刘方辉教授研究组的一员，研究μP下学习率调度的跨尺度迁移，同时也开始与Ranko Lazić教授探索模型检查点平均与学习率衰减的相关理论问题。
+            我的研究方向是机器学习数学理论，尤其关注神经网络训练背后的严格数学结构。目前，我作为刘方辉教授研究组的一员，研究μP下学习率调度的跨尺度迁移，同时也开始与Ranko Lazić教授探索模型检查点平均与学习率衰减的相关理论问题。同时，我还在英国华威大学数学学院担任Graduate Teaching Assistant，负责为MORSE专业一年级本科生开展小组数学指导课（supervisions）。
           </p>
 
           <div class="intro-meta" aria-label="研究标签">
@@ -1060,7 +1102,7 @@
             <p>我是英国华威大学数学系本科生，研究方向聚焦于机器学习数学理论。我主要关注机器学习模型背后的严格数学性质，包括神经网络理论、优化动力学、无限宽极限、超参数迁移与尺度扩展规律。</p>
             <p>目前，我是<a href="https://ins.sjtu.edu.cn/people/fanghui/" target="_blank" rel="noopener noreferrer">刘方辉教授</a>研究组的成员，主要研究μP下学习率调度的跨尺度迁移。同时，我也开始在<a href="https://warwick.ac.uk/fac/sci/dcs/people/Ranko_Lazic/" target="_blank" rel="noopener noreferrer">Ranko Lazić教授</a>的指导下，探索模型检查点平均（checkpoint averaging）与学习率衰减之间的数学关系。</p>
             <p>在理论研究中，我尤其关注能够运用概率论、线性代数、优化理论与渐近分析进行严格研究的问题，希望为神经网络训练现象提供清晰、可验证的数学解释。</p>
-          
+            <p>在教学方面，我受聘于华威大学数学学院，担任Graduate Teaching Assistant，通过小组数学指导课和学术辅导参与本科数学教学。</p>
           </div>
 
           <div class="panel quick-list">
@@ -1075,8 +1117,8 @@
             </div>
 
             <div class="quick-row">
-              <strong>Current Focus</strong>
-              <span>学习率调度迁移 · 模型检查点平均</span>
+              <strong>Teaching</strong>
+              <span><a href="#teaching">Graduate Teaching Assistant</a></span>
             </div>
 
             <div class="quick-row">
@@ -1183,6 +1225,19 @@
             </div>
           </article>
         </div>
+      </section>
+
+      <section id="teaching" data-reveal>
+        <div class="section-head">
+          <span class="section-kicker">Teaching</span>
+          <h2>教学经历</h2>
+        </div>
+
+        <article class="teaching-card" aria-labelledby="teaching-position-title">
+          <h3 id="teaching-position-title">数学教学助教（Graduate Teaching Assistant）</h3>
+          <p class="meta">英国华威大学数学学院 · 2026年10月至今</p>
+          <p class="teaching-description">负责为MORSE专业一年级本科生开展每周小组数学指导课（supervisions），组织数学问题讨论、讲解基础理论与解题方法，并批改书面作业、提供针对性学术反馈。</p>
+        </article>
       </section>
 
       <section id="personal" data-reveal>
