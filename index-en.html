@@ -1,6 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Siyuan Feng | Machine Learning Theory</title><meta name="description" content="Siyuan Feng, Mathematics undergraduate at the University of Warwick. Research in machine learning theory, neural-network training dynamics, and hyperparameter transfer."><link rel="icon" href="favicon.png" type="image/png">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Siyuan Feng, a Mathematics undergraduate at the University of Warwick working on μP, neural-network training dynamics, and learning-rate schedule transfer." name="description"/>
+<title>Siyuan Feng | Machine Learning Theory</title>
+<!-- Search engine and social image metadata; does not change the visible page. -->
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<meta content="profile" property="og:type"/>
+<meta content="Siyuan Feng | Machine Learning Theory" property="og:title"/>
+<meta content="Siyuan Feng, a Mathematics undergraduate at the University of Warwick working on μP, neural-network training dynamics, and learning-rate schedule transfer." property="og:description"/>
+<meta content="https://siyuan-feng.com/" property="og:url"/>
+<meta content="https://siyuan-feng.com/profile.jpg" property="og:image"/>
+<meta content="Portrait of Siyuan Feng" property="og:image:alt"/>
+<meta content="en_GB" property="og:locale"/>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "url": "https://siyuan-feng.com/",
+      "inLanguage": "en-GB",
+      "mainEntity": {
+        "@type": "Person",
+        "@id": "https://siyuan-feng.com/#person",
+        "name": "Siyuan Feng",
+        "alternateName": "冯思远",
+        "url": "https://siyuan-feng.com/",
+        "image": "https://siyuan-feng.com/profile.jpg",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Warwick"
+        }
+      }
+    }
+  </script>
+<!-- Show the English homepage at the clean site-root URL. -->
+<script>
+    (() => {
+      if (!["http:", "https:"].includes(window.location.protocol)) return;
+      const pathname = window.location.pathname;
+      if (pathname.endsWith("/index-en.html")) {
+        const rootPath = pathname.slice(0, -"index-en.html".length);
+        window.history.replaceState(
+          window.history.state,
+          "",
+          rootPath + window.location.search + window.location.hash
+        );
+      }
+    })();
+  </script>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<link href="favicon.png" rel="apple-touch-icon"/>
+
 <style>
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:35px}body{margin:0;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}a:hover{text-decoration:underline}a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:5px}img,video{display:block;max-width:100%}p{margin:0 0 1em}h1,h2,h3{font-weight:500}h3{margin:0 0 8px;line-height:1.3}ul{padding-left:1.2em}nav a{text-decoration:none}.portrait{object-fit:cover;object-position:center 39%;flex-shrink:0}.skip-link{position:fixed;left:16px;top:-100px;z-index:999;background:var(--paper);padding:8px 16px}.skip-link:focus{top:10px}.quick-links,.contact-links{display:flex;flex-wrap:wrap;align-items:center;gap:22px}.quick-links a,.contact-links a{text-decoration:none}.date{color:var(--muted)}.project-description{margin-bottom:0}.mentor{color:var(--muted)}.section-num{display:none}.project{break-inside:avoid}.paper-link{margin-top:11px}.content-section{scroll-margin-top:30px}.section-body>p:last-child{margin-bottom:0}.personal-media{margin-top:20px}.personal-media summary{display:flex;justify-content:space-between;align-items:center;cursor:pointer;list-style:none;padding:12px 0;border-bottom:1px solid var(--line);color:var(--accent)}.personal-media summary::-webkit-details-marker{display:none}.personal-media summary span{display:inline-block;transition:transform .2s}.personal-media[open] summary span{transform:rotate(45deg)}.media-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding-top:20px}.media-grid figure{margin:0}.media-grid img,.media-grid video{width:100%;max-height:320px;object-fit:contain;background:transparent}.media-grid figcaption{font-size:12px;color:var(--muted);margin-top:8px}.contact-mail{overflow-wrap:anywhere}footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);color:var(--muted)}.footer-dot{padding:0 5px}.other-name{font-weight:400}.language-link{white-space:nowrap}html[lang=zh-CN] .intro-copy p{line-height:1.85}html[lang=zh-CN] h1{letter-spacing:.03em}html[lang=zh-CN] h1 .other-name{letter-spacing:0}
 @media(max-width:600px){.media-grid{grid-template-columns:1fr}footer{flex-direction:column;gap:5px}.quick-links{gap:19px}}
@@ -62,87 +114,220 @@ html[lang=zh-CN] .classic-main h1,html[lang=zh-CN] .section-title{font-family:Ge
  .classic-main h1{font-size:32px}.classic-main .other-name{font-size:18px}
 }
 
+
+
+/* Restored content, original site identity, and visible personal media. */
+.classic-layout{grid-template-columns:170px minmax(0,1fr);gap:35px}
+.classic-menu{padding-right:20px}
+.menu-brand{display:inline-block;line-height:1}
+.menu-brand .site-logo{width:80px;height:80px;object-fit:contain}
+.classic-menu nav{gap:12px;line-height:1.4;margin-top:24px}
+.research-methods{font-size:15.5px;line-height:1.8;margin:23px 0 0}
+.profile-facts{display:grid;grid-template-columns:1fr 1fr;gap:15px 30px;border-top:1px solid var(--line);padding-top:18px;margin-top:24px;font-size:13px}
+.profile-facts .quick-row{display:flex;flex-direction:column;gap:3px}
+.profile-facts strong{font-weight:600;color:var(--muted);font-size:12px}
+.profile-facts a{text-decoration:none}
+.interest-list{display:grid;grid-template-columns:1fr 1fr;gap:20px 30px}
+.interest-item h3{font-size:16px;font-weight:bold;line-height:1.45;margin:0 0 6px}
+.interest-item p{font-size:14px;line-height:1.75;margin:0;color:#545960}
+.project::before{top:26px}
+.project-meta{line-height:1.6}
+.project-meta .kind{color:var(--muted)}
+.project-meta .status::before{content:'·';margin-right:8px;color:var(--muted)}
+.project-meta .date::before{content:none}
+.mentor{line-height:1.7}
+.achievement{font-size:15px;margin:12px 0 0;font-weight:500}
+.personal-media{font-size:14px;margin-top:23px}
+.personal-media h4{font-size:14px;font-weight:600;color:var(--muted);margin:0 0 12px}
+.media-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:20px;padding-top:0;align-items:start}
+.media-grid .solve-video{grid-column:auto;position:relative}
+.media-grid img,.media-grid video{max-height:none;object-fit:contain;background:#f7f7f5;border:1px solid #e3e5e7;border-radius:3px}
+.media-grid video{width:100%;aspect-ratio:16/9;cursor:pointer;background:#151515}
+.media-grid figcaption{font-size:12px;line-height:1.5;margin-top:8px}
+.photo-stack{display:grid;gap:18px}
+.media-grid a{display:block}
+.media-grid a:focus-visible{outline-offset:4px}
+.video-play{position:absolute;top:0;left:0;right:0;width:100%;aspect-ratio:16/9;display:grid;place-content:center;border:0;color:white;background:transparent;cursor:pointer}
+.video-play .play-circle{display:grid;place-content:center;width:66px;height:66px;border-radius:50%;background:rgba(0,0,0,.66);border:2px solid rgba(255,255,255,.9);box-shadow:0 2px 15px rgba(0,0,0,.2)}
+.video-play svg{width:26px;height:26px;margin-left:4px;fill:currentColor}
+.video-play:hover .play-circle{background:rgba(49,79,116,.95)}
+.video-play:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.video-play[hidden]{display:none}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.contact-grid h3{font-size:16px;font-weight:bold;margin-bottom:9px}
+.contact-grid p{font-size:14px;line-height:1.9;margin-bottom:0}
+@media(max-width:850px) and (min-width:701px){
+ .classic-layout{grid-template-columns:145px minmax(0,1fr);gap:24px}
+ .classic-menu{padding-right:15px}.classic-menu nav{font-size:14px}
+ .interest-list,.profile-facts,.contact-grid{grid-template-columns:1fr}
+ .media-grid{grid-template-columns:1fr}.photo-stack{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+ .classic-menu{display:grid;grid-template-columns:1fr auto;gap:16px 12px;padding-bottom:24px}
+ .menu-brand{grid-column:1;grid-row:1;justify-self:start}
+ .menu-brand .site-logo{width:48px;height:48px}
+ .side-language{grid-column:2;grid-row:1;align-self:center}
+ .classic-menu nav{grid-column:1 / -1;grid-row:2;display:flex;flex-wrap:wrap;justify-content:flex-start;gap:9px 18px;font-size:13px;margin:0;line-height:1.5}
+ .classic-menu nav a:first-child,.classic-menu nav a:last-child{display:block}
+ .classic-main h1{font-size:34px}
+ .profile-facts{gap:15px 22px;margin-top:21px}
+ .research-methods{font-size:15px;margin-top:20px}
+ .interest-list{grid-template-columns:1fr;gap:19px}
+ .interest-item h3{font-size:16px}.interest-item p{font-size:14px}
+ .media-grid{grid-template-columns:1fr;gap:22px}
+ .photo-stack{grid-template-columns:1fr;gap:22px}
+ .media-grid figcaption{font-size:12px}
+ .contact-grid{grid-template-columns:1fr;gap:20px}
+ .section-title{font-size:23px}
+}
+@media(max-width:380px){.profile-facts{grid-template-columns:1fr}.classic-menu nav{gap:8px 14px;font-size:12px}.classic-main h1{font-size:31px}}
 </style></head>
 <body class="variant-a"><a class="skip-link" href="#main">Skip to content</a>
 <div class="classic-layout">
-<aside class="classic-menu"><a class="menu-brand" href="#about">S. Feng<span>Mathematics</span></a>
-<nav aria-label="Main"><a href="#about">About</a><a href="#research">Research</a><a href="#teaching">Teaching</a><a href="#personal">Personal</a><a href="#contact">Contact</a></nav>
-<div class="side-language"><a href="index.html" class="language-link">中文</a></div></aside>
+<aside class="classic-menu"><a aria-label="Return to the homepage" class="menu-brand" href="index-en.html"><img alt="Siyuan Feng logo" class="site-logo" height="80" src="favicon.png" width="80"/></a>
+<nav aria-label="Main">
+<a href="#about">About</a>
+<a href="#interests">Research Interests</a>
+<a href="#research">Research Experience</a>
+<a href="#teaching">Teaching</a>
+<a href="#acknowledgements">Acknowledgements</a>
+<a href="#personal">Personal</a>
+<a href="#contact">Contact</a>
+</nav>
+<div class="side-language"><a class="language-link" href="index.html">中文</a></div></aside>
 <main class="classic-main" id="main">
-<header id="about" class="classic-intro">
+<header class="classic-intro" id="about">
 <h1>Siyuan Feng<span class="other-name">冯思远</span></h1>
 <div class="classic-bio">
-<div class="classic-photo"><img class="portrait" src="profile.jpg" width="500" height="684" alt="Portrait of Siyuan Feng" fetchpriority="high">
+<div class="classic-photo"><img alt="Portrait of Siyuan Feng" class="portrait" fetchpriority="high" height="684" src="profile.jpg" width="500"/>
 <div class="portrait-note">University of Warwick</div></div>
 <div class="role"><span class="role-title">Mathematics undergraduate</span><span class="role-school">University of Warwick</span></div>
-<div class="intro-copy">
-<p>I am a Mathematics undergraduate at the University of Warwick, working on the mathematical theory of machine learning. My interests include neural-network training dynamics, infinite-width limits, hyperparameter transfer, and scaling laws.</p>
-<p>I am a member of <a href="https://ins.sjtu.edu.cn/people/fanghui/" class="" target="_blank" rel="noopener noreferrer">Professor Fanghui Liu</a>’s research group, where I study learning-rate schedule transfer across scales under μP. I am also beginning to explore checkpoint averaging and learning-rate decay with <a href="https://warwick.ac.uk/fac/sci/dcs/people/Ranko_Lazic/" class="" target="_blank" rel="noopener noreferrer">Professor Ranko Lazić</a>.</p>
-<p>I also serve as a Teaching Assistant at Warwick’s Mathematics Institute, leading small-group mathematics supervisions for first-year MORSE students.</p>
-<div class="quick-links"><a href="mailto:eric_feng2006@outlook.com" class="">Email</a><a href="cv-en.pdf" class="" target="_blank" rel="noopener noreferrer">CV (English)</a><a href="index.html" class="language-link">中文</a></div></div></div>
-<div class="interests-line"><strong>Research interests</strong><ul><li>Neural-network theory</li><li>Optimisation dynamics</li><li>Infinite-width limits &amp; μP</li><li>Hyperparameter transfer</li></ul></div></header>
-<section id="research" class="content-section">
-<h2 class="section-title"><span class="section-num">01</span>Research</h2>
+<div class="intro-copy"><p>I am a Mathematics undergraduate at the University of Warwick, with a research focus on the mathematical theory of machine learning. My interests include neural-network theory, optimisation dynamics, infinite-width limits, hyperparameter transfer, and scaling laws.</p><p>I am currently a member of <a href="https://ins.sjtu.edu.cn/people/fanghui/" rel="noopener noreferrer" target="_blank">Professor Fanghui Liu</a>'s research group, where I study learning-rate schedule transfer across scales under μP. I am also beginning to explore the mathematical relationship between checkpoint averaging and learning-rate decay under the guidance of <a href="https://warwick.ac.uk/fac/sci/dcs/people/Ranko_Lazic/" rel="noopener noreferrer" target="_blank">Professor Ranko Lazić</a>.</p><p>In addition to my research, I hold a teaching appointment as a Teaching Assistant at Warwick's Mathematics Institute, where I support undergraduate mathematics education through small-group supervisions and academic guidance.</p><div class="quick-links"><a class="" href="mailto:eric_feng2006@outlook.com">Email</a><a class="" href="cv-en.pdf" rel="noopener noreferrer" target="_blank">CV (English)</a><a class="language-link" href="index.html">中文</a></div></div></div>
+<p class="research-methods">I am interested in the nonlinear dynamics and scaling limits of neural-network training. Using spectral analysis, perturbation theory, and asymptotic methods, I study the stability of optimisation trajectories and how network width, training steps, and learning-rate strategies shape the training process. My interests also include stochastic processes, Brownian motion, and related stochastic differential equations, particularly the effects of stochastic perturbations on training dynamics and optimisation.</p><div class="profile-facts">
+<div class="quick-row">
+<strong>Education</strong>
+<span>University of Warwick, BSc Mathematics</span>
+</div>
+<div class="quick-row">
+<strong>Research</strong>
+<span>Machine Learning Theory</span>
+</div>
+<div class="quick-row">
+<strong>Teaching</strong>
+<span><a href="#teaching">Teaching Assistant</a></span>
+</div>
+<div class="quick-row">
+<strong>Research Mentors</strong>
+<span>
+<a href="https://ins.sjtu.edu.cn/people/fanghui/" rel="noopener noreferrer" target="_blank">Fanghui Liu</a>
+                ·
+                <a href="https://warwick.ac.uk/fac/sci/dcs/people/Ranko_Lazic/" rel="noopener noreferrer" target="_blank">Ranko Lazić</a>
+</span>
+</div>
+</div></header>
+<section class="content-section" id="interests"><h2 class="section-title">Research Interests</h2><div class="section-body"><div class="interest-list"><div class="interest-item"><h3>Neural-Network Theory</h3><p>Rigorous properties of learning models, including optimisation, generalisation, asymptotic limits, and scaling behaviour.</p></div><div class="interest-item"><h3>Optimisation Trajectories and Training Dynamics</h3><p>Training trajectories, optimisation stability, and the relationships between learning-rate strategies, viewed through dynamical systems, spectral analysis, and stochastic processes.</p></div><div class="interest-item"><h3>Infinite-Width Limits and μP</h3><p>Parametrisation, feature learning, infinite-width and deterministic limits, and the cross-width stability of hyperparameters.</p></div><div class="interest-item"><h3>Hyperparameter Transfer and Scaling Laws</h3><p>Learning-rate schedules and the transfer of their optimal parameters across network widths and training steps.</p></div></div></div></section><section class="content-section" id="research">
+<h2 class="section-title">Research Experience</h2>
 <div class="section-body">
 <p class="research-intro">Understanding how neural networks train, and how learning rates transfer across scales.</p>
 <div class="project-list">
 <article class="project">
-    <div class="project-meta"><span class="status">Ongoing</span><span class="date">July 2026 – Present</span></div>
-    <h3>Cross-Scale WSD Schedule Transfer: Geometry and Prediction under μP</h3>
-    <p class="mentor">Supervised by <a href="https://ins.sjtu.edu.cn/people/fanghui/" class="" target="_blank" rel="noopener noreferrer">Fanghui Liu</a></p>
-    <p class="project-description">Mathematical foundations of learning-rate schedule transfer across network widths and training budgets, with a focus on optimisation dynamics, scaling behaviour, and μP.</p>
-   </article>
+<div class="project-meta"><span class="kind">Current Research</span><span class="status">Ongoing</span></div>
+<h3>Cross-Scale WSD Schedule Transfer: Geometry and Prediction under μP</h3>
+<p class="mentor">
+              Supervised by Professor <a href="https://ins.sjtu.edu.cn/people/fanghui/" rel="noopener noreferrer" target="_blank">Fanghui Liu</a> · July 2026 – Present
+            </p>
+<p class="project-description">
+              I study the mathematical foundations of learning-rate schedule transfer across network widths and training budgets, focusing on optimisation dynamics, scaling behaviour, and the role of μP.
+            </p>
+</article>
 <article class="project">
-    <div class="project-meta"><span class="status">Early stage</span><span class="date">October 2026 – Present</span></div>
-    <h3>Checkpoint Averaging and Learning-Rate Decay</h3>
-    <p class="mentor">Supervised by <a href="https://warwick.ac.uk/fac/sci/dcs/people/Ranko_Lazic/" class="" target="_blank" rel="noopener noreferrer">Ranko Lazić</a></p>
-    <p class="project-description">Exploring the mathematical relationship between checkpoint averaging and learning-rate decay, and its implications for training dynamics and learning-rate selection.</p>
-   </article>
+<div class="project-meta"><span class="kind">Current Research</span><span class="status">Early Stage</span></div>
+<h3>Checkpoint Averaging and Learning-Rate Decay</h3>
+<p class="mentor">
+              Supervised by Professor <a href="https://warwick.ac.uk/fac/sci/dcs/people/Ranko_Lazic/" rel="noopener noreferrer" target="_blank">Ranko Lazić</a> · October 2026 – Present
+            </p>
+<p class="project-description">
+              I am exploring the mathematical relationship between checkpoint averaging and learning-rate decay, with a focus on their implications for training dynamics and reliable learning-rate selection.
+            </p>
+</article>
 <article class="project">
-    <div class="project-meta"><span class="status">URSS 2026</span><span class="date">May – July 2026</span></div>
-    <h3>Two-Step Optimal Learning-Rate Geometry under μP</h3>
-    <p class="mentor">Supervised by <a href="https://ins.sjtu.edu.cn/people/fanghui/" class="" target="_blank" rel="noopener noreferrer">Fanghui Liu</a></p>
-    <p class="project-description">Studied optimal learning-rate geometry in a two-step deep linear μP network, proving generic uniqueness, constructing full-rank examples with three distinct global optima, and establishing stability under perturbations.</p>
-<div class="paper-link"><a href="two-step-optimal-learning-rate-geometry-under-mup.pdf" class="" target="_blank" rel="noopener noreferrer">Paper (PDF) ↗</a></div>
-   </article></div></div></section>
-<section id="teaching" class="content-section">
-<h2 class="section-title"><span class="section-num">02</span>Teaching</h2>
+<div class="project-meta"><span class="kind">Previous Research · URSS 2026</span></div>
+<h3>Two-Step Optimal Learning-Rate Geometry under μP</h3>
+<p class="mentor">
+              Supervised by Professor <a href="https://ins.sjtu.edu.cn/people/fanghui/" rel="noopener noreferrer" target="_blank">Fanghui Liu</a> · May 2026 – July 2026
+            </p>
+<p class="project-description">
+              Studied the global geometry of optimal learning rates in a two-step deep linear μP network. Proved generic uniqueness, constructed full-rank examples with three distinct global optima, and established stability under perturbations.
+            </p>
+<div class="paper-link">
+<a href="./two-step-optimal-learning-rate-geometry-under-mup.pdf" rel="noopener noreferrer" target="_blank">View paper PDF →</a>
+</div>
+</article></div></div></section>
+<section class="content-section" id="teaching">
+<h2 class="section-title">Teaching</h2>
 <div class="section-body">
 <div class="teaching-head">
 <h3>Teaching Assistant</h3><span class="date">October 2026 – Present</span></div>
 <p class="mentor">Mathematics Institute, University of Warwick</p>
-<p>I lead weekly small-group mathematics supervisions for first-year MORSE students, including problem-solving discussions, explanations of foundational concepts, and feedback on written assignments.</p></div></section>
-<section id="personal" class="content-section">
-<h2 class="section-title"><span class="section-num">03</span>Personal</h2>
+<p class="teaching-description">I lead weekly small-group mathematics supervisions for first-year MORSE students, facilitating mathematical problem-solving discussions, clarifying foundational concepts, and providing feedback on written assignments.</p></div></section>
+<section class="content-section" id="personal">
+<h2 class="section-title">Personal Interests</h2>
+<div class="section-body"><h3>4×4×4 Speedcubing</h3><p>
+              I am a 4×4×4 speedcuber and have competed in official WCA
+              competitions. My official results include a 34.22-second single
+              and a 41.46-second average. My cubing profile is available
+              <a href="https://cubing.com/results/person/2021FENG07" rel="noopener noreferrer" target="_blank">here</a>.
+            </p><div class="achievement">
+              At Warwick Winter 2025, I won the 4×4×4 event with a
+              36.95-second average, placing first in the university-wide
+              competition for this event.
+            </div><div class="personal-media"><h4>Solve Video and Competition Photos</h4><div class="media-grid"><figure class="solve-video"><video aria-label="A 4×4×4 cube solve" controls="" playsinline="" poster="data:image/jpeg;base64,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" preload="metadata" src="rubiks-4x4-solve.mp4">Your browser does not support HTML5 video playback.</video><button aria-label="Play the 4×4×4 solve video" class="video-play" hidden="" type="button"><span class="play-circle"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3.5v17L20 12z"></path></svg></span></button><figcaption>A 4×4×4 cube solve</figcaption></figure><div class="photo-stack"><figure><a href="warwick-winter-2025-podium.jpg" rel="noopener noreferrer" target="_blank"><img alt="Top three finishers in the Warwick Winter 2025 4x4x4 event" loading="lazy" src="warwick-winter-2025-podium.jpg"/></a><figcaption>Warwick Winter 2025 · Top three finishers</figcaption></figure><figure><a href="warwick-winter-2025-certificate.jpg" rel="noopener noreferrer" target="_blank"><img alt="Warwick Winter 2025 4x4x4 first-place certificate" loading="lazy" src="warwick-winter-2025-certificate.jpg"/></a><figcaption>Warwick Winter 2025 · First-place certificate</figcaption></figure></div></div></div></div></section>
+<section class="content-section" id="acknowledgements">
+<h2 class="section-title">Acknowledgements</h2>
 <div class="section-body">
-<h3>A little beyond mathematics</h3>
-<p>I enjoy 4×4×4 speedcubing. My official WCA results include a 34.22-second single and a 41.46-second average. I won the 4×4×4 event at Warwick Winter 2025 with a 36.95-second average. <a href="https://cubing.com/results/person/2021FENG07" class="" target="_blank" rel="noopener noreferrer">Cubing profile ↗</a></p>
-<details class="personal-media"><summary>A solve & a few moments <span aria-hidden="true">+</span></summary>
-<div class="media-grid">
-<figure class="solve-video"><video controls playsinline preload="none" aria-label="A 4×4×4 cube solve" src="rubiks-4x4-solve.mp4"></video><figcaption>A 4×4×4 cube solve</figcaption></figure>
-<figure><img loading="lazy" src="warwick-winter-2025-podium.jpg" alt="Warwick Winter 2025 4×4×4 competition podium"><figcaption>Warwick Winter 2025</figcaption></figure>
-<figure><img loading="lazy" src="warwick-winter-2025-certificate.jpg" alt="Warwick Winter 2025 4×4×4 competition certificate"><figcaption>Warwick Winter 2025 · Competition certificate</figcaption></figure></div></details></div></section>
-<section id="thanks" class="content-section">
-<h2 class="section-title"><span class="section-num">04</span>Acknowledgements</h2>
-<div class="section-body">
-<p>I am grateful to <a href="https://pi.math.cornell.edu/~damiano/" class="" target="_blank" rel="noopener noreferrer">Prof. Damiano Testa</a>, my personal tutor during my first two years at Warwick, for his guidance, encouragement, and continued support.</p></div></section>
-<section id="contact" class="content-section">
-<h2 class="section-title"><span class="section-num">05</span>Contact</h2>
-<div class="section-body">
-<p class="contact-mail"><a href="mailto:eric_feng2006@outlook.com" class="">eric_feng2006@outlook.com</a></p>
-<div class="contact-links"><a href="cv-en.pdf" class="" target="_blank" rel="noopener noreferrer">CV (English) ↗</a><a href="cv-zh.pdf" class="" target="_blank" rel="noopener noreferrer">CV (Chinese) ↗</a></div></div></section>
-<footer><span>Siyuan Feng <span class="footer-dot">·</span> 冯思远</span><span>Mathematics · Machine Learning Theory</span></footer></main></div>
+<p>I am sincerely grateful to <a href="https://pi.math.cornell.edu/~damiano/" rel="noopener noreferrer" target="_blank">Prof. Damiano Testa</a> (University of Warwick), who served as my personal tutor during my first two years of undergraduate study. His guidance, encouragement, and thoughtful advice have played an important role in my academic development. I particularly value our conversations about mathematics, research, and future academic directions, as well as his continued support throughout my academic journey.</p>
+</div></section>
+<section class="content-section" id="contact">
+<h2 class="section-title">CV &amp; Contact</h2>
+<div class="section-body contact-grid">
+<div class="contact-card">
+<h3>Curriculum Vitae</h3>
+<p>
+<a href="cv-en.pdf">CV (English)</a><br/>
+<a href="cv-zh.pdf">CV (Chinese)</a>
+</p>
+</div>
+<div class="contact-card">
+<h3>Contact</h3>
+<p>
+              Email:
+              <a href="mailto:eric_feng2006@outlook.com">
+                eric_feng2006@outlook.com
+              </a>
+</p>
+</div>
+</div></section>
+<footer>
+<span>Siyuan Feng · University of Warwick</span>
+<span>Machine Learning Theory</span>
+</footer></main></div>
 <script>
-document.querySelector('nav a[href^="#"]')?.setAttribute('aria-current', 'location');
-document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-  link.addEventListener('click', () => {
-    document.querySelectorAll('nav a').forEach(a => a.removeAttribute('aria-current'));
+(() => {
+  const links = Array.from(document.querySelectorAll('.classic-menu nav a[href^="#"]'));
+  links.forEach(link => link.addEventListener('click', () => {
+    links.forEach(a => a.removeAttribute('aria-current'));
     link.setAttribute('aria-current', 'location');
+  }));
+  document.querySelectorAll('.solve-video').forEach(figure => {
+    const video = figure.querySelector('video');
+    const button = figure.querySelector('.video-play');
+    button.hidden = false;
+    button.addEventListener('click', async () => {
+      try { await video.play(); button.hidden = true; }
+      catch { button.hidden = true; video.focus(); }
+    });
+    video.addEventListener('play', () => { button.hidden = true; });
+    video.addEventListener('ended', () => { button.hidden = false; });
   });
-});
-document.querySelectorAll('details').forEach(details => {
-  details.addEventListener('toggle', () => {
-    if (!details.open) details.querySelectorAll('video').forEach(video => video.pause());
-  });
-});
+})();
 </script></body></html>
