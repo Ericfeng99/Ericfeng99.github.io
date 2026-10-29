@@ -232,9 +232,75 @@ html[lang=zh-CN] .classic-main h1,html[lang=zh-CN] .section-title{font-family:Ge
 .staff-id-details figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:5px}
 .staff-id-details figcaption{font-size:12px;line-height:1.5;color:var(--muted);margin-top:7px}
 
-</style></head>
+
+
+/* Manual light/dark toggle: original typography and layout preserved. */
+.classic-layout{position:relative}
+.theme-toggle{
+  position:absolute;top:10px;right:30px;z-index:10;
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  min-width:82px;min-height:36px;padding:7px 12px;
+  border:1px solid var(--line);border-radius:20px;
+  background:var(--paper);color:var(--accent);
+  font:600 12px/1.4 var(--ui);cursor:pointer;
+  transition:background-color .15s,border-color .15s,color .15s;
+}
+.theme-toggle:hover{background:#f0f5fa;border-color:#94aac1}
+.theme-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.theme-toggle svg{display:block;width:17px;height:17px;flex-shrink:0}
+.theme-icon-sun{display:none!important}
+html[data-theme="dark"] .theme-icon-moon{display:none!important}
+html[data-theme="dark"] .theme-icon-sun{display:block!important}
+@media(max-width:700px){
+  .theme-toggle{top:19px;right:23px;min-height:35px;padding:6px 10px}
+  .classic-menu .side-language{margin-right:102px}
+}
+@media(max-width:380px){
+  .theme-toggle{right:16px;padding:6px 9px;min-width:74px}
+  .classic-menu .side-language{margin-right:91px}
+}
+
+/* Dark palette. The default remains light, irrespective of the OS preference. */
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#161b22;--ink:#e6edf3;--muted:#adb8c5;
+  --accent:#a8c9ec;--line:#374655;
+}
+html[data-theme="dark"] .theme-toggle:hover{background:#283849;border-color:#728ba8}
+html[data-theme="dark"] .classic-main h1{border-bottom-color:#60768d}
+html[data-theme="dark"] .classic-main .other-name{color:#bac6d3}
+html[data-theme="dark"] .classic-bio>.role{border-left-color:#81a6d2}
+html[data-theme="dark"] .role-title{color:#bcd6f4}
+html[data-theme="dark"] .role-school{color:#b3c1d1}
+html[data-theme="dark"] .interest-item p{color:#c6d0db}
+html[data-theme="dark"] .interests-line{border-top-color:var(--line)}
+html[data-theme="dark"] .interests-line li+li::before{color:#9aaabb}
+html[data-theme="dark"] .media-disclosure>summary{background:#213142;border-color:#536a82;color:#bcd6f5}
+html[data-theme="dark"] .media-disclosure>summary:hover{background:#294059;border-color:#83a3c8}
+html[data-theme="dark"] .media-disclosure>summary .media-toggle-title{color:#c5dcfa}
+html[data-theme="dark"] .media-disclosure>summary .media-toggle-note{color:#b2c3d7}
+html[data-theme="dark"] .media-disclosure>summary .media-toggle-action{background:#182532;color:#c8ddf6;border-color:#6883a1}
+html[data-theme="dark"] .media-grid img,
+html[data-theme="dark"] .media-grid video,
+html[data-theme="dark"] .media-disclosure .photo-stack img{background:#242e39;border-color:#4d6174}
+@media(max-width:700px){
+  html[data-theme="dark"] .intro-copy .quick-links{border-color:#45586b}
+}
+
+</style><!-- Apply a previously selected theme before painting; first visits are light. -->
+<script>
+(() => {
+  try {
+    if (window.localStorage.getItem('siyuan-site-theme') === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  } catch (error) { /* Theme still works without storage. */ }
+})();
+</script>
+</head>
 <body class="variant-a"><a class="skip-link" href="#main">Skip to content</a>
 <div class="classic-layout">
+<button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.7 14.7A9 9 0 0 1 9.3 3.3 9 9 0 1 0 20.7 14.7Z"/></svg><svg class="theme-icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><span class="theme-toggle-label">Dark</span></button>
 <aside class="classic-menu"><a aria-label="Return to the homepage" class="menu-brand" href="index-en.html"><img alt="Siyuan Feng logo" class="site-logo" height="80" src="favicon.png" width="80"/></a>
 <nav aria-label="Main">
 <a href="#about">About</a>
@@ -253,7 +319,7 @@ html[lang=zh-CN] .classic-main h1,html[lang=zh-CN] .section-title{font-family:Ge
 <div class="classic-photo"><img alt="Portrait of Siyuan Feng" class="portrait" fetchpriority="high" height="684" src="profile.jpg" width="500"/>
 <div class="portrait-note">University of Warwick</div></div>
 <div class="role"><span class="role-title">Mathematics undergraduate</span><span class="role-school">University of Warwick</span></div>
-<div class="intro-copy"><p>I am a Mathematics undergraduate at the University of Warwick, with a research focus on the mathematical theory of machine learning. My interests include neural-network theory, optimisation dynamics, infinite-width limits, hyperparameter transfer, and scaling laws.</p><p>I am currently a member of <a href="https://ins.sjtu.edu.cn/people/fanghui/" rel="noopener noreferrer" target="_blank">Professor Fanghui Liu</a>'s research group, where I collaborate with <a href="https://kuaaannn.github.io/" rel="noopener noreferrer" target="_blank">Yikuan Li</a> on learning-rate schedule transfer across scales under μP. I am also beginning to explore the mathematical relationship between checkpoint averaging and learning-rate decay under the guidance of <a href="https://warwick.ac.uk/fac/sci/dcs/people/Ranko_Lazic/" rel="noopener noreferrer" target="_blank">Professor Ranko Lazić</a>.</p><p>In addition to my research, I was appointed as a Graduate Teaching Assistant (GTA) at Warwick's Mathematics Institute during my undergraduate studies, where I lead small-group mathematics supervisions.</p><div class="quick-links"><a class="" href="mailto:eric_feng2006@outlook.com">Email</a><a class="" href="cv-en.pdf" rel="noopener noreferrer" target="_blank">CV (English)</a><a class="language-link" href="index.html">中文</a></div></div></div>
+<div class="intro-copy"><p>I am a Mathematics undergraduate at the University of Warwick, with a research focus on the mathematical theory of machine learning. My interests include neural-network theory, optimisation dynamics, infinite-width limits, hyperparameter transfer, and scaling laws.</p><p>I am currently a member of <a href="https://www.lfhsgre.org/" rel="noopener noreferrer" target="_blank">Professor Fanghui Liu</a>'s research group, where I collaborate with <a href="https://kuaaannn.github.io/" rel="noopener noreferrer" target="_blank">Yikuan Li</a> on learning-rate schedule transfer across scales under μP. I am also beginning to explore the mathematical relationship between checkpoint averaging and learning-rate decay under the guidance of <a href="https://warwick.ac.uk/fac/sci/dcs/people/Ranko_Lazic/" rel="noopener noreferrer" target="_blank">Professor Ranko Lazić</a>.</p><p>In addition to my research, I was appointed as a Graduate Teaching Assistant (GTA) at Warwick's Mathematics Institute during my undergraduate studies, where I lead small-group mathematics supervisions.</p><div class="quick-links"><a class="" href="mailto:eric_feng2006@outlook.com">Email</a><a class="" href="cv-en.pdf" rel="noopener noreferrer" target="_blank">CV (English)</a><a class="language-link" href="index.html">中文</a></div></div></div>
 <p class="research-methods">I am interested in the nonlinear dynamics and scaling limits of neural-network training. Using spectral analysis, perturbation theory, and asymptotic methods, I study the stability of optimisation trajectories and how network width, training steps, and learning-rate strategies shape the training process. My interests also include stochastic processes, Brownian motion, and related stochastic differential equations, particularly the effects of stochastic perturbations on training dynamics and optimisation.</p><div class="profile-facts">
 <div class="quick-row">
 <strong>Education</strong>
@@ -270,7 +336,7 @@ html[lang=zh-CN] .classic-main h1,html[lang=zh-CN] .section-title{font-family:Ge
 <div class="quick-row">
 <strong>Research Mentors</strong>
 <span>
-<a href="https://ins.sjtu.edu.cn/people/fanghui/" rel="noopener noreferrer" target="_blank">Fanghui Liu</a>
+<a href="https://www.lfhsgre.org/" rel="noopener noreferrer" target="_blank">Fanghui Liu</a>
                 ·
                 <a href="https://warwick.ac.uk/fac/sci/dcs/people/Ranko_Lazic/" rel="noopener noreferrer" target="_blank">Ranko Lazić</a>
 </span>
@@ -285,7 +351,7 @@ html[lang=zh-CN] .classic-main h1,html[lang=zh-CN] .section-title{font-family:Ge
 <div class="project-meta"><span class="kind">Current Research</span><span class="status">Ongoing</span></div>
 <h3>Cross-Scale WSD Schedule Transfer: Geometry and Prediction under μP</h3>
 <p class="mentor">
-              Supervised by Professor <a href="https://ins.sjtu.edu.cn/people/fanghui/" rel="noopener noreferrer" target="_blank">Fanghui Liu</a> · July 2026 – Present
+              Supervised by Professor <a href="https://www.lfhsgre.org/" rel="noopener noreferrer" target="_blank">Fanghui Liu</a> · July 2026 – Present
             </p>
 <p class="project-description">
               I study the mathematical foundations of learning-rate schedule transfer across network widths and training budgets, focusing on optimisation dynamics, scaling behaviour, and the role of μP.
@@ -305,7 +371,7 @@ html[lang=zh-CN] .classic-main h1,html[lang=zh-CN] .section-title{font-family:Ge
 <div class="project-meta"><span class="kind">Previous Research · URSS 2026</span></div>
 <h3>Two-Step Optimal Learning-Rate Geometry under μP</h3>
 <p class="mentor">
-              Supervised by Professor <a href="https://ins.sjtu.edu.cn/people/fanghui/" rel="noopener noreferrer" target="_blank">Fanghui Liu</a> · May 2026 – July 2026
+              Supervised by Professor <a href="https://www.lfhsgre.org/" rel="noopener noreferrer" target="_blank">Fanghui Liu</a> · May 2026 – July 2026
             </p>
 <p class="project-description">
               Studied the global geometry of optimal learning rates in a two-step deep linear μP network. Proved generic uniqueness, constructed full-rank examples with three distinct global optima, and established stability under perturbations.
@@ -394,4 +460,34 @@ document.querySelectorAll('details.media-disclosure').forEach(details => {
     }
   });
 });
-</script></body></html>
+</script><!-- Top-right theme switch; saved across the Chinese and English pages. -->
+<script>
+(() => {
+  const control = document.getElementById('theme-toggle');
+  if (!control) return;
+  const root = document.documentElement;
+  const chinese = root.lang.toLowerCase().startsWith('zh');
+  const label = control.querySelector('.theme-toggle-label');
+  function reflectTheme() {
+    const dark = root.getAttribute('data-theme') === 'dark';
+    label.textContent = chinese ? (dark ? '日间' : '夜间') : (dark ? 'Light' : 'Dark');
+    const description = chinese
+      ? (dark ? '切换至日间模式' : '切换至夜间模式')
+      : (dark ? 'Switch to light mode' : 'Switch to dark mode');
+    control.setAttribute('aria-label', description);
+    control.setAttribute('title', description);
+    control.setAttribute('aria-pressed', String(dark));
+  }
+  control.addEventListener('click', () => {
+    const dark = root.getAttribute('data-theme') === 'dark';
+    if (dark) root.removeAttribute('data-theme');
+    else root.setAttribute('data-theme', 'dark');
+    try {
+      window.localStorage.setItem('siyuan-site-theme', dark ? 'light' : 'dark');
+    } catch (error) { /* Ignore unavailable storage. */ }
+    reflectTheme();
+  });
+  reflectTheme();
+})();
+</script>
+</body></html>
